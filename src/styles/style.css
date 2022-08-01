@@ -95,7 +95,7 @@ body {
 .timer-container {
   grid-row: 2 / 3;
   display: grid;
-  grid-template-rows: 3fr 1fr;
+  grid-template-rows: 5fr 2fr;
 }
 
 /* .free-space2 {

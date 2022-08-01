@@ -20,53 +20,69 @@ export const NavigationIcons = ({
 }) => {
   const [techniquesAreOpen, setTechniquesOpen] = useState(false);
   const [timeIsOpen, setTimeOpen] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
   return (
     <div className="navContainer">
       <div
-        className="button1"
         onClick={() => {
           if (vibrations) setVibrations(false);
           else setVibrations(true);
         }}
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
       >
+        {" "}
+        <p>{isHovering && (vibrations ? "vibrations on" : "vibrations off")}</p>
         <button
           className={vibrations ? "button1-vib" : "button1-novib"}
         ></button>
-        <p>vibrations</p>
       </div>
       <div
-        className="button2"
         onClick={() => {
           if (sounds) setSounds(false);
           else setSounds(true);
         }}
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
       >
+        <p>{isHovering && (sounds ? "sound on" : "sound off")}</p>
         <button
           className={sounds ? "button2-sound" : "button2-nosound"}
         ></button>
-        <p>sound</p>
       </div>
       <div
-        className={`button3 ${timeIsOpen ? "visible-button" : ""}`}
+        className={`${timeIsOpen ? "visible-button" : ""}`}
         onClick={() => {
           handlePause();
           timeIsOpen ? setTimeOpen(false) : setTimeOpen(true);
         }}
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
       >
-        <button></button>
         <p>time</p>
+        <button className="button3"></button>
       </div>
       <div
-        className={`button4 ${techniquesAreOpen ? "visible-button" : ""}`}
+        className={`${techniquesAreOpen ? "visible-button" : ""}`}
         onClick={() => {
           techniquesAreOpen
             ? setTechniquesOpen(false)
             : setTechniquesOpen(true);
           handlePause();
         }}
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
       >
-        <button></button>
         <p>techniques</p>
+        <button className="button4"></button>
       </div>
       {techniquesAreOpen && (
         <ChoosinTechniqueModal

@@ -1,7 +1,16 @@
 .navContainer {
+  width: 100%;
+  margin-bottom: 0.5em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+}
+.navContainer div {
+  display: grid;
+  width: 100%;
+  grid-template-rows: 2fr 3fr;
   align-items: center;
   justify-items: center;
 }
@@ -18,9 +27,25 @@
 
   border: none;
 }
+/* .button1,
+.button1-novib,
+.button1-vib,
+.button2,
+.button2-nosound,
+.button2-sound,
+.button3,
+.button4 {
+
+} */
+/* }
 .button1 {
   grid-column: 1/ 2;
   grid-row: 1 / 2;
+  display: grid;
+  width: 100%;
+  grid-template-rows: 2fr 3fr;
+  align-items: center;
+  justify-items: center;
 }
 
 .button2 {
@@ -36,36 +61,33 @@
 .button4 {
   grid-column: 4/ 5;
   grid-row: 1 / 2;
-}
+} */
 .button1-vib {
   background: url(../../assets/icons/vibrations_on.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 .button1-novib {
-  background: url(../../assets/icons/Vector_vibrations_crossedout.svg) no-repeat
-    center center;
+  background: url(../../assets/icons/vibrations_on.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 
 .button2-sound {
-  background: url(../../assets/icons/Vector_sound.svg) no-repeat center center;
+  background: url(../../assets/icons/vibrations_on.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 
 .button2-nosound {
-  background: url(../../assets/icons/Vector_sound_crossed_out_.svg) no-repeat
-    center center;
+  background: url(../../assets/icons/vibrations_on.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 
-.button3 button {
-  background: url(../../assets/icons/Vector_time.svg) no-repeat center center;
+.button3 {
+  background: url(../../assets/icons/vibrations_on.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 
-.button4 button {
-  background: url(../../assets/icons/Vector_techniques.svg) no-repeat center
-    center;
+.button4 {
+  background: url(../../assets/icons/vibrations_on.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 

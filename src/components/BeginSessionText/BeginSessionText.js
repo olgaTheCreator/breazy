@@ -19,7 +19,7 @@ export const BeginSessionText = ({ durationOfSession, chosenTechnique }) => {
           Begin your {durationOfSession} minute
           {durationOfSession > 1 ? "s" : ""}
           <br />
-          <span style={{ fontWeight: "800", color: "hsla(216, 100%, 94%, 1)" }}>
+          <span style={{ fontWeight: "700", color: "hsla(216, 100%, 94%, 1)" }}>
             {chosenTechnique.name}
           </span>
           {/* {<ShowingTechniqueName chosenTechnique={chosenTechnique} />} */}
