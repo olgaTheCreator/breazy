@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./navigationStyle.css";
-import { ChoosinTechniqueModal } from "./ChoosingTechniquesModal";
-import { TimeModal } from "./TimeModal";
+import "./navigationIcons.css";
+import { ChoosinTechniqueModal } from "../ChoosingTechniqueModal/ChoosingTechniquesModal";
+import { SetDurationModal } from "../SetDurationModal/SetDurationModal";
 
 export const NavigationIcons = ({
   chosenTechnique,
@@ -80,7 +80,7 @@ export const NavigationIcons = ({
         />
       )}
       {timeIsOpen && (
-        <TimeModal
+        <SetDurationModal
           setTimeOpen={setTimeOpen}
           durationOfSession={durationOfSession}
           setDuration={setDuration}

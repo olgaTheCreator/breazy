@@ -10,9 +10,9 @@
 }
 .navContainer button {
   border-radius: 50%;
-  height: 2em;
-  width: 2em;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height: 3em;
+  width: 3em;
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25); */
   font-size: 0.9em;
   color: #455a6e;
 
@@ -38,33 +38,34 @@
   grid-row: 1 / 2;
 }
 .button1-vib {
-  background: url(../assets/icons/Vector_vibrations.svg) no-repeat center center;
+  background: url(../../assets/icons/vibrations_on.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 .button1-novib {
-  background: url(../assets/icons/Vector_vibrations_crossedout.svg) no-repeat
+  background: url(../../assets/icons/Vector_vibrations_crossedout.svg) no-repeat
     center center;
   background-size: 100% 100%;
 }
 
 .button2-sound {
-  background: url(../assets/icons/Vector_sound.svg) no-repeat center center;
+  background: url(../../assets/icons/Vector_sound.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 
 .button2-nosound {
-  background: url(../assets/icons/Vector_sound_crossed_out_.svg) no-repeat
+  background: url(../../assets/icons/Vector_sound_crossed_out_.svg) no-repeat
     center center;
   background-size: 100% 100%;
 }
 
 .button3 button {
-  background: url(../assets/icons/Vector_time.svg) no-repeat center center;
+  background: url(../../assets/icons/Vector_time.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 
 .button4 button {
-  background: url(../assets/icons/Vector_techniques.svg) no-repeat center center;
+  background: url(../../assets/icons/Vector_techniques.svg) no-repeat center
+    center;
   background-size: 100% 100%;
 }
 

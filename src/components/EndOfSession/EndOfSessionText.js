@@ -1,5 +1,5 @@
 import React from "react";
-import "./beginSessionTextStyle.css";
+import "../BeginSessionText/beginSessionText.css";
 
 export const EndOfSessionText = () => {
   return (

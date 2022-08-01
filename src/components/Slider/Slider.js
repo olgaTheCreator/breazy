@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
-import "./sliderStyle.css";
+import "./slider.css";
 import {
   thumbTopPosMax,
   thumbTopPosMin,
   countVh,
-} from "../utils/DurationAndPosition.js";
-import { debounce } from "../utils/Debounce";
+} from "../../utils/DurationAndPosition.js";
+import { debounce } from "../../utils/Debounce";
 
 export const Slider = ({ isSliding, setSliding, setThumbPos, thumbPos }) => {
   const clientYref = useRef(0);

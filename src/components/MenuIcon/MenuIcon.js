@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { MenuModal } from "./MenuModal";
-import "./menuIconStyle.css";
+import { MenuModal } from "../MenuModal/MenuModal";
+import "./menuIcon.css";
 
 export const MenuIcon = () => {
   const [menuIsOpen, setMenuOpen] = useState(false);

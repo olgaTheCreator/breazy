@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "../style.css";
-import { debounce } from "../utils/Debounce";
+import "../../styles/style.css";
+import { debounce } from "../../utils/Debounce";
 
 export const AppWrapper = ({ children }) => {
   const [dimensions, setDimensions] = useState({

@@ -1,9 +1,9 @@
 import React from "react";
 import "./timer.css";
-import { vibrate } from "../utils/Vibration";
-import { noOp } from "../utils/NoOp";
+import { vibrate } from "../../utils/Vibration";
+import { noOp } from "../../utils/NoOp";
 import { Howl } from "howler";
-import bell from "../assets/sounds/bell-hit-soft.wav";
+import bell from "../../assets/sounds/bell-hit-soft.wav";
 
 export const Timer = ({
   chosenTechnique,
@@ -63,9 +63,10 @@ export const Timer = ({
 
   return (
     <div className="container">
-      <div className="area1"></div>
-      <div className="area2">
-        <div className="circle" onClick={handleStart}>
+      {/* <div className="area1"></div>
+      <div className="area2"> */}
+      <div className="circle-outer" onClick={handleStart}>
+        <div className="circle-inner">
           <br />
           <br />
           {intervalId ? (
@@ -91,7 +92,7 @@ export const Timer = ({
           <br />
         </div>
       </div>
-      <div className="area3"></div>
     </div>
+    // </div>
   );
 };

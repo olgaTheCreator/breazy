@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import "./timeModalStyle.css";
-import { Slider } from "./Slider";
+import "./setDurationModal.css";
+import { Slider } from "../Slider/Slider";
 import {
   durationToPosition,
   positionToDuration,
-} from "../utils/DurationAndPosition.js";
+} from "../../utils/DurationAndPosition.js";
 
-export const TimeModal = ({
+export const SetDurationModal = ({
   setTimeOpen,
   durationOfSession,
   setDuration,

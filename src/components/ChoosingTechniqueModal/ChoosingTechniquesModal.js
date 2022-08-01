@@ -1,7 +1,7 @@
 import React from "react";
-import "./modalsStyle.css";
-import "./choosingTechniqueModalStyle.css";
-import { breathingTechniques } from "../data/breathingTechniques";
+import "../../styles/modalsStyle.css";
+import "./choosingTechniqueModal.css";
+import { breathingTechniques } from "../../data/breathingTechniques";
 
 export const ChoosinTechniqueModal = ({
   setTechniquesOpen,

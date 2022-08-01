@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export const ShowingTechniqueNameOnScreen = ({ chosenTechnique }) => {
+export const ShowingTechniqueName = ({ chosenTechnique }) => {
   const [visible, setVisible] = useState(true);
   useEffect(() => {
     setTimeout(() => {
