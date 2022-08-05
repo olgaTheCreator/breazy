@@ -1,5 +1,6 @@
 root {
   font-size: 62.5%;
+  --bg-color: hsla(203, 12%, 21%, 1);
 }
 html {
   font-size: 1.8rem;
@@ -45,7 +46,7 @@ body {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 100%;
+  width: 100vw;
   max-width: 800px;
   background: hsla(203, 12%, 21%, 1);
 
@@ -110,7 +111,7 @@ body {
   padding-top: 2%;
 }
 .timer {
-  margin-top: 2em;
+  margin-top: 1.8em;
 }
 
 /* .lower-line {

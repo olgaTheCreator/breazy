@@ -31,12 +31,14 @@ export const SetDurationModal = ({
             >
               {positionToDuration(thumbPos)}
             </div>
-            <Slider
-              isSliding={isSliding}
-              setSliding={setSliding}
-              thumbPos={thumbPos}
-              setThumbPos={setThumbPos}
-            />
+            <div className="slider">
+              <Slider
+                isSliding={isSliding}
+                setSliding={setSliding}
+                thumbPos={thumbPos}
+                setThumbPos={setThumbPos}
+              />
+            </div>
 
             <div
               className="buble-min"

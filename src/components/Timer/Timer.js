@@ -67,8 +67,6 @@ export const Timer = ({
       <div className="area2"> */}
       <div className="circle-outer" onClick={handleStart}>
         <div className="circle-inner">
-          <br />
-          <br />
           {intervalId ? (
             <div id="stop-button">
               PAUSE
@@ -88,8 +86,6 @@ export const Timer = ({
               <p>START</p>
             </div>
           )}
-          <br />
-          <br />
         </div>
       </div>
     </div>
