@@ -16,6 +16,7 @@
 }
 .navContainer p {
   font-size: 0.45em;
+  visibility: hidden;
 }
 .navContainer button {
   border-radius: 50%;
@@ -26,6 +27,10 @@
   color: #455a6e;
 
   border: none;
+}
+
+.navContainer div:hover > p {
+  visibility: visible;
 }
 /* .button1,
 .button1-novib,
@@ -63,31 +68,31 @@
   grid-row: 1 / 2;
 } */
 .button1-vib {
-  background: url(../../assets/icons/vibrations_on.svg) no-repeat center center;
+  background: url(../../assets/svgs/vibrations_on.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 .button1-novib {
-  background: url(../../assets/icons/vibrations_on.svg) no-repeat center center;
+  background: url(../../assets/svgs/vibrations_on.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 
 .button2-sound {
-  background: url(../../assets/icons/vibrations_on.svg) no-repeat center center;
+  background: url(../../assets/svgs/vibrations_on.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 
 .button2-nosound {
-  background: url(../../assets/icons/vibrations_on.svg) no-repeat center center;
+  background: url(../../assets/svgs/vibrations_on.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 
 .button3 {
-  background: url(../../assets/icons/vibrations_on.svg) no-repeat center center;
+  background: url(../../assets/svgs/vibrations_on.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 
 .button4 {
-  background: url(../../assets/icons/vibrations_on.svg) no-repeat center center;
+  background: url(../../assets/svgs/vibrations_on.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 

@@ -2,6 +2,6 @@
   height: calc(6 * var(--vh, vh));
   width: calc(6 * var(--vh, vh));
   border: none;
-  background: url(../../assets/icons/Vector.svg) no-repeat center center;
+  background: url(../../assets/svgs/Vector.svg) no-repeat center center;
   background-size: 100% 100%;
 }

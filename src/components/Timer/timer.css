@@ -50,7 +50,9 @@
   -webkit-border-radius: 50%;
   width: 6.4rem;
   height: 6.4rem;
-  background: #23292d;
+  /* background-color: #23292d; */
+  background: #23292d url(../../assets/pictures/gory.png) no-repeat center
+    bottom / auto 90%;
   box-shadow: inset 0px -2px 4px rgba(255, 255, 255, 0.25),
     inset 5px 4px 4px rgba(0, 0, 0, 0.25);
 }

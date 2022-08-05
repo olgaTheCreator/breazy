@@ -26,7 +26,7 @@ p.technique-name {
   list-style-type: none;
 }
 li {
-  background: url(../../assets/icons/Vector_ellipse_in_techniques.svg) no-repeat
+  background: url(../../assets/svgs/Vector_ellipse_in_techniques.svg) no-repeat
     left top;
   background-size: 1.1em 1.1em;
   vertical-align: middle;

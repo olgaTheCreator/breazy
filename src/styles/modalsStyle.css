@@ -1,34 +1,29 @@
 .darkBG {
-  background: linear-gradient(to top, #7f9790, #8ea8a0 60%, #e8e1d4);
+  background: hsla(203, 12%, 21%, 1);
+  /* background: linear-gradient(to top, #7f9790, #8ea8a0 60%, #e8e1d4); */
   width: 100%;
-  height: calc(var(--vh, 1vh) * 100);
+  height: 100%;
   z-index: 0;
   top: 0;
   left: 0;
   position: absolute;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows:
-    [row]
-    calc(4 * var(--vh, vh)) calc(6 * var(--vh, vh)) calc(24 * var(--vh, vh))
-    calc(40 * var(--vh, vh))
-    calc(9 * var(--vh, vh)) calc(13 * var(--vh, vh)) calc(4 * var(--vh, vh));
+  grid-template-rows: 1fr 2fr 1fr;
 }
 
 .centered {
   position: relative;
-  height: 100%;
-  grid-column: 1/2;
-  grid-row: 4/6;
+  grid-row: 2/3;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 100%;
+  grid-template-rows: auto 4fr 1fr;
 }
 
 .modal-name {
+  grid-row: 1/2;
   padding-right: 0.7em;
   padding-bottom: 0.7em;
-  grid-row: 3/4;
   align-self: end;
   justify-self: end;
   font-size: 1.8em;
@@ -43,6 +38,11 @@
   display: inline-block;
   border-radius: 15px;
   width: fit-content;
+}
+
+.hmm {
+  grid-row: 3/4;
+  visibility: hidden;
 }
 
 .durations-list {

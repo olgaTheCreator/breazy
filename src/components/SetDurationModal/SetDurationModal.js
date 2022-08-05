@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../../styles/modalsStyle.css";
 import "./setDurationModal.css";
 import { Slider } from "../Slider/Slider";
 import {
@@ -18,7 +19,7 @@ export const SetDurationModal = ({
   );
   return (
     <div className="darkBG">
-      <div className="modal-name">duration</div>
+      {/* <div className="modal-name">{""}</div> */}
       <div className="centered">
         <div className="time-modal" onMouseUp={() => setSliding(false)}>
           <div className="slider-parent">
@@ -59,6 +60,7 @@ export const SetDurationModal = ({
           </div>
         </div>
       </div>
+      <div className="hmm">hello</div>
     </div>
   );
 };

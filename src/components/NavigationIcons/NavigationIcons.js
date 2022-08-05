@@ -20,15 +20,7 @@ export const NavigationIcons = ({
 }) => {
   const [techniquesAreOpen, setTechniquesOpen] = useState(false);
   const [timeIsOpen, setTimeOpen] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
 
-  const handleMouseOver = () => {
-    setIsHovering(true);
-  };
-
-  const handleMouseOut = () => {
-    setIsHovering(false);
-  };
   return (
     <div className="navContainer">
       <div
@@ -36,11 +28,9 @@ export const NavigationIcons = ({
           if (vibrations) setVibrations(false);
           else setVibrations(true);
         }}
-        onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}
       >
         {" "}
-        <p>{isHovering && (vibrations ? "vibrations on" : "vibrations off")}</p>
+        <p>{vibrations ? "vibrations on" : "vibrations off"}</p>
         <button
           className={vibrations ? "button1-vib" : "button1-novib"}
         ></button>
@@ -50,10 +40,8 @@ export const NavigationIcons = ({
           if (sounds) setSounds(false);
           else setSounds(true);
         }}
-        onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}
       >
-        <p>{isHovering && (sounds ? "sound on" : "sound off")}</p>
+        <p>{sounds ? "sound on" : "sound off"}</p>
         <button
           className={sounds ? "button2-sound" : "button2-nosound"}
         ></button>
@@ -64,8 +52,6 @@ export const NavigationIcons = ({
           handlePause();
           timeIsOpen ? setTimeOpen(false) : setTimeOpen(true);
         }}
-        onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}
       >
         <p>time</p>
         <button className="button3"></button>
@@ -78,8 +64,6 @@ export const NavigationIcons = ({
             : setTechniquesOpen(true);
           handlePause();
         }}
-        onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}
       >
         <p>techniques</p>
         <button className="button4"></button>
