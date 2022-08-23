@@ -18,6 +18,7 @@
   font-size: 0.45em;
   visibility: hidden;
 }
+
 .navContainer button {
   border-radius: 50%;
   height: 3em;
@@ -28,10 +29,29 @@
 
   border: none;
 }
-
-.navContainer div:hover > p {
-  visibility: visible;
+@media (hover: hover) and (pointer: fine) {
+  .navContainer div:hover > p {
+    visibility: visible;
+    transition: none;
+  }
 }
+
+@media (pointer: coarse) {
+  .navContainer p {
+    transition: all 0.7s ease;
+    transition-delay: 200ms;
+  }
+  .navContainer div:active > p {
+    visibility: visible;
+    transition: none;
+  }
+}
+
+/* .navContainer div:hover,
+div:active > p {
+  visibility: visible;
+  transition: none;
+} */
 /* .button1,
 .button1-novib,
 .button1-vib,
