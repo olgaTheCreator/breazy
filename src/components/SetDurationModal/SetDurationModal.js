@@ -20,49 +20,48 @@ export const SetDurationModal = ({
   return (
     <div className="darkBG">
       {/* <div className="modal-name">{""}</div> */}
-      <div className="centered">
-        <div className="time-modal" onMouseUp={() => setSliding(false)}>
-          <div className="slider-parent">
-            <div
-              className="buble-number"
-              style={{
-                top: `${thumbPos}px`,
-              }}
-            >
-              {positionToDuration(thumbPos)}
-            </div>
-            <div className="slider">
-              <Slider
-                isSliding={isSliding}
-                setSliding={setSliding}
-                thumbPos={thumbPos}
-                setThumbPos={setThumbPos}
-              />
-            </div>
-
-            <div
-              className="buble-min"
-              style={{
-                top: `${thumbPos}px`,
-              }}
-            >
-              min
-            </div>
+      {/* <div className="centered"> */}
+      <div className="time-modal" onMouseUp={() => setSliding(false)}>
+        <div className="slider-parent">
+          <div
+            className="buble-number"
+            style={{
+              top: `${thumbPos}px`,
+            }}
+          >
+            {positionToDuration(thumbPos)}
           </div>
-          <div className="set-duration-button">
-            <button
-              onClick={() => {
-                setTimeOpen(false);
-                setDuration(positionToDuration(thumbPos));
-                handleStop();
-              }}
-            >
-              SET
-            </button>
+          <div className="slider">
+            <Slider
+              isSliding={isSliding}
+              setSliding={setSliding}
+              thumbPos={thumbPos}
+              setThumbPos={setThumbPos}
+            />
+          </div>
+
+          <div
+            className="buble-min"
+            style={{
+              top: `${thumbPos}px`,
+            }}
+          >
+            min
           </div>
         </div>
+        <div className="set-duration-button">
+          <button
+            onClick={() => {
+              setTimeOpen(false);
+              setDuration(positionToDuration(thumbPos));
+              handleStop();
+            }}
+          >
+            SET
+          </button>
+        </div>
+        {/* </div> */}
       </div>
-      <div className="hmm">hello</div>
     </div>
   );
 };

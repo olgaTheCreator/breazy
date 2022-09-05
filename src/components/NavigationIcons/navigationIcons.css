@@ -7,13 +7,14 @@
   align-items: center;
   justify-items: center;
 }
-.navContainer div {
+.navButtons {
   display: grid;
   /* width: 100%; */
   grid-template-rows: 2fr 3fr;
   align-items: center;
   justify-items: center;
 }
+
 .navContainer p {
   font-size: 0.45em;
   visibility: hidden;

@@ -1,24 +1,19 @@
 .time-modal {
   /* height: calc(var(--vh, 1vh) * 50); */
   /* position: relative; */
-  grid-row: 2/3;
-  grid-column: 3/4;
   /* justify-self: end; */
   width: 100%;
   height: 100%;
-  background: transparent;
   color: #455a6e;
 
   z-index: 10;
   /* box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.04); */
   display: grid;
   grid-template-rows: 25% 25% 25% 25%;
-  grid-template-columns: 25% 50% 25%;
+  grid-template-columns: 25% 25% 25% 25%;
   color: #455a6e;
 }
 .set-duration-button {
-  grid-row: 4/5;
-  grid-column: 2/5;
 }
 .set-duration-button button {
   background: #e8e1d4;
@@ -29,9 +24,10 @@
 }
 
 .slider-parent {
+  background: #23292d;
   width: 100%;
-  grid-row: 1 / 4;
-  grid-column: 1/5;
+  grid-row: 2 / 4;
+  grid-column: 2/5;
   display: grid;
   grid-template-columns: 33% 33% 33%;
   color: #455a6e;

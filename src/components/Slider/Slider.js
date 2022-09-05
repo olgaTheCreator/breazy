@@ -11,6 +11,7 @@ export const Slider = ({ isSliding, setSliding, setThumbPos, thumbPos }) => {
   const clientYref = useRef(0);
 
   const handleClick = (e) => {
+    console.log(e);
     e.clientY - countVh * 35.8 < countVh * 3.308
       ? (clientYref.current = countVh * thumbTopPosMin)
       : e.clientY - countVh * 35.8 > countVh * thumbTopPosMax
@@ -50,17 +51,17 @@ export const Slider = ({ isSliding, setSliding, setThumbPos, thumbPos }) => {
         className="slider-track"
         onClick={handleClick}
         style={{
-          backgroundImage: `linear-gradient(to top, #e8e1d4,  #e8e1d4 ${Math.floor(
+          backgroundImage: `linear-gradient(to top, hsla(206, 39%, 30%, 1),  hsla(206, 39%, 30%, 1) ${Math.floor(
             (1 -
               (thumbPos - thumbTopPosMin * countVh) /
                 ((thumbTopPosMax - thumbTopPosMin) * countVh)) *
               100
-          )}%,#8ea8a0 ${Math.floor(
+          )}%,hsla(204, 12%, 16%, 1) ${Math.floor(
             (1 -
               (thumbPos - thumbTopPosMin * countVh) /
                 ((thumbTopPosMax - thumbTopPosMin) * countVh)) *
               100
-          )}%, #8ea8a0 ${Math.ceil(
+          )}%, hsla(204, 12%, 16%, 1) ${Math.ceil(
             ((thumbPos - thumbTopPosMin * countVh) /
               ((thumbTopPosMax - thumbTopPosMin) * countVh)) *
               100

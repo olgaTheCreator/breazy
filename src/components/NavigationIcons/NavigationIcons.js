@@ -24,6 +24,7 @@ export const NavigationIcons = ({
   return (
     <div className="navContainer">
       <div
+        className="navButtons"
         onClick={() => {
           if (vibrations) setVibrations(false);
           else setVibrations(true);
@@ -36,6 +37,7 @@ export const NavigationIcons = ({
         ></button>
       </div>
       <div
+        className="navButtons"
         onClick={() => {
           if (sounds) setSounds(false);
           else setSounds(true);
@@ -47,7 +49,7 @@ export const NavigationIcons = ({
         ></button>
       </div>
       <div
-        className={`${timeIsOpen ? "visible-button" : ""}`}
+        className={`navButtons ${timeIsOpen ? "visible-button" : ""}`}
         onClick={() => {
           handlePause();
           timeIsOpen ? setTimeOpen(false) : setTimeOpen(true);
@@ -57,7 +59,7 @@ export const NavigationIcons = ({
         <button className="button3"></button>
       </div>
       <div
-        className={`${techniquesAreOpen ? "visible-button" : ""}`}
+        className={`navButtons ${techniquesAreOpen ? "visible-button" : ""}`}
         onClick={() => {
           techniquesAreOpen
             ? setTechniquesOpen(false)
