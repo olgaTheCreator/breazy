@@ -8,17 +8,25 @@ import {
 import { debounce } from "../../utils/Debounce";
 
 export const Slider = ({ isSliding, setSliding, setThumbPos, thumbPos }) => {
-  const clientYref = useRef(0);
+  const sliderTrack = useRef(null);
 
   const handleClick = (e) => {
-    console.log(e);
-    e.clientY - countVh * 35.8 < countVh * 3.308
-      ? (clientYref.current = countVh * thumbTopPosMin)
-      : e.clientY - countVh * 35.8 > countVh * thumbTopPosMax
-      ? (clientYref.current = countVh * thumbTopPosMax)
-      : (clientYref.current = e.clientY - countVh * 35.8);
-    debounce(setThumbPos(clientYref.current), 100);
+    console.log(e, e.clientY, sliderTrack.current.offsetTop);
+    debounce(setThumbPos(e.clientY - sliderTrack.current.offsetTop), 10);
+
+    console.log(thumbPos);
   };
+  // const clientYref = useRef(0);
+
+  // const handleClick = (e) => {
+  //   console.log(e);
+  //   e.clientY - countVh * 35.8 < countVh * 3.308
+  //     ? (clientYref.current = countVh * thumbTopPosMin)
+  //     : e.clientY - countVh * 35.8 > countVh * thumbTopPosMax
+  //     ? (clientYref.current = countVh * thumbTopPosMax)
+  //     : (clientYref.current = e.clientY - countVh * 35.8);
+  //   debounce(setThumbPos(clientYref.current), 100);
+  // };
   const handleMouseDown = () => {
     setSliding(true);
   };
@@ -46,6 +54,7 @@ export const Slider = ({ isSliding, setSliding, setThumbPos, thumbPos }) => {
       onMouseMove={handleMouseMove}
       onTouchMove={handleTouchMove}
       onMouseUp={handleMouseUp}
+      ref={sliderTrack}
     >
       <div
         className="slider-track"
@@ -72,9 +81,7 @@ export const Slider = ({ isSliding, setSliding, setThumbPos, thumbPos }) => {
         className="slider-thumb"
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
-        style={{
-          top: `${thumbPos}px`,
-        }}
+        style={{ top: `${thumbPos}px` }}
       ></div>
     </div>
   );
