@@ -11,7 +11,7 @@
 }
 .slider-track {
   grid-area: 1/1;
-  position: absolute;
+  position: relative;
 
   background: hsla(204, 12%, 16%, 1);
   border: 0.1rem solid hsla(206, 17%, 57%, 1);
@@ -22,12 +22,12 @@
   height: 8rem;
   cursor: pointer;
   touch-action: none;
+  display: grid;
+  justify-content: center;
 }
 
 .slider-thumb {
-  grid-area: 1/1;
-  position: absolute;
-  bottom: calc(var(--vh, 1vh) * 2.9);
+  position: relative;
   width: 0.85rem;
   height: 0.85rem;
   background: hsla(204, 12%, 16%, 1);

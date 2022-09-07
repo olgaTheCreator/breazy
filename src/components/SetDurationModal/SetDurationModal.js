@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "../../styles/modalsStyle.css";
 import "./setDurationModal.css";
 import { Slider } from "../Slider/Slider";
@@ -13,6 +13,7 @@ export const SetDurationModal = ({
   setDuration,
   handleStop,
 }) => {
+  const sliderTrackRef = useRef(0);
   const [isSliding, setSliding] = useState(false);
   const [thumbPos, setThumbPos] = useState(
     durationToPosition(durationOfSession) + 6
@@ -37,6 +38,7 @@ export const SetDurationModal = ({
               setSliding={setSliding}
               thumbPos={thumbPos}
               setThumbPos={setThumbPos}
+              forwardedRef={sliderTrackRef}
             />
           </div>
 
