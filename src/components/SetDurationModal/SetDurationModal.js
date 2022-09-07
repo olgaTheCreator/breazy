@@ -15,9 +15,15 @@ export const SetDurationModal = ({
 }) => {
   const sliderTrackRef = useRef(0);
   const [isSliding, setSliding] = useState(false);
-  const [thumbPos, setThumbPos] = useState(
-    durationToPosition(durationOfSession) + 6
+  console.log(
+    sliderTrackRef.current.clientHeight,
+    durationToPosition(3, sliderTrackRef.current.clientHeight),
+    durationOfSession
   );
+  const [thumbPos, setThumbPos] = useState(
+    durationToPosition(durationOfSession, sliderTrackRef.current.clientHeight)
+  );
+  console.log(thumbPos);
   return (
     <div className="darkBG">
       {/* <div className="modal-name">{""}</div> */}
@@ -30,7 +36,7 @@ export const SetDurationModal = ({
               top: `${thumbPos}px`,
             }}
           >
-            {positionToDuration(thumbPos)}
+            {positionToDuration(thumbPos, sliderTrackRef.current.clientHeight)}
           </div>
           <div className="slider">
             <Slider

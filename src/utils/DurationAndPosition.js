@@ -1,26 +1,7 @@
-const thumbTopPosMin = 3.3;
-const thumbTopPosMax = 31.85;
-const countVh = window.innerHeight / 100;
-
-const positionToDuration = (position) => {
-  return Math.round(
-    (1 -
-      (position - thumbTopPosMin * countVh) /
-        ((thumbTopPosMax - thumbTopPosMin) * countVh)) *
-      29 +
-      1
-  );
+const positionToDuration = (position, height) => {
+  return Math.floor((1 - position / height) * 29);
 };
-const durationToPosition = (duration) => {
-  return (
-    -(duration / 30 - 1) * ((thumbTopPosMax - thumbTopPosMin) * countVh) +
-    thumbTopPosMin * countVh
-  );
+const durationToPosition = (duration, height) => {
+  return Math.round((duration / 29) * height);
 };
-export {
-  positionToDuration,
-  durationToPosition,
-  thumbTopPosMax,
-  thumbTopPosMin,
-  countVh,
-};
+export { positionToDuration, durationToPosition };
