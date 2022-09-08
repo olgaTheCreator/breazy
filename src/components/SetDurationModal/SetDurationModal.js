@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../../styles/modalsStyle.css";
 import "./setDurationModal.css";
 import { Slider } from "../Slider/Slider";
@@ -13,15 +13,28 @@ export const SetDurationModal = ({
   setDuration,
   handleStop,
 }) => {
-  const sliderTrackRef = useRef(0);
+  const ref = useRef(0);
+  const [sliderHeight, setSliderHeight] = useState(1);
   const [isSliding, setSliding] = useState(false);
-  console.log(
-    sliderTrackRef.current.clientHeight,
-    durationToPosition(3, sliderTrackRef.current.clientHeight),
-    durationOfSession
-  );
-  const [thumbPos, setThumbPos] = useState(
-    durationToPosition(durationOfSession, sliderTrackRef.current.clientHeight)
+  console.log(sliderHeight);
+  // useEffect(() => {}, [sliderHeight]);
+  // console.log(
+  //   sliderTrackRef.current.clientHeight,
+  //   durationToPosition(3, sliderTrackRef.current.clientHeight),
+  //   durationOfSession
+  // );
+  const [thumbPos, setThumbPos] = useState(0);
+  //   durationToPosition(durationOfSession, sliderHeight)
+  // );
+  useEffect(
+    () =>
+      setThumbPos(
+        durationToPosition(
+          durationOfSession,
+          sliderHeight - sliderHeight * 0.068
+        )
+      ),
+    [sliderHeight]
   );
   console.log(thumbPos);
   return (
@@ -30,38 +43,39 @@ export const SetDurationModal = ({
       {/* <div className="centered"> */}
       <div className="time-modal" onMouseUp={() => setSliding(false)}>
         <div className="slider-parent">
-          <div
+          {/* <div
             className="buble-number"
             style={{
               top: `${thumbPos}px`,
             }}
           >
-            {positionToDuration(thumbPos, sliderTrackRef.current.clientHeight)}
-          </div>
-          <div className="slider">
+            {positionToDuration(thumbPos, sliderHeight)}
+          </div> */}
+          <div className="slider" ref={ref}>
             <Slider
               isSliding={isSliding}
               setSliding={setSliding}
               thumbPos={thumbPos}
               setThumbPos={setThumbPos}
-              forwardedRef={sliderTrackRef}
+              sliderHeight={sliderHeight}
+              setSliderHeight={setSliderHeight}
             />
           </div>
 
-          <div
+          {/* <div
             className="buble-min"
             style={{
               top: `${thumbPos}px`,
             }}
           >
             min
-          </div>
+          </div> */}
         </div>
         <div className="set-duration-button">
           <button
             onClick={() => {
               setTimeOpen(false);
-              setDuration(positionToDuration(thumbPos));
+              setDuration(positionToDuration(thumbPos, sliderHeight));
               handleStop();
             }}
           >

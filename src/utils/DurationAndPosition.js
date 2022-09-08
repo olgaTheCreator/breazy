@@ -1,7 +1,7 @@
 const positionToDuration = (position, height) => {
-  return Math.floor((1 - position / height) * 29);
+  return Math.floor((1 - position / height) * 30);
 };
 const durationToPosition = (duration, height) => {
-  return Math.round((duration / 29) * height);
+  return Math.ceil((1 - duration / 30) * height);
 };
 export { positionToDuration, durationToPosition };

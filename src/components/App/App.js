@@ -34,7 +34,7 @@ const App = () => {
   };
 
   if (seconds <= durationOfSession * 60) {
-    console.log(seconds);
+    // console.log(seconds);
   } else handleStop();
 
   return (

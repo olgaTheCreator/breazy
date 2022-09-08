@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import "./slider.css";
 // import {
 //   thumbTopPosMax,
@@ -6,43 +6,53 @@ import "./slider.css";
 //   countVh,
 // } from "../../utils/DurationAndPosition.js";
 import { debounce } from "../../utils/Debounce";
+import { positionToDuration } from "../../utils/DurationAndPosition.js";
 
 export const Slider = ({
   isSliding,
   setSliding,
   setThumbPos,
   thumbPos,
-  forwardedRef,
+  sliderHeight,
+  setSliderHeight,
 }) => {
-  // const forwardedRef = useRef(0);
+  // const sliderTrackRef = useRef(0);
+  const sliderTrackRef = useRef(0);
+  let trackHeight = 0;
 
+  useEffect(() => {
+    // 👇️ (better) use a ref
+    setSliderHeight(sliderTrackRef.current.clientHeight);
+    trackHeight = sliderTrackRef.current.firstChild.clientHeight;
+    console.log(trackHeight);
+    console.log(sliderHeight);
+  }, [sliderTrackRef.current.clientHeight]);
   const handleClick = (e) => {
-    console.log(
-      e,
-      e.clientY,
-      forwardedRef.current.offsetTop +
-        forwardedRef.current.parentElement.offsetTop,
-      forwardedRef.current.firstChild.clientHeight
-    );
+    // console.log(
+    //   e,
+    //   e.clientY,
+    //   sliderTrackRef.current.offsetTop +
+    //     sliderTrackRef.current.parentElement.offsetTop,
+    //   sliderTrackRef.current.firstChild.clientHeight
+    // );
     const position =
       e.clientY -
-      (forwardedRef.current.offsetTop +
-        forwardedRef.current.parentElement.offsetTop) -
-      forwardedRef.current.firstChild.clientHeight / 2;
+      (sliderTrackRef.current.offsetTop +
+        sliderTrackRef.current.parentElement.offsetTop) -
+      sliderTrackRef.current.firstChild.clientHeight / 2;
     debounce(
-      position <= forwardedRef.current.firstChild.clientHeight / 2
-        ? setThumbPos(-forwardedRef.current.firstChild.clientHeight / 2)
-        : position >= forwardedRef.current.clientHeight
+      position <= 0
+        ? setThumbPos(-sliderTrackRef.current.firstChild.clientHeight / 2)
+        : position >= sliderTrackRef.current.clientHeight
         ? setThumbPos(
-            forwardedRef.current.clientHeight -
-              forwardedRef.current.firstChild.clientHeight / 2
+            sliderTrackRef.current.clientHeight -
+              sliderTrackRef.current.firstChild.clientHeight
           )
         : setThumbPos(position),
-      0
+      50
     );
-
-    console.log(thumbPos);
   };
+  console.log(thumbPos);
   // const clientYref = useRef(0);
 
   // const handleClick = (e) => {
@@ -82,20 +92,31 @@ export const Slider = ({
       onTouchMove={handleTouchMove}
       onMouseUp={handleMouseUp}
     >
+      {" "}
+      <div
+        className="buble-number"
+        style={{
+          top: `${thumbPos}px`,
+        }}
+      >
+        {thumbPos <= 5
+          ? positionToDuration(0, sliderHeight)
+          : positionToDuration(thumbPos, sliderHeight - sliderHeight * 0.039)}
+      </div>
       <div
         className="slider-track"
         onMouseMove={handleMouseMove}
         onTouchMove={handleTouchMove}
         onMouseUp={handleMouseUp}
         onClick={handleClick}
-        ref={forwardedRef}
+        ref={sliderTrackRef}
         style={{
           backgroundImage: `linear-gradient(to top, hsla(206, 39%, 30%, 1),  hsla(206, 39%, 30%, 1) ${Math.floor(
-            (1 - thumbPos / forwardedRef.current.clientHeight) * 100
+            (1 - thumbPos / sliderTrackRef.current.clientHeight) * 100
           )}%,hsla(204, 12%, 16%, 1) ${Math.floor(
-            (1 - thumbPos / forwardedRef.current.clientHeight) * 100
+            (1 - thumbPos / sliderTrackRef.current.clientHeight) * 100
           )}%, hsla(204, 12%, 16%, 1) ${Math.ceil(
-            (1 - thumbPos / forwardedRef.current.clientHeight) * 100
+            (1 - thumbPos / sliderTrackRef.current.clientHeight) * 100
           )}%)`,
         }}
       >
@@ -105,6 +126,14 @@ export const Slider = ({
           onMouseUp={handleMouseUp}
           style={{ top: `${thumbPos}px` }}
         ></div>
+      </div>
+      <div
+        className="buble-min"
+        style={{
+          top: `${thumbPos}px`,
+        }}
+      >
+        min
       </div>
     </div>
   );
