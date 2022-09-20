@@ -95,13 +95,14 @@ export const Slider = ({
       {" "}
       <div
         className="buble-number"
-        style={{
-          top: `${thumbPos}px`,
-        }}
+        // style={{
+        //   top: "50%",
+        // }}
       >
         {thumbPos <= sliderHeight * 0.01
           ? positionToDuration(0, sliderHeight)
-          : positionToDuration(thumbPos, sliderHeight - sliderHeight * 0.039)}
+          : positionToDuration(thumbPos, sliderHeight - sliderHeight * 0.036)}
+        {` min`}
       </div>
       <div
         className="slider-track"
@@ -127,14 +128,14 @@ export const Slider = ({
           style={{ top: `${thumbPos}px` }}
         ></div>
       </div>
-      <div
+      {/* <div
         className="buble-min"
         style={{
           top: `${thumbPos}px`,
         }}
       >
         min
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -13,8 +13,7 @@
   grid-template-columns: 25% 25% 25% 25%;
   color: #455a6e;
 }
-.set-duration-button {
-}
+
 .set-duration-button button {
   background: #e8e1d4;
   border-radius: 15px;
@@ -33,26 +32,6 @@
   color: #455a6e;
   bottom: calc(var(--vh, 1vh) * 5);
   justify-items: center;
-}
-
-.buble-number {
-  height: fit-content;
-  position: relative;
-  justify-self: start;
-  grid-row: 1 / 2;
-  grid-column: 1/2;
-  color: #e8e1d4;
-  font-size: 0.9em;
-}
-
-.buble-min {
-  height: fit-content;
-  position: relative;
-  justify-self: end;
-  grid-row: 1 / 2;
-  grid-column: 3/4;
-  color: #e8e1d4;
-  font-size: 0.8em;
 }
 
 .slider {
