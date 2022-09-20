@@ -75,7 +75,14 @@ export const SetDurationModal = ({
           <button
             onClick={() => {
               setTimeOpen(false);
-              setDuration(positionToDuration(thumbPos, sliderHeight));
+              setDuration(
+                thumbPos <= sliderHeight * 0.01
+                  ? positionToDuration(0, sliderHeight)
+                  : positionToDuration(
+                      thumbPos,
+                      sliderHeight - sliderHeight * 0.036
+                    )
+              );
               handleStop();
             }}
           >

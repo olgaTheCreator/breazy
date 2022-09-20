@@ -99,7 +99,7 @@ export const Slider = ({
           top: `${thumbPos}px`,
         }}
       >
-        {thumbPos <= 5
+        {thumbPos <= sliderHeight * 0.01
           ? positionToDuration(0, sliderHeight)
           : positionToDuration(thumbPos, sliderHeight - sliderHeight * 0.039)}
       </div>
