@@ -89,31 +89,31 @@ div:active > p {
   grid-row: 1 / 2;
 } */
 .button1-vib {
-  background: url(../../assets/svgs/vibrations_on.svg) no-repeat center center;
+  background: url(../../assets/svgs/vibrate_on.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 .button1-novib {
-  background: url(../../assets/svgs/vibrations_on.svg) no-repeat center center;
+  background: url(../../assets/svgs/vibrate_on.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 
 .button2-sound {
-  background: url(../../assets/svgs/vibrations_on.svg) no-repeat center center;
+  background: url(../../assets/svgs/vibrate_on.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 
 .button2-nosound {
-  background: url(../../assets/svgs/vibrations_on.svg) no-repeat center center;
+  background: url(../../assets/svgs/vibrate_on.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 
 .button3 {
-  background: url(../../assets/svgs/vibrations_on.svg) no-repeat center center;
+  background: url(../../assets/svgs/vibrate_on.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 
 .button4 {
-  background: url(../../assets/svgs/vibrations_on.svg) no-repeat center center;
+  background: url(../../assets/svgs/vibrate_on.svg) no-repeat center center;
   background-size: 100% 100%;
 }
 
