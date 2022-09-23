@@ -66,13 +66,14 @@ export const Timer = ({
       {/* <div className="area1"></div>
       <div className="area2"> */}
       <div className="circle-outer" onClick={handleStart}>
-        <div className="circle-inner">
+        <div
+          className="circle-inner"
+          style={{
+            background: intervalId ? "#23292d" : "",
+          }}
+        >
           {intervalId ? (
             <div id="stop-button">
-              PAUSE
-              <br />
-              {changeOfStep(modFromSec, inhaleExhale).duration}
-              <br />
               {intervalId ? (
                 <div className="step-text">
                   {changeOfStep(modFromSec, inhaleExhale).currentStep}

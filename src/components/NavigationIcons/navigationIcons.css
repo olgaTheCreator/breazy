@@ -22,10 +22,9 @@
 
 .navContainer button {
   border-radius: 50%;
-  height: 2.5em;
-  width: 2.5em;
+  height: 1.95rem;
+  width: 1.95rem;
   /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25); */
-  font-size: 0.9em;
   color: #455a6e;
 
   border: none;
@@ -91,42 +90,48 @@ div:active > p {
 .button1-vib {
   width: 100%;
   background: url(../../assets/svgs/vibrate_on.svg) no-repeat center center;
-  background-size: 2.15rem 2.15rem;
+  background-size: 1.9rem 1.9rem;
+  margin-bottom: 0.8rem;
   box-shadow: 3px 3px 15px 2px hsla(0, 0%, 0%, 0.25),
     -3px -3px 15px 2px hsla(0, 0%, 100%, 0.25);
 }
 .button1-novib {
   width: 100%;
   background: url(../../assets/svgs/vibrate_on.svg) no-repeat center center;
-  background-size: 2.15rem 2.15rem;
+  background-size: 1.9rem 1.9rem;
+  margin-bottom: 0.8rem;
   box-shadow: 3px 3px 15px 2px hsla(0, 0%, 0%, 0.25),
     -3px -3px 15px 2px hsla(0, 0%, 100%, 0.25);
 }
 
 .button2-sound {
   background: url(../../assets/svgs/vibrate_on.svg) no-repeat center center;
-  background-size: 2.15rem 2.15rem;
+  background-size: 1.9rem 1.9rem;
+  margin-bottom: 0.8rem;
   box-shadow: 3px 3px 15px 2px hsla(0, 0%, 0%, 0.25),
     -3px -3px 15px 2px hsla(0, 0%, 100%, 0.25);
 }
 
 .button2-nosound {
   background: url(../../assets/svgs/vibrate_on.svg) no-repeat center center;
-  background-size: 2.15rem 2.15rem;
+  background-size: 1.9rem 1.9rem;
+  margin-bottom: 0.8rem;
   box-shadow: 3px 3px 15px 2px hsla(0, 0%, 0%, 0.25),
     -3px -3px 15px 2px hsla(0, 0%, 100%, 0.25);
 }
 
 .button3 {
   background: url(../../assets/svgs/vibrate_on.svg) no-repeat center center;
-  background-size: 2.15rem 2.15rem;
+  background-size: 1.9rem 1.9rem;
+  margin-bottom: 0.8rem;
   box-shadow: 3px 3px 15px 2px hsla(0, 0%, 0%, 0.25),
     -3px -3px 15px 2px hsla(0, 0%, 100%, 0.25);
 }
 
 .button4 {
   background: url(../../assets/svgs/vibrate_on.svg) no-repeat center center;
-  background-size: 2.15rem 2.15rem;
+  background-size: 1.9rem 1.9rem;
+  margin-bottom: 0.8rem;
   box-shadow: 3px 3px 15px 2px hsla(0, 0%, 0%, 0.25),
     -3px -3px 15px 2px hsla(0, 0%, 100%, 0.25);
 }
