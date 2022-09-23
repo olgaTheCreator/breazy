@@ -15,24 +15,26 @@ export const ChoosinTechniqueModal = ({
         setTechniquesOpen(false);
       }}
     >
-      <div className="modal-name">techniques</div>
-      <div className="centered">
-        <div className="modal">
-          <ul className="list-of-techniques">
-            {breathingTechniques.map((a, index) => (
-              <li
-                key={a.id}
-                onClick={() => {
-                  handleStop();
-                  setTechnique(breathingTechniques[index]),
-                    setTechniquesOpen(false);
-                }}
-              >
-                {a.name}
-                <p className="short-descriptiion">{a.shortDescription}</p>
-              </li>
-            ))}
-          </ul>
+      <div className="modal">
+        <div className="techniques-parent">
+          <div className="modal-name">techniques</div>
+          <div className="list-of-techniques">
+            <ul>
+              {breathingTechniques.map((a, index) => (
+                <li
+                  key={a.id}
+                  onClick={() => {
+                    handleStop();
+                    setTechnique(breathingTechniques[index]),
+                      setTechniquesOpen(false);
+                  }}
+                >
+                  {a.name}
+                  <p className="short-descriptiion">{a.shortDescription}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

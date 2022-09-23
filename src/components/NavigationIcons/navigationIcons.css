@@ -22,8 +22,8 @@
 
 .navContainer button {
   border-radius: 50%;
-  height: 3em;
-  width: 3em;
+  height: 2.5em;
+  width: 2.5em;
   /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25); */
   font-size: 0.9em;
   color: #455a6e;
@@ -89,32 +89,46 @@ div:active > p {
   grid-row: 1 / 2;
 } */
 .button1-vib {
+  width: 100%;
   background: url(../../assets/svgs/vibrate_on.svg) no-repeat center center;
-  background-size: 100% 100%;
+  background-size: 2.15rem 2.15rem;
+  box-shadow: 3px 3px 15px 2px hsla(0, 0%, 0%, 0.25),
+    -3px -3px 15px 2px hsla(0, 0%, 100%, 0.25);
 }
 .button1-novib {
+  width: 100%;
   background: url(../../assets/svgs/vibrate_on.svg) no-repeat center center;
-  background-size: 100% 100%;
+  background-size: 2.15rem 2.15rem;
+  box-shadow: 3px 3px 15px 2px hsla(0, 0%, 0%, 0.25),
+    -3px -3px 15px 2px hsla(0, 0%, 100%, 0.25);
 }
 
 .button2-sound {
   background: url(../../assets/svgs/vibrate_on.svg) no-repeat center center;
-  background-size: 100% 100%;
+  background-size: 2.15rem 2.15rem;
+  box-shadow: 3px 3px 15px 2px hsla(0, 0%, 0%, 0.25),
+    -3px -3px 15px 2px hsla(0, 0%, 100%, 0.25);
 }
 
 .button2-nosound {
   background: url(../../assets/svgs/vibrate_on.svg) no-repeat center center;
-  background-size: 100% 100%;
+  background-size: 2.15rem 2.15rem;
+  box-shadow: 3px 3px 15px 2px hsla(0, 0%, 0%, 0.25),
+    -3px -3px 15px 2px hsla(0, 0%, 100%, 0.25);
 }
 
 .button3 {
   background: url(../../assets/svgs/vibrate_on.svg) no-repeat center center;
-  background-size: 100% 100%;
+  background-size: 2.15rem 2.15rem;
+  box-shadow: 3px 3px 15px 2px hsla(0, 0%, 0%, 0.25),
+    -3px -3px 15px 2px hsla(0, 0%, 100%, 0.25);
 }
 
 .button4 {
   background: url(../../assets/svgs/vibrate_on.svg) no-repeat center center;
-  background-size: 100% 100%;
+  background-size: 2.15rem 2.15rem;
+  box-shadow: 3px 3px 15px 2px hsla(0, 0%, 0%, 0.25),
+    -3px -3px 15px 2px hsla(0, 0%, 100%, 0.25);
 }
 
 .visible-button {

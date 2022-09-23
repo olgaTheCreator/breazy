@@ -25,13 +25,15 @@
   cursor: pointer;
   touch-action: none;
   display: grid;
-  justify-content: center;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  justify-items: center;
 }
 
 .slider-thumb {
   position: relative;
   width: 0.9rem;
-  height: 0.85rem;
+  height: 0.9rem;
   background: hsla(204, 12%, 16%, 1);
   border: 0.1rem solid hsla(206, 17%, 57%, 1);
   box-shadow: 0px calc(0.3 * var(--vh, vh)) calc(0.3 * var(--vh, vh))
