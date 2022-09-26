@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./timer.css";
 import { vibrate } from "../../utils/Vibration";
 import { noOp } from "../../utils/NoOp";
 import { Howl } from "howler";
 import bell from "../../assets/sounds/bell-hit-soft.wav";
+import { CSSTransition } from "react-transition-group";
 
 export const Timer = ({
   chosenTechnique,
@@ -19,6 +20,7 @@ export const Timer = ({
   vibrations,
   sounds,
 }) => {
+  const [animate, setAnimate] = useState(false);
   // Setup the new Howl.
   const sound = new Howl({
     src: [bell],
@@ -58,6 +60,7 @@ export const Timer = ({
 
       setIntervalId(newIntervalId);
       setPause(false);
+      setAnimate(true);
     }
   };
 
@@ -89,6 +92,13 @@ export const Timer = ({
           )}
         </div>
       </div>
+      <CSSTransition in={animate} timeout={5000} classNames="my-node" appear>
+        <div className="orbit">
+          <div className="sun2-wrapper">
+            <div className="sun2"> </div>
+          </div>
+        </div>
+      </CSSTransition>
     </div>
     // </div>
   );
