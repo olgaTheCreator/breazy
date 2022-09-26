@@ -4,7 +4,7 @@ import { vibrate } from "../../utils/Vibration";
 import { noOp } from "../../utils/NoOp";
 import { Howl } from "howler";
 import bell from "../../assets/sounds/bell-hit-soft.wav";
-import { CSSTransition } from "react-transition-group";
+// import { CSSTransition } from "react-transition-group";
 
 export const Timer = ({
   chosenTechnique,
@@ -51,6 +51,7 @@ export const Timer = ({
 
     if (intervalId && !pause) {
       handlePause();
+      setAnimate(false);
     } else {
       const newIntervalId = setInterval(() => {
         setSeconds(
@@ -92,13 +93,47 @@ export const Timer = ({
           )}
         </div>
       </div>
-      <CSSTransition in={animate} timeout={5000} classNames="my-node" appear>
-        <div className="orbit">
-          <div className="sun2-wrapper">
-            <div className="sun2"> </div>
+
+      <div
+        className="orbit"
+        style={{
+          animationPlayState:
+            animate &&
+            (changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale" ||
+              changeOfStep(modFromSec, inhaleExhale).currentStep === "exhale")
+              ? "running"
+              : "paused",
+        }}
+      >
+        <div
+          className="sun2-wrapper"
+          style={{
+            animationPlayState:
+              animate &&
+              (changeOfStep(modFromSec, inhaleExhale).currentStep ===
+                "inhale" ||
+                changeOfStep(modFromSec, inhaleExhale).currentStep === "exhale")
+                ? "running"
+                : "paused",
+          }}
+        >
+          <div
+            className="sun2"
+            style={{
+              animationPlayState:
+                animate &&
+                (changeOfStep(modFromSec, inhaleExhale).currentStep ===
+                  "inhale" ||
+                  changeOfStep(modFromSec, inhaleExhale).currentStep ===
+                    "exhale")
+                  ? "running"
+                  : "paused",
+            }}
+          >
+            {" "}
           </div>
         </div>
-      </CSSTransition>
+      </div>
     </div>
     // </div>
   );
