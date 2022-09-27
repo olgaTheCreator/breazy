@@ -18,11 +18,15 @@ const App = () => {
   const [pause, setPause] = useState(false);
   const [vibrations, setVibrations] = useState(true);
   const [sounds, setSounds] = useState(true);
+  const [animate, setAnimate] = useState(false);
+  const [showButtons, setShowButtons] = useState(true);
 
   const handlePause = () => {
     clearInterval(intervalId);
     setIntervalId(0);
     setPause(true);
+    setAnimate(false);
+    setShowButtons(true);
     return;
   };
   const handleStop = () => {
@@ -30,9 +34,15 @@ const App = () => {
     setIntervalId(0);
     setSeconds(0);
     setPause(false);
+    setShowButtons(true);
     return;
   };
-
+  // const handleShowingButtons = () => {
+  //   if (intervalId && !pause) {
+  //     setShowButtons(true);
+  //     setTimeout(() => setShowButtons(false), 7000);
+  //   }
+  // };
   if (seconds <= durationOfSession * 60) {
     // console.log(seconds);
   } else handleStop();
@@ -58,6 +68,9 @@ const App = () => {
             handlePause={handlePause}
             vibrations={vibrations}
             sounds={sounds}
+            animate={animate}
+            setAnimate={setAnimate}
+            setShowButtons={setShowButtons}
           />
         </div>
         <div className="beginSession">
@@ -76,24 +89,43 @@ const App = () => {
           </div> */}
         </div>
       </div>
-      <div className="menu-container">
-        <NavigationIcons
-          chosenTechnique={chosenTechnique}
-          setTechnique={setTechnique}
-          intervalId={intervalId}
-          setIntervalId={setIntervalId}
-          setSeconds={setSeconds}
-          setDuration={setDuration}
-          durationOfSession={durationOfSession}
-          setPause={setPause}
-          handlePause={handlePause}
-          handleStop={handleStop}
-          vibrations={vibrations}
-          setVibrations={setVibrations}
-          sounds={sounds}
-          setSounds={setSounds}
-        />
+
+      <div
+        className="menu-container"
+        style={{
+          background: showButtons ? "hsla(203, 12%, 21%, 1)" : "",
+        }}
+        onClick={() => handlePause()}
+        // onClick={() => {
+        //   handleShowingButtons();
+        // }}
+        // style={{ visibility: !intervalId ? "visible" : "hidden" }}
+      >
+        {showButtons && (
+          <NavigationIcons
+            chosenTechnique={chosenTechnique}
+            setTechnique={setTechnique}
+            intervalId={intervalId}
+            setIntervalId={setIntervalId}
+            setSeconds={setSeconds}
+            setDuration={setDuration}
+            durationOfSession={durationOfSession}
+            setPause={setPause}
+            handlePause={handlePause}
+            handleStop={handleStop}
+            vibrations={vibrations}
+            setVibrations={setVibrations}
+            sounds={sounds}
+            setSounds={setSounds}
+          />
+        )}
       </div>
+      {/* <div
+        className="mountains"
+        style={{ width: "100%", visibility: intervalId ? "visible" : "hidden" }}
+      >
+        <div></div>
+      </div> */}
     </AppWrapper>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./timer.css";
 import { vibrate } from "../../utils/Vibration";
 import { noOp } from "../../utils/NoOp";
@@ -19,8 +19,10 @@ export const Timer = ({
   //handleStop,
   vibrations,
   sounds,
+  animate,
+  setAnimate,
+  setShowButtons,
 }) => {
-  const [animate, setAnimate] = useState(false);
   // Setup the new Howl.
   const sound = new Howl({
     src: [bell],
@@ -62,6 +64,7 @@ export const Timer = ({
       setIntervalId(newIntervalId);
       setPause(false);
       setAnimate(true);
+      setShowButtons(false);
     }
   };
 
@@ -97,6 +100,7 @@ export const Timer = ({
       <div
         className="orbit"
         style={{
+          visibility: intervalId ? "visible" : "hidden",
           animationPlayState:
             animate &&
             (changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale" ||
@@ -108,6 +112,7 @@ export const Timer = ({
         <div
           className="sun2-wrapper"
           style={{
+            // display: intervalId || pause ? "grid" : "none",
             animationPlayState:
               animate &&
               (changeOfStep(modFromSec, inhaleExhale).currentStep ===
@@ -120,6 +125,7 @@ export const Timer = ({
           <div
             className="sun2"
             style={{
+              // display: intervalId || pause ? "grid" : "none",
               animationPlayState:
                 animate &&
                 (changeOfStep(modFromSec, inhaleExhale).currentStep ===
