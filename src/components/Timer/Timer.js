@@ -134,15 +134,19 @@ export const Timer = ({
           <div
             className="sun2"
             style={{
-              // display: intervalId || pause ? "grid" : "none",
-              animationPlayState:
-                animate &&
-                (changeOfStep(modFromSec, inhaleExhale).currentStep ===
-                  "inhale" ||
-                  changeOfStep(modFromSec, inhaleExhale).currentStep ===
-                    "exhale")
-                  ? "running"
-                  : "paused",
+              "--color1": "white",
+              "--color2": "blue",
+              animation: `sun_gradient ${
+                changeOfStep(modFromSec, inhaleExhale).duration
+              }s ease infinite`,
+              // animationPlayState:
+              //   animate &&
+              //   (changeOfStep(modFromSec, inhaleExhale).currentStep ===
+              //     "inhale" ||
+              //     changeOfStep(modFromSec, inhaleExhale).currentStep ===
+              //       "exhale")
+              //     ? "running"
+              //     : "paused",
             }}
           >
             {" "}

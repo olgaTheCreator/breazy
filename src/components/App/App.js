@@ -20,6 +20,7 @@ const App = () => {
   const [sounds, setSounds] = useState(true);
   const [animate, setAnimate] = useState(false);
   const [showButtons, setShowButtons] = useState(true);
+  const [stop, setStop] = useState(true);
 
   const handlePause = () => {
     clearInterval(intervalId);
@@ -33,6 +34,7 @@ const App = () => {
     clearInterval(intervalId);
     setIntervalId(0);
     setSeconds(0);
+    setStop(true);
     setPause(false);
     // setShowButtons(true);
     return;
@@ -76,7 +78,7 @@ const App = () => {
         <div className="beginSession">
           {durationOfSession * 60 === seconds ? (
             <EndOfSessionText />
-          ) : !intervalId ? (
+          ) : stop ? (
             <BeginSessionText
               durationOfSession={durationOfSession}
               chosenTechnique={chosenTechnique}
