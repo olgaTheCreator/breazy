@@ -25,8 +25,9 @@ export const ChoosinTechniqueModal = ({
                   key={a.id}
                   onClick={() => {
                     handleStop();
-                    setTechnique(breathingTechniques[index]),
-                      setTechniquesOpen(false);
+                    setTechnique(breathingTechniques[index]);
+                    setTechniquesOpen(false);
+                    console.log(breathingTechniques[index]);
                   }}
                 >
                   {a.name}

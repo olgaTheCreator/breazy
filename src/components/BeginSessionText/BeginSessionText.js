@@ -9,8 +9,7 @@ export const BeginSessionText = ({ durationOfSession, chosenTechnique }) => {
       setVisible(false);
     }, 5000);
     return () => setVisible(true);
-  }, [chosenTechnique]);
-
+  }, [durationOfSession, chosenTechnique]);
   // return <div>{visible ? chosenTechnique.name : ""}</div>;
   return (
     <div>

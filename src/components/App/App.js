@@ -34,7 +34,7 @@ const App = () => {
     setIntervalId(0);
     setSeconds(0);
     setPause(false);
-    setShowButtons(true);
+    // setShowButtons(true);
     return;
   };
   // const handleShowingButtons = () => {
@@ -76,13 +76,13 @@ const App = () => {
         <div className="beginSession">
           {durationOfSession * 60 === seconds ? (
             <EndOfSessionText />
-          ) : intervalId || pause ? (
-            ""
-          ) : (
+          ) : !intervalId ? (
             <BeginSessionText
               durationOfSession={durationOfSession}
               chosenTechnique={chosenTechnique}
             />
+          ) : (
+            ""
           )}
           {/* <div>
             <ShowingTechniqueNameOnScreen chosenTechnique={chosenTechnique} />

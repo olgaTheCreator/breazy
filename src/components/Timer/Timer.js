@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./timer.css";
 import { vibrate } from "../../utils/Vibration";
 import { noOp } from "../../utils/NoOp";
 import { Howl } from "howler";
 import bell from "../../assets/sounds/bell-hit-soft.wav";
+import useOnClickOutside from "../../utils/Hooks/useOnClickOutside";
 // import { CSSTransition } from "react-transition-group";
 
 export const Timer = ({
@@ -23,9 +24,17 @@ export const Timer = ({
   setAnimate,
   setShowButtons,
 }) => {
+  const ref = useRef();
   // Setup the new Howl.
   const sound = new Howl({
     src: [bell],
+  });
+
+  useOnClickOutside(ref, () => {
+    if (animate) {
+      console.log("using onclickoutside");
+      handlePause();
+    }
   });
 
   const changeOfStep = (modulo, array) => {
@@ -72,7 +81,7 @@ export const Timer = ({
     <div className="container">
       {/* <div className="area1"></div>
       <div className="area2"> */}
-      <div className="circle-outer" onClick={handleStart}>
+      <div className="circle-outer" onClick={handleStart} ref={ref}>
         <div
           className="circle-inner"
           style={{
