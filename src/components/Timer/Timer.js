@@ -134,11 +134,50 @@ export const Timer = ({
           <div
             className="sun2"
             style={{
-              "--color1": "white",
-              "--color2": "blue",
-              animation: `sun_gradient ${
-                changeOfStep(modFromSec, inhaleExhale).duration
-              }s ease infinite`,
+              "--color1": "hsla(216, 100%, 94%, 1)",
+              "--color2": "hsla(206, 82%, 17%, 1)",
+              animationName: `scale, ${
+                changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale"
+                  ? "sun_gradient"
+                  : changeOfStep(modFromSec, inhaleExhale).currentStep ===
+                    "exhale"
+                  ? "sun_gradient2"
+                  : "none"
+              }`,
+              animationDuration: `6s,${
+                changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale"
+                  ? inhaleExhale[0].duration
+                  : changeOfStep(modFromSec, inhaleExhale).currentStep ===
+                    "exhale"
+                  ? inhaleExhale[2].duration
+                  : 0
+              }s`,
+
+              animationTimingFunction: "linear, linear",
+              animationDirection: "normal, normal",
+              animationIterationCount: `infinite, 1`,
+              animationPlayState: `
+                ${
+                  animate &&
+                  (changeOfStep(modFromSec, inhaleExhale).currentStep ===
+                    "inhale" ||
+                    changeOfStep(modFromSec, inhaleExhale).currentStep ===
+                      "exhale")
+                    ? "running"
+                    : "paused"
+                }, ${
+                animate &&
+                (changeOfStep(modFromSec, inhaleExhale).currentStep ===
+                  "inhale" ||
+                  changeOfStep(modFromSec, inhaleExhale).currentStep ===
+                    "exhale")
+                  ? "running"
+                  : "paused"
+              }`,
+
+              // `sun_gradient ${
+              //   changeOfStep(modFromSec, inhaleExhale).duration
+              // }s linear infinite alternate`,
               // animationPlayState:
               //   animate &&
               //   (changeOfStep(modFromSec, inhaleExhale).currentStep ===

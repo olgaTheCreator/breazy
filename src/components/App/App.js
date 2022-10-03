@@ -36,6 +36,7 @@ const App = () => {
     setSeconds(0);
     setStop(true);
     setPause(false);
+    setAnimate(false);
     // setShowButtons(true);
     return;
   };
