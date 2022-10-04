@@ -104,14 +104,18 @@ const App = () => {
         // }}
         // style={{ visibility: !intervalId ? "visible" : "hidden" }}
       >
-        <div
-          className="progress-meter"
-          style={{
-            zIndex: !showButtons ? "5" : "-10",
-            animationDuration: `${durationOfSession * 60}s`,
-            animationPlayState: !pause ? "running" : "paused",
-          }}
-        ></div>
+        {!showButtons && (
+          <div
+            className="progress-meter"
+            style={{
+              left: `min(${
+                (seconds / (durationOfSession * 60)) * 100 - 5
+              }%, 90%)`,
+              // animationDuration: `${durationOfSession * 60}s`,
+              // animationPlayState: !pause ? "running" : "paused",
+            }}
+          ></div>
+        )}
 
         {showButtons && (
           <NavigationIcons
