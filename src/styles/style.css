@@ -123,6 +123,36 @@ body {
   padding-top: 2%;
 }
 
+.progress-meter {
+  /* position: 0% 50%; */
+  position: relative;
+  left: -3%;
+  top: 10%;
+  z-index: auto;
+  grid-area: 1/1/2/2;
+  place-self: center start;
+
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+  /* background-color: red; */
+  background: linear-gradient(to right, red, blue);
+  animation-name: progress;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+@keyframes progress {
+  0% {
+    left: -3%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
 /* .lower-line {
   grid-row: 7 / 8;
   display: grid;
@@ -133,7 +163,7 @@ body {
     rgba(0, 0, 0, 0.25);
   width: 100%; }*/
 
-@keyframes gradient {
+/* @keyframes gradient {
   0% {
     background: linear-gradient(0deg, #7f9790 10%, #8ea8a0 65%, #e8e1d4 100%);
   }
@@ -143,4 +173,4 @@ body {
   100% {
     background: linear-gradient(0deg, #7f9790 10%, #8ea8a0 65%, #e8e1d4);
   }
-}
+} */

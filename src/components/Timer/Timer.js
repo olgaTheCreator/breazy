@@ -41,11 +41,11 @@ export const Timer = ({
     for (let i = 0; i <= 3; i++) {
       const { duration, step } = array[i];
       if (modulo < duration) {
-        if (modulo === 0) {
+        if (modulo === 0 && !pause) {
           sounds ? sound.play() : noOp();
           vibrations ? vibrate() : noOp();
         }
-        return { duration: duration - modulo, currentStep: step };
+        return { duration: duration - modulo, currentStep: step, index: i };
       } else {
         modulo = modulo - duration;
       }
@@ -136,6 +136,13 @@ export const Timer = ({
             style={{
               "--color1": "hsla(216, 100%, 94%, 1)",
               "--color2": "hsla(206, 82%, 17%, 1)",
+              background:
+                changeOfStep(modFromSec, inhaleExhale).index === 1
+                  ? "linear-gradient(to left, var(--color1), var(--color2)) right /200% 200%"
+                  : changeOfStep(modFromSec, inhaleExhale).index === 3
+                  ? "linear-gradient(to left, var(--color1), var(--color2)) left /200% 200%"
+                  : "",
+              // backgroundSize: "200%, 200%",
               animationName: `scale, ${
                 changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale"
                   ? "sun_gradient"
