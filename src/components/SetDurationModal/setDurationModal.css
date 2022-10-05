@@ -36,6 +36,8 @@
 }
 
 .slider {
+  display: grid;
+  place-items: center;
   grid-column: 2/3;
   width: 100%;
 }

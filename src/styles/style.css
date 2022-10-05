@@ -116,13 +116,6 @@ body {
   margin-top: 1.8em;
 }
 
-.mountains {
-  background: url(../assets/pictures/gory.png) no-repeat center bottom / cover;
-  grid-row: 3 / 4;
-  display: grid;
-  padding-top: 2%;
-}
-
 .progress-meter {
   /* position: 0% 50%; */
   position: relative;
