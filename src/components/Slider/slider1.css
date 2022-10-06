@@ -70,7 +70,9 @@
   text-align: right;
   cursor: pointer;
 }
-
+.rc-slider-mark-text-active {
+  color: hsla(206, 17%, 57%, 1);
+}
 .rc-slider-dot {
   position: absolute;
   width: 0.45rem;
@@ -80,4 +82,8 @@
   vertical-align: middle;
   background-color: hsla(206, 17%, 57%, 0.3);
   cursor: pointer;
+}
+
+.rc-slider-dot-active {
+  background-color: hsla(206, 17%, 57%, 1);
 }
