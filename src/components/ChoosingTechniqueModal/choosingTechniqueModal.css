@@ -1,7 +1,6 @@
 .modal {
   align-items: end;
   position: relative;
-  right: 0.7em;
   grid-row: 1/2;
   grid-column: 1/2;
   justify-self: end;
@@ -25,7 +24,9 @@ p.technique-name {
 }
 
 .list-of-techniques {
+  margin: 10% 10% -5% 10%;
   background: #23292d;
+
   border-radius: 62px;
 }
 .list-of-techniques ul {

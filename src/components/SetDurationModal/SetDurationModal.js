@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/modalsStyle.css";
 import "./setDurationModal.css";
 import { DurationSlider } from "../Slider/Slider";
@@ -33,13 +33,17 @@ export const SetDurationModal = ({
   //   [sliderHeight]
   // );
   // console.log(thumbPos);
-  let durdur;
+  const [dur, setDur] = useState(3);
   const handleDurationChange = (value) => {
-    durdur = value;
+    setDur(value);
   };
   return (
     <div className="darkBG">
       <div className="time-modal">
+        <div className="modal-title">
+          Session Length
+          <p>set duration</p>
+        </div>
         <div className="slider-parent">
           <div className="slider">
             <DurationSlider
@@ -47,13 +51,14 @@ export const SetDurationModal = ({
               durationOfSession={durationOfSession}
             />
           </div>
+          <div className="duration-display">{dur} min</div>
           {console.log(durationOfSession)}
         </div>
         <div className="set-duration-button">
           <button
             onClick={() => {
               setTimeOpen(false);
-              setDuration(durdur);
+              setDuration(dur);
               handleStop();
             }}
           >

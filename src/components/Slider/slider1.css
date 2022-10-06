@@ -14,7 +14,7 @@
   position: relative;
   border-radius: 999px;
   width: 0.9rem;
-  height: 8rem;
+  height: 70%;
   touch-action: none;
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -60,13 +60,24 @@
   position: relative;
   left: 0;
   height: 100%;
-  font-size: 19px;
+  font-size: 0.6rem;
 }
 
 .rc-slider-mark-text {
+  left: -2rem;
   position: absolute;
   display: inline-block;
-  color: #999;
-  text-align: left;
+  text-align: right;
+  cursor: pointer;
+}
+
+.rc-slider-dot {
+  position: absolute;
+  width: 0.45rem;
+  height: 0.08rem;
+  left: -1rem;
+  /* // margin-left: -4px; */
+  vertical-align: middle;
+  background-color: hsla(206, 17%, 57%, 0.3);
   cursor: pointer;
 }
