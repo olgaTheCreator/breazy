@@ -17,6 +17,7 @@ export const Timer = ({
   pause,
   setPause,
   handlePause,
+  setStop,
   //handleStop,
   vibrations,
   sounds,
@@ -72,6 +73,7 @@ export const Timer = ({
 
       setIntervalId(newIntervalId);
       setPause(false);
+      setStop(false);
       setAnimate(true);
       setShowButtons(false);
     }
@@ -138,9 +140,9 @@ export const Timer = ({
               "--color2": "hsla(206, 82%, 17%, 1)",
               background:
                 changeOfStep(modFromSec, inhaleExhale).index === 1
-                  ? "linear-gradient(to left, var(--color1), var(--color2)) right /200% 200%"
+                  ? "linear-gradient(to right, var(--color1), var(--color2)) right /250% 250%"
                   : changeOfStep(modFromSec, inhaleExhale).index === 3
-                  ? "linear-gradient(to left, var(--color1), var(--color2)) left /200% 200%"
+                  ? "linear-gradient(to right, var(--color1), var(--color2)) left /250% 250%"
                   : "",
               // backgroundSize: "200%, 200%",
               animationName: `scale, ${

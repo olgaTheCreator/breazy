@@ -7,11 +7,12 @@ export const breathingTechniques = [
       { duration: 6, step: "exhale" },
       { duration: 0, step: "hold" },
     ],
-    shortDescription: "very calming 4-0-6-0",
+    shortDescription:
+      "longer exhale breathing is specifically used to calm down",
     id: 1,
   },
   {
-    name: "4-7-8",
+    name: "better sleep",
     inhaleExhale: [
       { duration: 4, step: "inhale" },
       { duration: 7, step: "hold" },
@@ -31,5 +32,17 @@ export const breathingTechniques = [
     ],
     shortDescription: "heighens performance and concentration",
     id: 3,
+  },
+  {
+    name: "breath of fire",
+    inhaleExhale: [
+      { duration: 1, step: "inhale" },
+      { duration: 0, step: "hold" },
+      { duration: 1, step: "exhale" },
+      { duration: 0, step: "hold" },
+    ],
+    shortDescription:
+      "improves energy levels through vigorous inhales and exhales",
+    id: 4,
   },
 ];

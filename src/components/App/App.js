@@ -46,16 +46,24 @@ const App = () => {
   //     setTimeout(() => setShowButtons(false), 7000);
   //   }
   // };
-  if (seconds <= durationOfSession * 60) {
-    // console.log(seconds);
-  } else handleStop();
+  if (seconds === durationOfSession * 60) {
+    setTimeout(() => {
+      handleStop();
+    }, 3000);
+
+    // useEffect(() => {
+    //   setTimeout(() => {
+    //     handleStop();
+    //   }, 5000);
+    // }, []);
+  }
 
   return (
     <AppWrapper>
+      {" "}
       <div className="menu-icon">
         <MenuIcon />
       </div>
-
       <div className="timer-container">
         <div className="timer">
           <Timer
@@ -67,6 +75,7 @@ const App = () => {
             durationOfSession={durationOfSession}
             pause={pause}
             setPause={setPause}
+            setStop={setStop}
             handleStop={handleStop}
             handlePause={handlePause}
             vibrations={vibrations}
@@ -85,14 +94,13 @@ const App = () => {
               chosenTechnique={chosenTechnique}
             />
           ) : (
-            ""
+            " "
           )}
           {/* <div>
             <ShowingTechniqueNameOnScreen chosenTechnique={chosenTechnique} />
           </div> */}
         </div>
       </div>
-
       <div
         className="menu-container"
         style={{
@@ -110,7 +118,7 @@ const App = () => {
             style={{
               left: `min(${
                 (seconds / (durationOfSession * 60)) * 100 - 5
-              }%, 90%)`,
+              }%, 93%)`,
               // animationDuration: `${durationOfSession * 60}s`,
               // animationPlayState: !pause ? "running" : "paused",
             }}

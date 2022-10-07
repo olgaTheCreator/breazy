@@ -137,7 +137,7 @@ body {
     hsla(216, 100%, 94%, 1) -20%,
     hsla(206, 82%, 17%, 1) 116.18%
   );
-  transition: left 1s ease-in;
+  transition: left 1.2s linear;
   /* animation-name: progress;
   animation-iteration-count: 1;
   animation-timing-function: linear; */
