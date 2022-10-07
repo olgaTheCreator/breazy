@@ -51,6 +51,10 @@ p.technique-name {
   list-style-type: none;
 }
 .list-of-techniques li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
   background: url(../../assets/svgs/Vector_ellipse_in_techniques.svg) no-repeat
     left top;
   background-size: 1.1em 1.1em;
@@ -70,7 +74,6 @@ p.technique-name {
 } */
 
 .short-description {
-  margin-left: 1em;
   margin-top: -0.1em;
   text-align: left;
   color: hsla(212, 18%, 60%, 0.7);

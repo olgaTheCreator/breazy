@@ -36,8 +36,7 @@ export const ChoosinTechniqueModal = ({
                   {a.name}{" "}
                   <span
                     style={{
-                      display: "block",
-                      margin: "-0.2em 1em 0 0",
+                      margin: "0 1em 0 0",
                       fontSize: "0.45rem",
                       textAlign: "right",
                       color: " hsla(212, 18%, 60%, 1)",
