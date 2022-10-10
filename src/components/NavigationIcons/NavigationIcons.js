@@ -17,6 +17,7 @@ export const NavigationIcons = ({
   setVibrations,
   sounds,
   setSounds,
+  menuIsOpen,
 }) => {
   const [techniquesAreOpen, setTechniquesOpen] = useState(false);
   const [timeIsOpen, setTimeOpen] = useState(false);
@@ -33,7 +34,9 @@ export const NavigationIcons = ({
         {" "}
         <p>{vibrations ? "vibrations on" : "vibrations off"}</p>
         <button
-          className={vibrations ? "button1-vib" : "button1-novib"}
+          className={`${vibrations ? "button1-vib" : "button1-novib"} ${
+            menuIsOpen ? "visible-button" : ""
+          }`}
         ></button>
       </div>
       <div
@@ -45,11 +48,15 @@ export const NavigationIcons = ({
       >
         <p>{sounds ? "sound on" : "sound off"}</p>
         <button
-          className={sounds ? "button2-sound" : "button2-nosound"}
+          className={`${sounds ? "button2-sound" : "button2-nosound"} ${
+            menuIsOpen ? "visible-button" : ""
+          }`}
         ></button>
       </div>
       <div
-        className={`navButtons ${timeIsOpen ? "visible-button" : ""}`}
+        className={`navButtons ${
+          timeIsOpen || menuIsOpen ? "visible-button" : ""
+        }`}
         onClick={() => {
           // handlePause();
           timeIsOpen ? setTimeOpen(false) : setTimeOpen(true);
@@ -59,7 +66,9 @@ export const NavigationIcons = ({
         <button className="button3"></button>
       </div>
       <div
-        className={`navButtons ${techniquesAreOpen ? "visible-button" : ""}`}
+        className={`navButtons ${
+          techniquesAreOpen || menuIsOpen ? "visible-button" : ""
+        }`}
         onClick={() => {
           techniquesAreOpen
             ? setTechniquesOpen(false)

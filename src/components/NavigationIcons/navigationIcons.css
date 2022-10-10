@@ -137,6 +137,6 @@ div:active > p {
     -3px -3px 15px 2px hsla(0, 0%, 100%, 0.25);
 }
 
-.visible-button {
+/* .visible-button {
   z-index: 12;
-}
+} */

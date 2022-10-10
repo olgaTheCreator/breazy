@@ -42,23 +42,19 @@ const marks = {
   28: " ",
   29: " ",
   30: {
-    style: {
-      // top: "-20%",
-      // bottom: "-12%",
-      // transform: "none",
-    },
+    style: {},
     label: 30,
   },
 };
 
-export const DurationSlider = ({ onChange }) => {
+export const DurationSlider = ({ onChange, durationOfSession }) => {
   return (
     // <div className="slider-wrapper">
     <Slider
       vertical
       min={1}
       max={30}
-      defaultValue={3}
+      defaultValue={durationOfSession}
       onChange={onChange}
       marks={marks}
     />

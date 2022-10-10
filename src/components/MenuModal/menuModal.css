@@ -1,0 +1,50 @@
+.darkBG-menu {
+  color: hsla(212, 18%, 60%, 1);
+  background: hsla(203, 12%, 21%, 1);
+  /* background: linear-gradient(to top, #7f9790, #8ea8a0 60%, #e8e1d4); */
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0%;
+  left: 0;
+  position: absolute;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  justify-items: center;
+}
+
+.menu-modal {
+  position: relative;
+  padding-right: 1em;
+  top: 10%;
+  background: #23292d;
+  text-align: left;
+  font-size: 0.85rem;
+  border-radius: 62px;
+  width: 70%;
+  height: max-content;
+  max-height: 70%;
+  color: hsla(212, 18%, 60%, 1);
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.menu-modal::-webkit-scrollbar {
+  display: none;
+}
+.menu-modal ul {
+  overflow-y: scroll;
+}
+li p {
+  font-size: 0.5rem;
+}
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}

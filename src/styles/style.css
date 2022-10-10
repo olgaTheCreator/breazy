@@ -143,6 +143,10 @@ body {
   animation-timing-function: linear; */
 }
 
+.visible-button {
+  z-index: 99;
+}
+
 @keyframes progress {
   0% {
     left: -3%;

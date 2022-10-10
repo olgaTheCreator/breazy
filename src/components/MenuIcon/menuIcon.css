@@ -1,4 +1,5 @@
 .menu-icon-container button {
+  position: relative;
   height: calc(6 * var(--vh, vh));
   width: calc(6 * var(--vh, vh));
   border: none;

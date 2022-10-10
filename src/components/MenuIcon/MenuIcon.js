@@ -1,19 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { MenuModal } from "../MenuModal/MenuModal";
 import "./menuIcon.css";
 
-export const MenuIcon = () => {
-  const [menuIsOpen, setMenuOpen] = useState(false);
+export const MenuIcon = ({ menuIsOpen, setMenuOpen }) => {
   return (
     <div>
       <div
         className="menu-icon-container"
         onClick={() => {
-          console.log({ menuIsOpen });
-          setMenuOpen(true);
+          menuIsOpen ? setMenuOpen(false) : setMenuOpen(true);
         }}
       >
-        <button></button>
+        <button className={menuIsOpen ? "visible-button" : ""}></button>
       </div>
       {menuIsOpen && <MenuModal setMenuOpen={setMenuOpen} />}
     </div>

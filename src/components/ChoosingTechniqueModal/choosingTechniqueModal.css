@@ -37,7 +37,7 @@ p.technique-name {
 
 .list-of-techniques {
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 500;
   margin: 0% 10% -5% 10%;
   /* padding: 0.3em; */
   background: #23292d;
@@ -59,6 +59,7 @@ p.technique-name {
     left top;
   background-size: 1.1em 1.1em;
   padding-left: 15%;
+  padding-bottom: 0.2em;
   /* vertical-align: middle; */
   text-align: left;
 }
@@ -74,7 +75,7 @@ p.technique-name {
 } */
 
 .short-description {
-  margin-top: -0.1em;
+  margin-top: 0.3em;
   text-align: left;
   color: hsla(212, 18%, 60%, 0.7);
   visibility: visible;

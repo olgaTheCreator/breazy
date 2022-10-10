@@ -21,6 +21,7 @@ const App = () => {
   const [animate, setAnimate] = useState(false);
   const [showButtons, setShowButtons] = useState(true);
   const [stop, setStop] = useState(true);
+  const [menuIsOpen, setMenuOpen] = useState(false);
 
   const handlePause = () => {
     clearInterval(intervalId);
@@ -62,7 +63,7 @@ const App = () => {
     <AppWrapper>
       {" "}
       <div className="menu-icon">
-        <MenuIcon />
+        <MenuIcon menuIsOpen={menuIsOpen} setMenuOpen={setMenuOpen} />
       </div>
       <div className="timer-container">
         <div className="timer">
@@ -127,6 +128,7 @@ const App = () => {
 
         {showButtons && (
           <NavigationIcons
+            menuIsOpen={menuIsOpen}
             chosenTechnique={chosenTechnique}
             setTechnique={setTechnique}
             intervalId={intervalId}
