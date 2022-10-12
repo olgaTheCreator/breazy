@@ -1,6 +1,6 @@
 export const breathingTechniques = [
   {
-    name: "calm",
+    name: "water",
     inhaleExhale: [
       { duration: 4, step: "inhale" },
       { duration: 0, step: "hold" },
@@ -12,7 +12,7 @@ export const breathingTechniques = [
     id: 1,
   },
   {
-    name: "better sleep",
+    name: "moon",
     inhaleExhale: [
       { duration: 4, step: "inhale" },
       { duration: 7, step: "hold" },
@@ -23,18 +23,18 @@ export const breathingTechniques = [
     id: 2,
   },
   {
-    name: "box (square)",
+    name: "wind",
     inhaleExhale: [
       { duration: 4, step: "inhale" },
       { duration: 4, step: "hold" },
       { duration: 4, step: "exhale" },
       { duration: 4, step: "hold" },
     ],
-    shortDescription: "heighens performance and concentration",
+    shortDescription: "square breathing heighens performance and concentration",
     id: 3,
   },
   {
-    name: "breath of fire",
+    name: "flame",
     inhaleExhale: [
       { duration: 1, step: "inhale" },
       { duration: 0, step: "hold" },
@@ -42,7 +42,7 @@ export const breathingTechniques = [
       { duration: 0, step: "hold" },
     ],
     shortDescription:
-      "improves energy levels through vigorous inhales and exhales",
+      '"breath of fire" improves energy levels through vigorous inhales and exhales',
     id: 4,
   },
 ];

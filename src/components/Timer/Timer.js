@@ -18,6 +18,7 @@ export const Timer = ({
   setPause,
   handlePause,
   setStop,
+  stop,
   //handleStop,
   vibrations,
   sounds,
@@ -112,6 +113,29 @@ export const Timer = ({
         className="orbit"
         style={{
           visibility: intervalId ? "visible" : "hidden",
+          transform:
+            changeOfStep(modFromSec, inhaleExhale).index === 1
+              ? `rotateZ(-175deg)`
+              : changeOfStep(modFromSec, inhaleExhale).index === 3
+              ? `rotateZ(-360deg)`
+              : "",
+          animationName: !stop
+            ? `${
+                changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale"
+                  ? "orbit"
+                  : changeOfStep(modFromSec, inhaleExhale).currentStep ===
+                    "exhale"
+                  ? "orbit2"
+                  : "none"
+              }`
+            : "",
+          animationDuration: `${
+            changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale"
+              ? inhaleExhale[0].duration
+              : changeOfStep(modFromSec, inhaleExhale).currentStep === "exhale"
+              ? inhaleExhale[2].duration
+              : 0
+          }s`,
           animationPlayState:
             animate &&
             (changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale" ||
@@ -123,7 +147,32 @@ export const Timer = ({
         <div
           className="sun2-wrapper"
           style={{
+            transform:
+              changeOfStep(modFromSec, inhaleExhale).index === 1
+                ? `rotateX(-90deg) rotateY(180deg) rotateZ(0deg)`
+                : changeOfStep(modFromSec, inhaleExhale).index === 3
+                ? `rotateX(-90deg) rotateY(0deg) rotateZ(0deg)`
+                : "",
             // display: intervalId || pause ? "grid" : "none",
+            animationName: !stop
+              ? `${
+                  changeOfStep(modFromSec, inhaleExhale).currentStep ===
+                  "inhale"
+                    ? "invert"
+                    : changeOfStep(modFromSec, inhaleExhale).currentStep ===
+                      "exhale"
+                    ? "invert2"
+                    : "none"
+                }`
+              : "",
+            animationDuration: `${
+              changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale"
+                ? inhaleExhale[0].duration
+                : changeOfStep(modFromSec, inhaleExhale).currentStep ===
+                  "exhale"
+                ? inhaleExhale[2].duration
+                : 0
+            }s`,
             animationPlayState:
               animate &&
               (changeOfStep(modFromSec, inhaleExhale).currentStep ===
@@ -138,22 +187,44 @@ export const Timer = ({
             style={{
               "--color1": "hsla(216, 100%, 94%, 1)",
               "--color2": "hsla(206, 82%, 17%, 1)",
-              background:
+              height:
                 changeOfStep(modFromSec, inhaleExhale).index === 1
-                  ? "linear-gradient(to right, var(--color1), var(--color2)) right /250% 250%"
+                  ? `${1.15 * 1.8}rem`
                   : changeOfStep(modFromSec, inhaleExhale).index === 3
-                  ? "linear-gradient(to right, var(--color1), var(--color2)) left /250% 250%"
+                  ? `${1.8}rem`
+                  : "",
+              width:
+                changeOfStep(modFromSec, inhaleExhale).index === 1
+                  ? `${1.15 * 1.8}rem`
+                  : changeOfStep(modFromSec, inhaleExhale).index === 3
+                  ? `${1.8}rem`
+                  : "",
+              background:
+                changeOfStep(modFromSec, inhaleExhale).index === 3
+                  ? "linear-gradient(to bottom, var(--color1), var(--color2)) bottom /250% 250%"
+                  : changeOfStep(modFromSec, inhaleExhale).index === 1
+                  ? "linear-gradient(to bottom, var(--color1), var(--color2)) top /250% 250%"
                   : "",
               // backgroundSize: "200%, 200%",
-              animationName: `scale, ${
+              animationName: !stop
+                ? `${
+                    changeOfStep(modFromSec, inhaleExhale).currentStep ===
+                    "inhale"
+                      ? "scale, sun_gradient"
+                      : changeOfStep(modFromSec, inhaleExhale).currentStep ===
+                        "exhale"
+                      ? "scale2, sun_gradient2"
+                      : "none"
+                  }`
+                : "",
+              animationDuration: `${
                 changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale"
-                  ? "sun_gradient"
+                  ? inhaleExhale[0].duration
                   : changeOfStep(modFromSec, inhaleExhale).currentStep ===
                     "exhale"
-                  ? "sun_gradient2"
-                  : "none"
-              }`,
-              animationDuration: `6s,${
+                  ? inhaleExhale[2].duration
+                  : 0
+              }s,${
                 changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale"
                   ? inhaleExhale[0].duration
                   : changeOfStep(modFromSec, inhaleExhale).currentStep ===
@@ -164,7 +235,7 @@ export const Timer = ({
 
               animationTimingFunction: "linear, linear",
               animationDirection: "normal, normal",
-              animationIterationCount: `infinite, 1`,
+              animationIterationCount: `1, 1`,
               animationPlayState: `
                 ${
                   animate &&

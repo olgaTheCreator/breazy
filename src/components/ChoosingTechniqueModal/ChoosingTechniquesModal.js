@@ -30,7 +30,6 @@ export const ChoosinTechniqueModal = ({
                     handleStop();
                     setTechnique(breathingTechniques[index]);
                     setTechniquesOpen(false);
-                    console.log(breathingTechniques[index]);
                   }}
                 >
                   {a.name}{" "}

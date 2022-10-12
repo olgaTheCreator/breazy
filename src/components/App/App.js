@@ -77,6 +77,7 @@ const App = () => {
             pause={pause}
             setPause={setPause}
             setStop={setStop}
+            stop={stop}
             handleStop={handleStop}
             handlePause={handlePause}
             vibrations={vibrations}
@@ -100,6 +101,7 @@ const App = () => {
           {/* <div>
             <ShowingTechniqueNameOnScreen chosenTechnique={chosenTechnique} />
           </div> */}
+          {console.log(stop)}
         </div>
       </div>
       <div
@@ -128,7 +130,7 @@ const App = () => {
 
         {showButtons && (
           <NavigationIcons
-            menuIsOpen={menuIsOpen}
+            setMenuOpen={setMenuOpen}
             chosenTechnique={chosenTechnique}
             setTechnique={setTechnique}
             intervalId={intervalId}
