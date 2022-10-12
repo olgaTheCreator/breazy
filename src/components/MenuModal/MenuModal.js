@@ -99,9 +99,10 @@ export const MenuModal = () => {
                     a medical doctor or certified health practitioner.
                     <br />
                     You should consult your GP or other relevant medical
-                    practitioners are taking medication, you are pregnant, or if
-                    you have any medical condition(s), especially asthma,
-                    diabetes, epilepsy, obesity, or a heart condition.
+                    practitioners if you are taking medication, you are
+                    pregnant, or if you have any medical condition(s),
+                    especially asthma, diabetes, epilepsy, obesity, or a heart
+                    condition.
                   </p>
                 </div>
               )}

@@ -359,3 +359,18 @@
     background-color: yellow;
   } */
 }
+
+.aba-enter {
+  background-color: "";
+}
+.aba-enter-active {
+  background-color: "#23292d";
+  transition: background-color 300ms;
+}
+.aba-exit {
+  background-color: "#23292d";
+}
+.aba-exit-active {
+  background-color: "";
+  transition: background-color 300ms;
+}
