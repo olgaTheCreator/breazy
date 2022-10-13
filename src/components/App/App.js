@@ -101,7 +101,7 @@ const App = () => {
           {/* <div>
             <ShowingTechniqueNameOnScreen chosenTechnique={chosenTechnique} />
           </div> */}
-          {console.log(stop)}
+          {console.log(stop, seconds)}
         </div>
       </div>
       <div

@@ -54,10 +54,10 @@ export const NavigationIcons = ({
         onClick={() => {
           // handlePause();
           setMenuOpen(false);
-          timeIsOpen ? setTimeOpen(false) : setTimeOpen(true);
+          timeIsOpen ? (setTimeOpen(false), handleStop()) : setTimeOpen(true);
         }}
       >
-        <p>time</p>
+        <p>duration</p>
         <button className="button3"></button>
       </div>
       <div

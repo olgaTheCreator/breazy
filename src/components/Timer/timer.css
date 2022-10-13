@@ -51,8 +51,9 @@
   width: 6.3rem;
   height: 6.3rem;
   /* background-color: #23292d; */
-  background: #23292d url(../../assets/pictures/gory.png) no-repeat center
-    bottom / auto 90%;
+  background: #23292d url(../../assets/pictures/gory.png) no-repeat;
+  background-size: auto 90%;
+  background-position: center bottom;
   box-shadow: inset 0px -2px 4px rgba(255, 255, 255, 0.25),
     inset 5px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -360,17 +361,29 @@
   } */
 }
 
-.aba-enter {
-  background-color: "";
+.mountain_on_stop-appear {
+  background-size: auto 0%;
 }
-.aba-enter-active {
-  background-color: "#23292d";
-  transition: background-color 300ms;
+.mountain_on_stop-appear-active {
+  background-size: auto 90%;
+  transition: background-size 1100ms;
 }
-.aba-exit {
-  background-color: "#23292d";
+
+.mountain_on_stop-enter {
+  background-size: auto 0%;
 }
-.aba-exit-active {
-  background-color: "";
-  transition: background-color 300ms;
+.mountain_on_stop-enter-active {
+  background-size: auto 90%;
+  transition: background-size 1100ms;
+}
+.mountain_on_stop-exit {
+  background-size: auto 90%;
+}
+.mountain_on_stop-exit-active {
+  background-size: auto 0%;
+  transition: background-size 1100ms;
+}
+
+.mountain_on_stop-exit-done {
+  background-size: auto 0%;
 }

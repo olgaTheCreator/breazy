@@ -5,7 +5,7 @@ import { noOp } from "../../utils/NoOp";
 import { Howl } from "howler";
 import bell from "../../assets/sounds/bell-hit-soft.wav";
 import useOnClickOutside from "../../utils/Hooks/useOnClickOutside";
-// import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { CSSTransition } from "react-transition-group";
 
 export const Timer = ({
   chosenTechnique,
@@ -86,36 +86,37 @@ export const Timer = ({
       {/* <div className="area1"></div>
       <div className="area2"> */}
       <div className="circle-outer" onClick={handleStart} ref={ref}>
-        {/* <CSSTransition
+        <CSSTransition
+          appear
           in={stop}
           nodeRef={nodeRef}
-          timeout={300}
-          classNames="aba"
-        > */}
-        <div
-          nodeRef={nodeRef}
-          className="circle-inner"
-          style={{
-            background: intervalId ? "#23292d" : "",
-          }}
+          timeout={1100}
+          classNames="mountain_on_stop"
         >
-          {intervalId ? (
-            <div id="stop-button">
-              {intervalId ? (
-                <div className="step-text">
-                  {changeOfStep(modFromSec, inhaleExhale).currentStep}
-                </div>
-              ) : (
-                <div></div>
-              )}
-            </div>
-          ) : (
-            <div className="play-button">
-              <p>START</p>
-            </div>
-          )}
-        </div>
-        {/* </CSSTransition> */}
+          <div
+            ref={nodeRef}
+            className="circle-inner"
+            // style={{
+            //   backgroundSize: intervalId ? "0 0" : "",
+            // }}
+          >
+            {intervalId ? (
+              <div id="stop-button">
+                {intervalId ? (
+                  <div className="step-text">
+                    {changeOfStep(modFromSec, inhaleExhale).currentStep}
+                  </div>
+                ) : (
+                  <div></div>
+                )}
+              </div>
+            ) : (
+              <div className="play-button">
+                <p>START</p>
+              </div>
+            )}
+          </div>
+        </CSSTransition>
       </div>
 
       <div
@@ -244,7 +245,7 @@ export const Timer = ({
 
               animationTimingFunction: "linear, linear",
               animationDirection: "normal, normal",
-              animationIterationCount: `1, 1`,
+              animationIterationCount: `infinite, infinite`,
               animationPlayState: `
                 ${
                   animate &&

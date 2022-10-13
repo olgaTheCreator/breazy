@@ -33,6 +33,7 @@ export const SetDurationModal = ({
             />
           </div>
           <div className="duration-display">{dur} min</div>
+          {console.log(dur)}
           {console.log(durationOfSession)}
         </div>
         {/* <div className="set-duration-button">
