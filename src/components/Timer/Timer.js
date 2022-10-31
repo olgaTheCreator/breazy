@@ -123,29 +123,25 @@ export const Timer = ({
         className="orbit"
         style={{
           visibility: intervalId ? "visible" : "hidden",
-          transform:
-            changeOfStep(modFromSec, inhaleExhale).index === 1
-              ? `rotateZ(-175deg)`
-              : changeOfStep(modFromSec, inhaleExhale).index === 3
-              ? `rotateZ(-360deg)`
-              : "",
-          animationName: !stop
-            ? `${
-                changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale"
-                  ? "orbit"
-                  : changeOfStep(modFromSec, inhaleExhale).currentStep ===
-                    "exhale"
-                  ? "orbit2"
-                  : "none"
-              }`
-            : "",
+          // transform:
+          //   changeOfStep(modFromSec, inhaleExhale).index === 1
+          //     ? `rotateZ(-175deg)`
+          //     : changeOfStep(modFromSec, inhaleExhale).index === 3
+          //     ? `rotateZ(-360deg)`
+          //     : "",
+          animationName: !stop ? "orbit" : "",
+
+          // animationDuration: `${
+          //   changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale"
+          //     ? inhaleExhale[0].duration
+          //     : changeOfStep(modFromSec, inhaleExhale).currentStep === "exhale"
+          //     ? inhaleExhale[2].duration
+          //     : 0
+          // }s`,
           animationDuration: `${
-            changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale"
-              ? inhaleExhale[0].duration
-              : changeOfStep(modFromSec, inhaleExhale).currentStep === "exhale"
-              ? inhaleExhale[2].duration
-              : 0
+            inhaleExhale[0].duration + inhaleExhale[2].duration
           }s`,
+
           animationPlayState:
             animate &&
             (changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale" ||
@@ -157,31 +153,35 @@ export const Timer = ({
         <div
           className="sun2-wrapper"
           style={{
-            transform:
-              changeOfStep(modFromSec, inhaleExhale).index === 1
-                ? `rotateX(-90deg) rotateY(180deg) rotateZ(0deg)`
-                : changeOfStep(modFromSec, inhaleExhale).index === 3
-                ? `rotateX(-90deg) rotateY(0deg) rotateZ(0deg)`
-                : "",
-            // display: intervalId || pause ? "grid" : "none",
-            animationName: !stop
-              ? `${
-                  changeOfStep(modFromSec, inhaleExhale).currentStep ===
-                  "inhale"
-                    ? "invert"
-                    : changeOfStep(modFromSec, inhaleExhale).currentStep ===
-                      "exhale"
-                    ? "invert2"
-                    : "none"
-                }`
-              : "",
+            // transform:
+            //   changeOfStep(modFromSec, inhaleExhale).index === 1
+            //     ? `rotateX(-90deg) rotateY(180deg) rotateZ(0deg)`
+            //     : changeOfStep(modFromSec, inhaleExhale).index === 3
+            //     ? `rotateX(-90deg) rotateY(0deg) rotateZ(0deg)`
+            //     : "",
+            // // display: intervalId || pause ? "grid" : "none",
+            // animationName: !stop
+            //   ? `${
+            //       changeOfStep(modFromSec, inhaleExhale).currentStep ===
+            //       "inhale"
+            //         ? "invert"
+            //         : changeOfStep(modFromSec, inhaleExhale).currentStep ===
+            //           "exhale"
+            //         ? "invert2"
+            //         : "none"
+            //     }`
+            //   : "",
+            // animationDuration: `${
+            //   changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale"
+            //     ? inhaleExhale[0].duration
+            //     : changeOfStep(modFromSec, inhaleExhale).currentStep ===
+            //       "exhale"
+            //     ? inhaleExhale[2].duration
+            //     : 0
+            // }s`,
+            animationName: !stop ? "invert" : "",
             animationDuration: `${
-              changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale"
-                ? inhaleExhale[0].duration
-                : changeOfStep(modFromSec, inhaleExhale).currentStep ===
-                  "exhale"
-                ? inhaleExhale[2].duration
-                : 0
+              inhaleExhale[0].duration + inhaleExhale[2].duration
             }s`,
             animationPlayState:
               animate &&
@@ -197,25 +197,25 @@ export const Timer = ({
             style={{
               "--color1": "hsla(216, 100%, 94%, 1)",
               "--color2": "hsla(206, 82%, 17%, 1)",
-              height:
+              transform:
                 changeOfStep(modFromSec, inhaleExhale).index === 1
-                  ? `${1.15 * 1.8}rem`
+                  ? `scale(1.4,1.4)`
                   : changeOfStep(modFromSec, inhaleExhale).index === 3
-                  ? `${1.8}rem`
+                  ? `scale(1,1)`
                   : "",
-              width:
-                changeOfStep(modFromSec, inhaleExhale).index === 1
-                  ? `${1.15 * 1.8}rem`
-                  : changeOfStep(modFromSec, inhaleExhale).index === 3
-                  ? `${1.8}rem`
-                  : "",
+              // width:
+              //   changeOfStep(modFromSec, inhaleExhale).index === 1
+              //     ? `${1.4 * 1.8}rem`
+              //     : changeOfStep(modFromSec, inhaleExhale).index === 3
+              //     ? `${1.8}rem`
+              //     : "",
               background:
                 changeOfStep(modFromSec, inhaleExhale).index === 3
-                  ? "linear-gradient(to bottom, var(--color1), var(--color2)) bottom /250% 250%"
+                  ? "linear-gradient(to bottom, var(--color2), var(--color1)) top /250% 250%"
                   : changeOfStep(modFromSec, inhaleExhale).index === 1
-                  ? "linear-gradient(to bottom, var(--color1), var(--color2)) top /250% 250%"
+                  ? "linear-gradient(to bottom, var(--color2), var(--color1)) bottom /250% 250%"
                   : "",
-              // backgroundSize: "200%, 200%",
+
               animationName: !stop
                 ? `${
                     changeOfStep(modFromSec, inhaleExhale).currentStep ===
