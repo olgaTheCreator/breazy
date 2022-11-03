@@ -245,7 +245,7 @@ export const Timer = ({
 
               animationTimingFunction: "linear, linear",
               animationDirection: "normal, normal",
-              animationIterationCount: `infinite, infinite`,
+              animationIterationCount: `1, 1`,
               animationPlayState: `
                 ${
                   animate &&
