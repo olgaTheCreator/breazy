@@ -133,11 +133,14 @@ export const Timer = ({
           }s`,
 
           animationPlayState:
-            animate &&
-            (changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale" ||
-              changeOfStep(modFromSec, inhaleExhale).currentStep === "exhale")
-              ? "running"
-              : "paused",
+            pause ||
+            changeOfStep(modFromSec, inhaleExhale).currentStep === "hold"
+              ? "paused"
+              : "running",
+          // changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale" ||
+          // changeOfStep(modFromSec, inhaleExhale).currentStep === "exhale"
+          //   ? "running"
+          //   : "paused",
         }}
       >
         <div
@@ -174,12 +177,14 @@ export const Timer = ({
               inhaleExhale[0].duration + inhaleExhale[2].duration
             }s`,
             animationPlayState:
-              animate &&
-              (changeOfStep(modFromSec, inhaleExhale).currentStep ===
-                "inhale" ||
-                changeOfStep(modFromSec, inhaleExhale).currentStep === "exhale")
-                ? "running"
-                : "paused",
+              pause ||
+              changeOfStep(modFromSec, inhaleExhale).currentStep === "hold"
+                ? "paused"
+                : "running",
+            // changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale" ||
+            // changeOfStep(modFromSec, inhaleExhale).currentStep === "exhale"
+            //   ? "running"
+            //   : "paused",
           }}
         >
           <div
@@ -238,21 +243,15 @@ export const Timer = ({
               animationIterationCount: `1, 1`,
               animationPlayState: `
                 ${
-                  animate &&
-                  (changeOfStep(modFromSec, inhaleExhale).currentStep ===
-                    "inhale" ||
-                    changeOfStep(modFromSec, inhaleExhale).currentStep ===
-                      "exhale")
-                    ? "running"
-                    : "paused"
+                  pause ||
+                  changeOfStep(modFromSec, inhaleExhale).currentStep === "hold"
+                    ? "paused"
+                    : "running"
                 }, ${
-                animate &&
-                (changeOfStep(modFromSec, inhaleExhale).currentStep ===
-                  "inhale" ||
-                  changeOfStep(modFromSec, inhaleExhale).currentStep ===
-                    "exhale")
-                  ? "running"
-                  : "paused"
+                pause ||
+                changeOfStep(modFromSec, inhaleExhale).currentStep === "hold"
+                  ? "paused"
+                  : "running"
               }`,
 
               // `sun_gradient ${
