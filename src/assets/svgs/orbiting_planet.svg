@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="69"
+   height="69.102974"
+   viewBox="0 0 69 69.102974"
+   fill="none"
+   version="1.1"
+   id="svg335"
+   sodipodi:docname="orbiting_planet.svg"
+   inkscape:version="1.2.1 (1:1.2.1+202210291244+9c6d41e410)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview337"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="7.442029"
+     inkscape:cx="34.600779"
+     inkscape:cy="34.667965"
+     inkscape:window-width="2560"
+     inkscape:window-height="1416"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg335" />
+  <path
+     d="m 51.75,4.6735653 c 23,13.2790997 23,46.4766997 0,59.7557997 C 28.75,77.708465 0,61.109565 0,34.551465 0,7.9933653 28.75,-8.6054347 51.75,4.6735653 Z"
+     fill="url(#paint0_linear_628_675)"
+     id="path326"
+     style="fill:url(#paint0_linear_628_675)" />
+  <defs
+     id="defs333">
+    <linearGradient
+       id="paint0_linear_628_675"
+       x1="138"
+       y1="69"
+       x2="-22.3235"
+       y2="69"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-34.5,-34.448535)">
+      <stop
+         stop-color="#083251"
+         id="stop328" />
+      <stop
+         offset="1"
+         stop-color="#DFECFF"
+         id="stop330" />
+    </linearGradient>
+  </defs>
+</svg>

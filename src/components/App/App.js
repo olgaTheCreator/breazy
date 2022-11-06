@@ -131,11 +131,11 @@ const App = () => {
             }}
           ></div>
         )}
-        {console.log(
+        {/* {console.log(
           seconds,
           window.innerWidth,
           seconds / (durationOfSession * 60000)
-        )}
+        )} */}
         {showButtons && (
           <NavigationIcons
             setMenuOpen={setMenuOpen}

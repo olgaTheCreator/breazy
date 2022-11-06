@@ -35,10 +35,28 @@
 }
 .menu-modal ul {
   overflow-y: scroll;
+  padding: 2% 0% 0% 6%;
+
+  list-style-position: outside;
+  list-style-type: none;
 }
-li p {
+.menu-modal li p {
   font-size: 0.5rem;
 }
+
+.menu-modal li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: url(../../assets/svgs/small.svg) no-repeat left top 15%;
+  background-size: 1.1em 1.1em;
+  padding-left: 15%;
+  padding-bottom: 0.6em;
+  /* vertical-align: middle; */
+  text-align: left;
+}
+
 button {
   background: none;
   color: inherit;

@@ -55,8 +55,7 @@ p.technique-name {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-end;
-  background: url(../../assets/svgs/Vector_ellipse_in_techniques.svg) no-repeat
-    left top;
+  background: url(../../assets/svgs/small.svg) no-repeat left top 10%;
   background-size: 1.1em 1.1em;
   padding-left: 15%;
   padding-bottom: 0.2em;

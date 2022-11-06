@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="54"
+   height="54"
+   viewBox="0 0 54 54"
+   fill="none"
+   version="1.1"
+   id="svg1770"
+   sodipodi:docname="menu.svg"
+   inkscape:version="1.2.1 (1:1.2.1+202210291244+9c6d41e410)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1772"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="17.706897"
+     inkscape:cx="25.639727"
+     inkscape:cy="28.971762"
+     inkscape:window-width="843"
+     inkscape:window-height="1404"
+     inkscape:window-x="1709"
+     inkscape:window-y="4"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1770" />
+  <circle
+     cx="27"
+     cy="27"
+     r="27"
+     fill="#2f373c"
+     id="circle1732" />
+  <g
+     filter="url(#filter0_d_936_915)"
+     id="g1736">
+    <circle
+       cx="27"
+       cy="27"
+       r="23"
+       fill="url(#paint0_linear_936_915)"
+       shape-rendering="crispEdges"
+       id="circle1734"
+       style="fill:url(#paint0_linear_936_915)" />
+  </g>
+  <path
+     d="M 37.7333,25.6665 H 16.2667 C 15.5671,25.6665 15,26.2336 15,26.9332 v 0.1333 c 0,0.6996 0.5671,1.2667 1.2667,1.2667 H 37.7333 C 38.4329,28.3332 39,27.7661 39,27.0665 v -0.1333 c 0,-0.6996 -0.5671,-1.2667 -1.2667,-1.2667 z"
+     fill="#a4b7d0"
+     fill-opacity="0.8"
+     id="path1738" />
+  <path
+     d="M 37.7333,32.3335 H 16.2667 C 15.5671,32.3335 15,32.9006 15,33.6002 v 0.1333 c 0,0.6996 0.5671,1.2667 1.2667,1.2667 H 37.7333 C 38.4329,35.0002 39,34.4331 39,33.7335 v -0.1333 c 0,-0.6996 -0.5671,-1.2667 -1.2667,-1.2667 z"
+     fill="#a4b7d0"
+     fill-opacity="0.8"
+     id="path1740" />
+  <path
+     d="M 37.7333,19 H 16.2667 C 15.5671,19 15,19.5671 15,20.2667 V 20.4 c 0,0.6996 0.5671,1.2667 1.2667,1.2667 H 37.7333 C 38.4329,21.6667 39,21.0996 39,20.4 V 20.2667 C 39,19.5671 38.4329,19 37.7333,19 Z"
+     fill="#a4b7d0"
+     fill-opacity="0.8"
+     id="path1742" />
+  <defs
+     id="defs1768">
+    <filter
+       id="filter0_d_936_915"
+       x="0"
+       y="4"
+       width="54"
+       height="54"
+       filterUnits="userSpaceOnUse"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         flood-opacity="0"
+         result="BackgroundImageFix"
+         id="feFlood1744" />
+      <feColorMatrix
+         in="SourceAlpha"
+         type="matrix"
+         values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+         result="hardAlpha"
+         id="feColorMatrix1746" />
+      <feOffset
+         dy="4"
+         id="feOffset1748" />
+      <feGaussianBlur
+         stdDeviation="2"
+         id="feGaussianBlur1750" />
+      <feComposite
+         in2="hardAlpha"
+         operator="out"
+         id="feComposite1752" />
+      <feColorMatrix
+         type="matrix"
+         values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+         id="feColorMatrix1754" />
+      <feBlend
+         mode="normal"
+         in2="BackgroundImageFix"
+         result="effect1_dropShadow_936_915"
+         id="feBlend1756" />
+      <feBlend
+         mode="normal"
+         in="SourceGraphic"
+         in2="effect1_dropShadow_936_915"
+         result="shape"
+         id="feBlend1758" />
+    </filter>
+    <linearGradient
+       id="paint0_linear_936_915"
+       x1="27"
+       y1="4"
+       x2="27"
+       y2="50"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-color="#292D30"
+         id="stop1761" />
+      <stop
+         offset="0.961458"
+         stop-color="#313538"
+         id="stop1763" />
+      <stop
+         offset="1"
+         stop-color="#292D30"
+         stop-opacity="0"
+         id="stop1765" />
+    </linearGradient>
+  </defs>
+</svg>
