@@ -1,0 +1,20 @@
+.nav_icon {
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  box-shadow: -3px -3px 15px rgba(255, 255, 255, 0.25),
+    3px 3px 15px rgba(0, 0, 0, 0.25);
+  margin: auto;
+}
+
+svg:hover .circleOuter {
+  fill: hsla(206, 39%, 30%, 1);
+}
+
+svg:active .circleOuter {
+  fill: hsla(206, 39%, 30%, 1);
+}
+
+svg:focus .circleOuter {
+  fill: hsla(206, 39%, 30%, 1);
+}
