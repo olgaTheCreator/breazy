@@ -118,15 +118,24 @@ const App = () => {
           <div
             className="progress-meter"
             style={{
-              left: `min(${
-                (seconds / (durationOfSession * 60000)) * 100 - 5
-              }%, 93%)`,
+              transform: `translateX(${
+                seconds / (durationOfSession * 60000) < 0.91
+                  ? (seconds / (durationOfSession * 60000)) * window.innerWidth
+                  : 0.91 * window.innerWidth
+              }px)`,
+              // left: `min(${
+              //   (seconds / (durationOfSession * 60000)) * 100 - 5
+              // }%, 93%)`,
               // animationDuration: `${durationOfSession * 60}s`,
               // animationPlayState: !pause ? "running" : "paused",
             }}
           ></div>
         )}
-
+        {console.log(
+          seconds,
+          window.innerWidth,
+          seconds / (durationOfSession * 60000)
+        )}
         {showButtons && (
           <NavigationIcons
             setMenuOpen={setMenuOpen}

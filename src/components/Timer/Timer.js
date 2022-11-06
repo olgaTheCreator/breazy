@@ -267,7 +267,7 @@ export const Timer = ({
               //     : "paused",
             }}
           >
-            {console.log(seconds)}
+            {/* {console.log(seconds)} */}
           </div>
         </div>
       </div>
