@@ -43,7 +43,7 @@ export const Timer = ({
     for (let i = 0; i <= 3; i++) {
       const { duration, step } = array[i];
       if (modulo < duration) {
-        if (modulo === 0 && !pause) {
+        if (Math.floor(modulo / 100) * 100 === 0 && !pause) {
           sounds ? sound.play() : noOp();
           vibrations ? vibrate() : noOp();
         }
@@ -68,9 +68,9 @@ export const Timer = ({
     } else {
       const newIntervalId = setInterval(() => {
         setSeconds(
-          () => seconds + Math.floor((Date.now() - initialUnixTime) / 1000)
+          () => seconds + Math.floor((Date.now() - initialUnixTime) / 10) * 10
         );
-      }, 1000);
+      }, 100);
 
       setIntervalId(newIntervalId);
       setPause(false);
@@ -130,14 +130,17 @@ export const Timer = ({
           // }s`,
           animationDuration: `${
             inhaleExhale[0].duration + inhaleExhale[2].duration
-          }s`,
+          }ms`,
 
           animationPlayState:
-            animate &&
-            (changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale" ||
-              changeOfStep(modFromSec, inhaleExhale).currentStep === "exhale")
-              ? "running"
-              : "paused",
+            pause ||
+            changeOfStep(modFromSec, inhaleExhale).currentStep === "hold"
+              ? "paused"
+              : "running",
+          // changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale" ||
+          // changeOfStep(modFromSec, inhaleExhale).currentStep === "exhale"
+          //   ? "running"
+          //   : "paused",
         }}
       >
         <div
@@ -172,14 +175,16 @@ export const Timer = ({
             animationName: !stop ? "invert" : "",
             animationDuration: `${
               inhaleExhale[0].duration + inhaleExhale[2].duration
-            }s`,
+            }ms`,
             animationPlayState:
-              animate &&
-              (changeOfStep(modFromSec, inhaleExhale).currentStep ===
-                "inhale" ||
-                changeOfStep(modFromSec, inhaleExhale).currentStep === "exhale")
-                ? "running"
-                : "paused",
+              pause ||
+              changeOfStep(modFromSec, inhaleExhale).currentStep === "hold"
+                ? "paused"
+                : "running",
+            // changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale" ||
+            // changeOfStep(modFromSec, inhaleExhale).currentStep === "exhale"
+            //   ? "running"
+            //   : "paused",
           }}
         >
           <div
@@ -224,35 +229,29 @@ export const Timer = ({
                     "exhale"
                   ? inhaleExhale[2].duration
                   : 0
-              }s,${
+              }ms,${
                 changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale"
                   ? inhaleExhale[0].duration
                   : changeOfStep(modFromSec, inhaleExhale).currentStep ===
                     "exhale"
                   ? inhaleExhale[2].duration
                   : 0
-              }s`,
-
+              }ms`,
               animationTimingFunction: "linear, linear",
               animationDirection: "normal, normal",
               animationIterationCount: `1, 1`,
               animationPlayState: `
                 ${
-                  animate &&
-                  (changeOfStep(modFromSec, inhaleExhale).currentStep ===
-                    "inhale" ||
-                    changeOfStep(modFromSec, inhaleExhale).currentStep ===
-                      "exhale")
-                    ? "running"
-                    : "paused"
+                  pause
+                    ? // changeOfStep(modFromSec, inhaleExhale).currentStep === "hold"
+                      "paused"
+                    : "running"
                 }, ${
-                animate &&
-                (changeOfStep(modFromSec, inhaleExhale).currentStep ===
-                  "inhale" ||
-                  changeOfStep(modFromSec, inhaleExhale).currentStep ===
-                    "exhale")
-                  ? "running"
-                  : "paused"
+                pause
+                  ? // ||
+                    // changeOfStep(modFromSec, inhaleExhale).currentStep === "hold"
+                    "paused"
+                  : "running"
               }`,
 
               // `sun_gradient ${
@@ -268,7 +267,7 @@ export const Timer = ({
               //     : "paused",
             }}
           >
-            {" "}
+            {/* {console.log(seconds)} */}
           </div>
         </div>
       </div>

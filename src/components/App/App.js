@@ -47,7 +47,7 @@ const App = () => {
   //     setTimeout(() => setShowButtons(false), 7000);
   //   }
   // };
-  if (seconds === durationOfSession * 60) {
+  if (Math.floor(seconds / 1000) === durationOfSession * 60) {
     setTimeout(() => {
       handleStop();
     }, 3000);
@@ -88,7 +88,7 @@ const App = () => {
           />
         </div>
         <div className="beginSession">
-          {durationOfSession * 60 === seconds ? (
+          {durationOfSession * 60 === Math.floor(seconds / 1000) ? (
             <EndOfSessionText />
           ) : stop ? (
             <BeginSessionText
@@ -101,7 +101,6 @@ const App = () => {
           {/* <div>
             <ShowingTechniqueNameOnScreen chosenTechnique={chosenTechnique} />
           </div> */}
-          {console.log(stop)}
         </div>
       </div>
       <div
@@ -119,15 +118,24 @@ const App = () => {
           <div
             className="progress-meter"
             style={{
-              left: `min(${
-                (seconds / (durationOfSession * 60)) * 100 - 5
-              }%, 93%)`,
+              transform: `translateX(${
+                seconds / (durationOfSession * 60000) < 0.91
+                  ? (seconds / (durationOfSession * 60000)) * window.innerWidth
+                  : 0.91 * window.innerWidth
+              }px)`,
+              // left: `min(${
+              //   (seconds / (durationOfSession * 60000)) * 100 - 5
+              // }%, 93%)`,
               // animationDuration: `${durationOfSession * 60}s`,
               // animationPlayState: !pause ? "running" : "paused",
             }}
           ></div>
         )}
-
+        {console.log(
+          seconds,
+          window.innerWidth,
+          seconds / (durationOfSession * 60000)
+        )}
         {showButtons && (
           <NavigationIcons
             setMenuOpen={setMenuOpen}

@@ -2,9 +2,9 @@ export const breathingTechniques = [
   {
     name: "water",
     inhaleExhale: [
-      { duration: 4, step: "inhale" },
+      { duration: 4000, step: "inhale" },
       { duration: 0, step: "hold" },
-      { duration: 6, step: "exhale" },
+      { duration: 6000, step: "exhale" },
       { duration: 0, step: "hold" },
     ],
     shortDescription:
@@ -14,9 +14,9 @@ export const breathingTechniques = [
   {
     name: "moon",
     inhaleExhale: [
-      { duration: 4, step: "inhale" },
-      { duration: 7, step: "hold" },
-      { duration: 8, step: "exhale" },
+      { duration: 4000, step: "inhale" },
+      { duration: 7000, step: "hold" },
+      { duration: 8000, step: "exhale" },
       { duration: 0, step: "hold" },
     ],
     shortDescription: "helps falling asleep in a shorter period of time",
@@ -25,10 +25,10 @@ export const breathingTechniques = [
   {
     name: "wind",
     inhaleExhale: [
-      { duration: 4, step: "inhale" },
-      { duration: 4, step: "hold" },
-      { duration: 4, step: "exhale" },
-      { duration: 4, step: "hold" },
+      { duration: 4000, step: "inhale" },
+      { duration: 4000, step: "hold" },
+      { duration: 4000, step: "exhale" },
+      { duration: 4000, step: "hold" },
     ],
     shortDescription: "square breathing heighens performance and concentration",
     id: 3,
@@ -36,9 +36,9 @@ export const breathingTechniques = [
   {
     name: "flame",
     inhaleExhale: [
-      { duration: 1, step: "inhale" },
+      { duration: 1000, step: "inhale" },
       { duration: 0, step: "hold" },
-      { duration: 1, step: "exhale" },
+      { duration: 1000, step: "exhale" },
       { duration: 0, step: "hold" },
     ],
     shortDescription:
