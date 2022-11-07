@@ -1,6 +1,7 @@
 import React from "react";
 import { MenuModal } from "../MenuModal/MenuModal";
 import "./menuIcon.css";
+import { Icon_Menu } from "../SvgIcons/MenuIconSvg/Icon_Menu/Icon_Menu";
 
 export const MenuIcon = ({ menuIsOpen, setMenuOpen }) => {
   return (
@@ -11,7 +12,9 @@ export const MenuIcon = ({ menuIsOpen, setMenuOpen }) => {
           menuIsOpen ? setMenuOpen(false) : setMenuOpen(true);
         }}
       >
-        <button className={menuIsOpen ? "visible-button" : ""}></button>
+        <button className={menuIsOpen ? "visible-button" : ""}>
+          <Icon_Menu />
+        </button>
       </div>
       {menuIsOpen && <MenuModal setMenuOpen={setMenuOpen} />}
     </div>

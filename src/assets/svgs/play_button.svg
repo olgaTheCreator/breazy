@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="88.197502"
-   height="97.611946"
+   width="100%"
+   height="100%"
    viewBox="0 0 88.197502 97.611946"
    fill="none"
    version="1.1"
@@ -38,6 +38,7 @@
      style="fill:url(#paint0_linear_628_673)" />
   <defs
      id="defs9">
+     
     <linearGradient
        id="paint0_linear_628_673"
        x1="136"

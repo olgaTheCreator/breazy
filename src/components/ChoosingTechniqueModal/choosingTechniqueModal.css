@@ -55,12 +55,17 @@ p.technique-name {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-end;
-  background: url(../../assets/svgs/small.svg) no-repeat left top 10%;
-  background-size: 1.1em 1.1em;
-  padding-left: 15%;
-  padding-bottom: 0.2em;
+  /* background: url(../../assets/svgs/small.svg) no-repeat left top 10%; */
+  /* background-size: 1.1em 1.1em; */
+  padding-left: 0.1em;
+  padding-top: 0.05em;
+  padding-bottom: 0.07em;
   /* vertical-align: middle; */
   text-align: left;
+}
+
+.list-of-techniques li:hover svg .circleOuter {
+  fill: hsla(206, 39%, 30%, 1);
 }
 
 .list-of-techniques li p {
@@ -74,7 +79,8 @@ p.technique-name {
 } */
 
 .short-description {
-  margin-top: 0.3em;
+  /* margin: 0.2rem 0.3rem 0.3rem 0.3rem; */
+  padding-right: 0.4em;
   text-align: left;
   color: hsla(212, 18%, 60%, 0.7);
   visibility: visible;

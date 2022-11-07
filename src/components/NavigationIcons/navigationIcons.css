@@ -33,6 +33,11 @@
   margin-bottom: 0.8rem;
   justify-self: center;
 }
+
+.visible-button svg .circleOuter {
+  fill: hsla(206, 39%, 30%, 1);
+}
+
 @media (hover: hover) and (pointer: fine) {
   .navContainer div:hover > p {
     visibility: visible;

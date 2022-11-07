@@ -3,6 +3,7 @@ import "./timer.css";
 import { vibrate } from "../../utils/Vibration";
 import { noOp } from "../../utils/NoOp";
 import { Howl } from "howler";
+import { Icon_Play } from "../SvgIcons/PlayIconSvg/Icon_Play/Icon_Play";
 import bell from "../../assets/sounds/bell-hit-soft.wav";
 import useOnClickOutside from "../../utils/Hooks/useOnClickOutside";
 // import { CSSTransition } from "react-transition-group";
@@ -103,7 +104,9 @@ export const Timer = ({
             </div>
           ) : (
             <div className="play-button">
-              <p>START</p>
+              <button>
+                <Icon_Play />
+              </button>
             </div>
           )}
         </div>
@@ -193,9 +196,11 @@ export const Timer = ({
               "--color1": "hsla(216, 100%, 94%, 1)",
               "--color2": "hsla(206, 82%, 17%, 1)",
               transform:
-                changeOfStep(modFromSec, inhaleExhale).index === 1
+                changeOfStep(modFromSec, inhaleExhale).index === 1 &&
+                changeOfStep(modFromSec, inhaleExhale).duration > 0
                   ? `scale(1.4,1.4)`
-                  : changeOfStep(modFromSec, inhaleExhale).index === 3
+                  : changeOfStep(modFromSec, inhaleExhale).index === 3 &&
+                    changeOfStep(modFromSec, inhaleExhale).duration > 0
                   ? `scale(1,1)`
                   : "",
               // width:
@@ -205,9 +210,11 @@ export const Timer = ({
               //     ? `${1.8}rem`
               //     : "",
               background:
-                changeOfStep(modFromSec, inhaleExhale).index === 3
+                changeOfStep(modFromSec, inhaleExhale).index === 3 &&
+                changeOfStep(modFromSec, inhaleExhale).duration > 0
                   ? "linear-gradient(to bottom, var(--color2), var(--color1)) top /250% 250%"
-                  : changeOfStep(modFromSec, inhaleExhale).index === 1
+                  : changeOfStep(modFromSec, inhaleExhale).index === 1 &&
+                    changeOfStep(modFromSec, inhaleExhale).duration > 0
                   ? "linear-gradient(to bottom, var(--color2), var(--color1)) bottom /250% 250%"
                   : "",
 

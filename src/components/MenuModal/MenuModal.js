@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-
 import "./menuModal.css";
+import { Icon_Small } from "../SvgIcons/SmallIconSvg/Icon_Small/Icon_Small";
 
 export const MenuModal = () => {
   const [open, setOPen] = useState("nothing");
@@ -18,13 +18,18 @@ export const MenuModal = () => {
       <div className="menu-modal">
         <ul>
           <li>
-            <div ref={ref1} onClick={() => handleScroll(ref1)}>
+            <div
+              ref={ref1}
+              onClick={() => handleScroll(ref1)}
+              className="menu_item"
+            >
+              <Icon_Small />
               <button
                 onClick={() => {
                   open !== "about" ? setOPen("about") : setOPen("nothing");
                 }}
               >
-                About this app
+                <span>About this app</span>
               </button>
               {open === "about" && (
                 <div>
@@ -50,14 +55,19 @@ export const MenuModal = () => {
           </li>
 
           <li>
-            <div ref={ref2} onClick={() => handleScroll(ref2)}>
+            <div
+              ref={ref2}
+              onClick={() => handleScroll(ref2)}
+              className="menu_item"
+            >
+              <Icon_Small />
               <button
                 onClick={() => {
                   open !== "prepare" ? setOPen("prepare") : setOPen("nothing");
                 }}
               >
                 {console.log(ref2.current)}
-                Get ready
+                <span>Get ready</span>
               </button>
               {open === "prepare" && (
                 <div>
@@ -81,7 +91,12 @@ export const MenuModal = () => {
             </div>
           </li>
           <li>
-            <div ref={ref3} onClick={() => handleScroll(ref3)}>
+            <div
+              ref={ref3}
+              onClick={() => handleScroll(ref3)}
+              className="menu_item"
+            >
+              <Icon_Small />
               <button
                 onClick={() => {
                   open !== "disclaimer"
@@ -89,7 +104,7 @@ export const MenuModal = () => {
                     : setOPen("nothing");
                 }}
               >
-                Disclaimer
+                <span>Disclaimer</span>
               </button>
               {open === "disclaimer" && (
                 <div>
@@ -104,7 +119,7 @@ export const MenuModal = () => {
                     diabetes, epilepsy, obesity, or a heart condition.
                   </p>
                 </div>
-              )}
+              )}{" "}
             </div>
           </li>
         </ul>

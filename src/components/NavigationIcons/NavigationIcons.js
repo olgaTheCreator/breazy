@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import "./navigationIcons.css";
-import { Icon_Sound_On } from "./NavigationIconsSvgs/Icon_Sound_On/Icon_Sound_On";
-import { Icon_Sound_Off } from "./NavigationIconsSvgs/Icon_Sound_Off/Icon_Sound_Off";
+import { Icon_Duration } from "../SvgIcons/NavigationIconsSvgs/Icon_Duration/Icon_Duration";
+import { Icon_Vibrations_On } from "../SvgIcons/NavigationIconsSvgs/Icon_Vibrations_On/Icon_Vibrations_On";
+import { Icon_Vibrations_Off } from "../SvgIcons/NavigationIconsSvgs/Icon_Vibrations_Off/Icon_Vibrations_Off";
+import { Icon_Sound_On } from "../SvgIcons/NavigationIconsSvgs/Icon_Sound_On/Icon_Sound_On";
+import { Icon_Sound_Off } from "../SvgIcons/NavigationIconsSvgs/Icon_Sound_Off/Icon_Sound_Off";
+import { Icon_Techniques } from "../SvgIcons/NavigationIconsSvgs/Icon_Techniques/Icon_Techniques";
 import { ChoosinTechniqueModal } from "../ChoosingTechniqueModal/ChoosingTechniquesModal";
 import { SetDurationModal } from "../SetDurationModal/SetDurationModal";
 
@@ -38,8 +42,8 @@ export const NavigationIcons = ({
         <button>
           {/* className={`${vibrations ? "button1-vib" : "button1-novib"} `}> */}
           {/* <div className="svg_size"> */}
-          {vibrations && <Icon_Sound_On />}
-          {!vibrations && <Icon_Sound_Off />}
+          {vibrations && <Icon_Vibrations_On />}
+          {!vibrations && <Icon_Vibrations_Off />}
           {/* </div> */}
         </button>
       </div>
@@ -57,7 +61,7 @@ export const NavigationIcons = ({
         </button>
       </div>
       <div
-        className={`${timeIsOpen ? "visible-button" : ""}`}
+        className={`${timeIsOpen ? `visible-button` : ""}`}
         onClick={() => {
           // handlePause();
           setMenuOpen(false);
@@ -66,7 +70,7 @@ export const NavigationIcons = ({
       >
         <p>time</p>
         <button>
-          <Icon_Sound_On />
+          <Icon_Duration />
         </button>
       </div>
       <div
@@ -81,7 +85,7 @@ export const NavigationIcons = ({
       >
         <p>techniques</p>
         <button>
-          <Icon_Sound_On />
+          <Icon_Techniques />
         </button>
       </div>
       {techniquesAreOpen && (

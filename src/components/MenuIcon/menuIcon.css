@@ -1,11 +1,15 @@
 .menu-icon-container button {
   position: relative;
-  height: 1.8rem;
-  width: 1.8rem;
-  border: none;
+  height: 1.9rem;
+  width: 1.9rem;
+  /* border: none;
   background: url(../../assets/svgs/menu.svg) no-repeat center center;
-  background-size: 100% 100%;
+  background-size: 100% 100%; */
   border-radius: 50%;
-  box-shadow: -3px -3px 15px rgba(255, 255, 255, 0.25),
-    3px 3px 15px rgba(0, 0, 0, 0.25);
+  /* box-shadow: -3px -3px 15px rgba(255, 255, 255, 0.25),
+    3px 3px 15px rgba(0, 0, 0, 0.25); */
+}
+
+.visible-button svg .circleOuter {
+  fill: hsla(206, 39%, 30%, 1);
 }

@@ -3,7 +3,7 @@
   background: hsla(203, 12%, 21%, 1);
   /* background: linear-gradient(to top, #7f9790, #8ea8a0 60%, #e8e1d4); */
   width: 100%;
-  height: 82%;
+  height: 85%;
   z-index: 0;
   top: 0%;
   left: 0;
@@ -16,6 +16,7 @@
 
 .menu-modal {
   position: relative;
+  margin-top: 5%;
   padding-right: 1em;
   top: 10%;
   background: #23292d;
@@ -41,23 +42,44 @@
   list-style-type: none;
 }
 .menu-modal li p {
+  align-self: flex-end;
   font-size: 0.5rem;
+  padding-bottom: 3%;
 }
 
 .menu-modal li {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-end;
-  background: url(../../assets/svgs/small.svg) no-repeat left top 15%;
-  background-size: 1.1em 1.1em;
-  padding-left: 15%;
-  padding-bottom: 0.6em;
+  justify-content: flex-start;
+  align-items: flex-end; */
+  /* background: url(../../assets/svgs/small.svg) no-repeat left top 15%;
+  background-size: 1.1em 1.1em; */
+  padding-left: 3%;
+  padding-bottom: 0.6rem;
+  column-gap: 0.6rem;
   /* vertical-align: middle; */
   text-align: left;
 }
 
+.menu_item {
+  display: flex;
+  column-gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.menu_item:hover svg .circleOuter {
+  fill: hsla(206, 39%, 30%, 1);
+}
+
+/* .menu_item:focus svg .circleOuter {
+  fill: hsla(206, 39%, 30%, 1);
+}
+.menu_item:active svg .circleOuter {
+  fill: hsla(206, 39%, 30%, 1);
+} */
+
 button {
+  text-align: left;
   background: none;
   color: inherit;
   border: none;
@@ -66,3 +88,7 @@ button {
   cursor: pointer;
   outline: inherit;
 }
+
+/* button:focus svg .circleOuter {
+  fill: hsla(206, 39%, 30%, 1);
+} */

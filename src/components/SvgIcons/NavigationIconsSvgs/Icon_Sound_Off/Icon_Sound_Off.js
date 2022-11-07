@@ -27,7 +27,7 @@ export const Icon_Sound_Off = () => {
             cy="27"
             r="23"
             fill="url(#paint0_linear_936_911)"
-            shapeRendering="crispEdges"
+            // shapeRendering="crispEdges"
             id="circle1031"
             style={{ fill: "url(#paint0_linear_936_911)" }}
           />

@@ -2,6 +2,7 @@ import React from "react";
 import "../../styles/modalsStyle.css";
 import "./choosingTechniqueModal.css";
 import { breathingTechniques } from "../../data/breathingTechniques";
+import { Icon_Small } from "../SvgIcons/SmallIconSvg/Icon_Small/Icon_Small";
 
 export const ChoosinTechniqueModal = ({
   setTechniquesOpen,
@@ -32,6 +33,7 @@ export const ChoosinTechniqueModal = ({
                     setTechniquesOpen(false);
                   }}
                 >
+                  <Icon_Small />
                   {a.name}{" "}
                   <span
                     style={{
@@ -41,8 +43,10 @@ export const ChoosinTechniqueModal = ({
                       color: " hsla(212, 18%, 60%, 1)",
                     }}
                   >
-                    {a.inhaleExhale[0].duration}-{a.inhaleExhale[1].duration}-
-                    {a.inhaleExhale[2].duration}-{a.inhaleExhale[3].duration}
+                    {a.inhaleExhale[0].duration / 1000}-
+                    {a.inhaleExhale[1].duration / 1000}-
+                    {a.inhaleExhale[2].duration / 1000}-
+                    {a.inhaleExhale[3].duration / 1000}
                     <br />
                   </span>
                   <p className="short-description">{a.shortDescription}</p>
