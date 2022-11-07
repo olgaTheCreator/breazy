@@ -23,11 +23,14 @@
   text-align: left;
   font-size: 0.85rem;
   border-radius: 62px;
-  width: 70%;
+  width: 80%;
   height: max-content;
-  max-height: 70%;
+  max-height: 80%;
   color: hsla(212, 18%, 60%, 1);
   overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  /* scroll-padding: top right bottom left */
+  scroll-padding-bottom: 20px;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -36,6 +39,9 @@
 }
 .menu-modal ul {
   overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  /* scroll-padding: top right bottom left */
+  scroll-padding: 0 0 50px 0;
   padding: 2% 0% 0% 6%;
 
   list-style-position: outside;
@@ -45,6 +51,7 @@
   align-self: flex-end;
   font-size: 0.5rem;
   padding-bottom: 3%;
+  scroll-padding-block-end: 2rem;
 }
 
 .menu-modal li {
@@ -59,8 +66,16 @@
   column-gap: 0.6rem;
   /* vertical-align: middle; */
   text-align: left;
+  scroll-padding-bottom: 50px;
+  max-height: 30%;
 }
 
+.collapsable {
+  max-height: 40%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-padding: 0 0 50px 0;
+}
 .menu_item {
   display: flex;
   column-gap: 0.6rem;

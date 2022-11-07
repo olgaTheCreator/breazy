@@ -88,7 +88,7 @@ const App = () => {
           />
         </div>
         <div className="beginSession">
-          {durationOfSession * 60 === Math.floor(seconds / 1000) ? (
+          {durationOfSession * 60 === Math.round(seconds / 1000) ? (
             <EndOfSessionText />
           ) : stop ? (
             <BeginSessionText
@@ -98,6 +98,7 @@ const App = () => {
           ) : (
             " "
           )}
+          {console.log(stop)}
           {/* <div>
             <ShowingTechniqueNameOnScreen chosenTechnique={chosenTechnique} />
           </div> */}

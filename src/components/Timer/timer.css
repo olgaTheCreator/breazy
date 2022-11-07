@@ -95,6 +95,7 @@
 }
 
 .play-button {
+  cursor: pointer;
   position: relative;
   display: flex;
   justify-items: center;

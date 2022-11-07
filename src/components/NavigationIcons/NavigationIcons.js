@@ -27,6 +27,7 @@ export const NavigationIcons = ({
 }) => {
   const [techniquesAreOpen, setTechniquesOpen] = useState(false);
   const [timeIsOpen, setTimeOpen] = useState(false);
+  const [dur, setDur] = useState(durationOfSession);
 
   return (
     <div className="navContainer">
@@ -65,7 +66,11 @@ export const NavigationIcons = ({
         onClick={() => {
           // handlePause();
           setMenuOpen(false);
-          timeIsOpen ? setTimeOpen(false) : setTimeOpen(true);
+          if (timeIsOpen) {
+            setTimeOpen(false);
+            setDuration(dur);
+            handleStop();
+          } else setTimeOpen(true);
         }}
       >
         <p>time</p>
@@ -105,6 +110,8 @@ export const NavigationIcons = ({
           durationOfSession={durationOfSession}
           setDuration={setDuration}
           handleStop={handleStop}
+          dur={dur}
+          setDur={setDur}
         />
       )}
     </div>
