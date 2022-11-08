@@ -6,25 +6,31 @@ html {
   font-size: 1.8rem;
 }
 
-@media (max-width: 400px) {
+@media screen and (max-width: 400px) {
   html {
     font-size: 1.8rem;
   }
 }
 
-@media (min-width: 401px) and (max-width: 800px) {
+@media screen and (min-width: 401px) and (max-width: 590px) {
   html {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
 }
-@media (min-width: 801px) and (max-width: 1200px) {
+
+@media screen and (min-width: 591px) and (max-width: 650px) {
   html {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
   }
 }
-@media (min-width: 1201px) {
+@media screen and (min-width: 651px) and (max-width: 799px) {
   html {
-    font-size: 3rem;
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 2.8rem;
   }
 }
 
@@ -51,16 +57,18 @@ body {
   background: hsla(203, 12%, 21%, 1);
 
   /*animation: gradient 3s infinite;*/
-  display: grid;
-  grid-template-columns: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* grid-template-columns: 100%;
   grid-template-rows:
-    13% 66% 1fr
-    /* fr 4fr 1fr */
-    /* [row]
+    13% 66% 1fr */
+  /* fr 4fr 1fr */
+  /* [row]
     calc(4 * var(--vh, vh)) calc(6 * var(--vh, vh)) calc(24 * var(--vh, vh))
     calc(40 * var(--vh, vh))
-    calc(9 * var(--vh, vh)) calc(13 * var(--vh, vh)) calc(4 * var(--vh, vh)); */;
-  grid-row-gap: 0px;
+    calc(9 * var(--vh, vh)) calc(13 * var(--vh, vh)) calc(4 * var(--vh, vh)); */
+  /* grid-row-gap: 0px; */
   height: 100%;
   /* height: calc(var(--vh, 1vh) * 100); */
   padding: 0px;
@@ -81,9 +89,9 @@ body {
   width: 100%;
 } */
 .menu-icon {
-  grid-row: 1 / 2;
-  justify-self: end;
-  padding: 0.5em;
+  align-self: flex-end;
+  padding-top: 0.8rem;
+  padding-right: 0.6rem;
   z-index: 12;
 }
 
@@ -95,9 +103,10 @@ body {
 } */
 
 .timer-container {
-  grid-row: 2 / 3;
+  margin-top: 5%;
+  height: 50%;
   display: grid;
-  grid-template-rows: 5fr 2fr;
+  grid-template-rows: 4fr 2fr;
 }
 
 /* .free-space2 {
@@ -107,13 +116,19 @@ body {
 
 .menu-container {
   background: url(../assets/pictures/gory.png) no-repeat center bottom/ 100%;
-  grid-row: 3 / 4;
+  height: 20%;
   display: grid;
 
   padding-top: 2%;
 }
 .timer {
-  margin-top: 1.8em;
+  padding-top: 5%;
+}
+
+@media screen and (min-width: 801px) {
+  .menu-container {
+    height: 27%;
+  }
 }
 
 .progress-meter {

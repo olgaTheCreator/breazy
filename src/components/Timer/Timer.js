@@ -96,7 +96,10 @@ export const Timer = ({
             <div id="stop-button">
               {intervalId ? (
                 <div className="step-text">
-                  {changeOfStep(modFromSec, inhaleExhale).currentStep}
+                  {changeOfStep(
+                    modFromSec,
+                    inhaleExhale
+                  ).currentStep.toUpperCase()}
                 </div>
               ) : (
                 <div></div>

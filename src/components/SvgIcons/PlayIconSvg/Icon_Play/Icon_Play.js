@@ -24,18 +24,18 @@ export const Icon_Play = () => {
         <defs id="defs9">
           <filter id="shadow" colorInterpolationFilters="sRGB">
             <feDropShadow
-              dx=""
+              dx="0"
               dy="4"
-              stdDeviation="0.4"
-              floodColor="rgba(0, 0, 0, 0.25)"
+              stdDeviation="0.6"
+              floodColor="rgba(0, 0, 0, 0.6"
               // floodOpacity="0.8"
             />
             <feDropShadow
               dx="5"
               dy="5"
-              stdDeviation="0.6"
+              stdDeviation="1"
               floodColor="#2B2C2D"
-              floodOpacity="0.7"
+              floodOpacity="0.5"
             />
           </filter>
           <linearGradient

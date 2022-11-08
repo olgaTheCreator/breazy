@@ -2,8 +2,8 @@
   width: 1.9rem;
   height: 1.9rem;
   border-radius: 50%;
-  box-shadow: -3px -3px 15px rgba(255, 255, 255, 0.25),
-    3px 3px 15px rgba(0, 0, 0, 0.25);
+  box-shadow: -0.12rem -0.12rem 0.5rem 0.1rem rgba(255, 255, 255, 0.25),
+    0.12rem 0.12rem 0.5rem 0.1rem rgba(0, 0, 0, 0.25);
   margin: auto;
 }
 
