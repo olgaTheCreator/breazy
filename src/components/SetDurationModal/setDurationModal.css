@@ -14,13 +14,13 @@
   color: #455a6e;
 }
 
-.set-duration-button button {
+/* .set-duration-button button {
   background: #e8e1d4;
   border-radius: 15px;
   width: fit-content;
   height: fit-content;
   justify-self: center;
-}
+} */
 .modal-title {
   grid-row: 2/3;
   grid-column: 2/5;
@@ -41,7 +41,6 @@
   display: grid;
   grid-template-columns: 33% 33% 33%;
   color: #455a6e;
-  bottom: calc(var(--vh, 1vh) * 5);
   justify-items: center;
 }
 
