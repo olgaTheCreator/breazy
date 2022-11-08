@@ -35,7 +35,7 @@ export const Icon_Play = () => {
               dy="5"
               stdDeviation="0.6"
               floodColor="#2B2C2D"
-              floodOpacity="0.9"
+              floodOpacity="0.7"
             />
           </filter>
           <linearGradient

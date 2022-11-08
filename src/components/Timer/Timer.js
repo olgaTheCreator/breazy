@@ -198,7 +198,7 @@ export const Timer = ({
               transform:
                 changeOfStep(modFromSec, inhaleExhale).index === 1 &&
                 changeOfStep(modFromSec, inhaleExhale).duration > 0
-                  ? `scale(1.4,1.4)`
+                  ? `scale(1.3,1.3)`
                   : changeOfStep(modFromSec, inhaleExhale).index === 3 &&
                     changeOfStep(modFromSec, inhaleExhale).duration > 0
                   ? `scale(1,1)`
