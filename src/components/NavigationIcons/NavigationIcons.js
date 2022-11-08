@@ -40,7 +40,7 @@ export const NavigationIcons = ({
       >
         {" "}
         <p>{vibrations ? "vibrations on" : "vibrations off"}</p>
-        <button>
+        <button className="nav_button">
           {/* className={`${vibrations ? "button1-vib" : "button1-novib"} `}> */}
           {/* <div className="svg_size"> */}
           {vibrations && <Icon_Vibrations_On />}
@@ -56,7 +56,7 @@ export const NavigationIcons = ({
         }}
       >
         <p>{sounds ? "sound on" : "sound off"}</p>
-        <button>
+        <button className="nav_button">
           {sounds && <Icon_Sound_On />}
           {!sounds && <Icon_Sound_Off />}
         </button>
@@ -74,7 +74,7 @@ export const NavigationIcons = ({
         }}
       >
         <p>time</p>
-        <button>
+        <button className="nav_button">
           <Icon_Duration />
         </button>
       </div>
@@ -89,7 +89,7 @@ export const NavigationIcons = ({
         }}
       >
         <p>techniques</p>
-        <button>
+        <button className="nav_button">
           <Icon_Techniques />
         </button>
       </div>

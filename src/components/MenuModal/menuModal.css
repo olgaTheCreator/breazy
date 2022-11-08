@@ -102,6 +102,7 @@ button {
   font: inherit;
   cursor: pointer;
   outline: inherit;
+  margin: 0;
 }
 
 /* button:focus svg .circleOuter {

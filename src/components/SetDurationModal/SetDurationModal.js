@@ -2,6 +2,7 @@ import React from "react";
 import "../../styles/modalsStyle.css";
 import "./setDurationModal.css";
 import { DurationSlider } from "../Slider/Slider";
+import { Icon_Small } from "../SvgIcons/SmallIconSvg/Icon_Small/Icon_Small";
 
 export const SetDurationModal = ({
   // setTimeOpen,
@@ -28,10 +29,18 @@ export const SetDurationModal = ({
         </div>
         <div className="slider-parent">
           <div className="slider">
+            <button onClick={() => (dur <= 29 ? setDur(dur + 1) : "")}>
+              <Icon_Small />
+            </button>
+            {console.log(dur)}
             <DurationSlider
               onChange={handleDurationChange}
               durationOfSession={durationOfSession}
+              click={dur}
             />
+            <button onClick={() => (dur >= 2 ? setDur(dur - 1) : "")}>
+              <Icon_Small />
+            </button>
           </div>
           <div className="duration-display">{dur} min</div>
           {console.log(dur, durationOfSession)}

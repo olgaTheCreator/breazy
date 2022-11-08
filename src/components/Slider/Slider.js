@@ -47,7 +47,7 @@ const marks = {
   },
 };
 
-export const DurationSlider = ({ onChange, durationOfSession }) => {
+export const DurationSlider = ({ click, onChange, durationOfSession }) => {
   return (
     // <div className="slider-wrapper">
     <Slider
@@ -55,6 +55,7 @@ export const DurationSlider = ({ onChange, durationOfSession }) => {
       min={1}
       max={30}
       defaultValue={durationOfSession}
+      value={click}
       onChange={onChange}
       marks={marks}
     />
