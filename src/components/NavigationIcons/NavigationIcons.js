@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./navigationIcons.css";
 import { Icon_Duration } from "../SvgIcons/NavigationIconsSvgs/Icon_Duration/Icon_Duration";
 import { Icon_Vibrations_On } from "../SvgIcons/NavigationIconsSvgs/Icon_Vibrations_On/Icon_Vibrations_On";
@@ -8,6 +8,7 @@ import { Icon_Sound_Off } from "../SvgIcons/NavigationIconsSvgs/Icon_Sound_Off/I
 import { Icon_Techniques } from "../SvgIcons/NavigationIconsSvgs/Icon_Techniques/Icon_Techniques";
 import { ChoosinTechniqueModal } from "../ChoosingTechniqueModal/ChoosingTechniquesModal";
 import { SetDurationModal } from "../SetDurationModal/SetDurationModal";
+import { CSSTransition } from "react-transition-group";
 
 export const NavigationIcons = ({
   chosenTechnique,
@@ -25,6 +26,7 @@ export const NavigationIcons = ({
   setSounds,
   setMenuOpen,
 }) => {
+  const nodeRef = useRef(null);
   const [techniquesAreOpen, setTechniquesOpen] = useState(false);
   const [timeIsOpen, setTimeOpen] = useState(false);
   const [dur, setDur] = useState(durationOfSession);
@@ -104,16 +106,26 @@ export const NavigationIcons = ({
           handleStop={handleStop}
         />
       )}
-      {timeIsOpen && (
-        <SetDurationModal
-          setTimeOpen={setTimeOpen}
-          durationOfSession={durationOfSession}
-          setDuration={setDuration}
-          handleStop={handleStop}
-          dur={dur}
-          setDur={setDur}
-        />
-      )}
+      <CSSTransition
+        in={timeIsOpen}
+        nodeRef={nodeRef}
+        timeout={700}
+        classNames="fade_in"
+      >
+        <div ref={nodeRef}>
+          {timeIsOpen && (
+            <SetDurationModal
+              setTimeOpen={setTimeOpen}
+              timeIsOpen={timeIsOpen}
+              durationOfSession={durationOfSession}
+              setDuration={setDuration}
+              handleStop={handleStop}
+              dur={dur}
+              setDur={setDur}
+            />
+          )}
+        </div>
+      </CSSTransition>
     </div>
   );
 };

@@ -42,7 +42,9 @@
 
 .circle-inner {
   position: relative;
-  display: grid;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   place-items: center;
   color: hsla(213, 30%, 71%, 0.8);
 
@@ -414,4 +416,58 @@
   /* 100% {
     background-color: yellow;
   } */
+}
+
+.mountain_on_stop-appear {
+  background-size: auto 0%;
+}
+.mountain_on_stop-appear-active {
+  background-size: auto 90%;
+  transition: background-size 1100ms;
+}
+
+.mountain_on_stop-enter {
+  background-size: auto 0%;
+}
+.mountain_on_stop-enter-active {
+  background-size: auto 90%;
+  transition: background-size 1100ms;
+}
+.mountain_on_stop-exit {
+  background-size: auto 90%;
+}
+.mountain_on_stop-exit-active {
+  background-size: auto 0%;
+  transition: background-size 1100ms;
+}
+
+.mountain_on_stop-exit-done {
+  background-size: auto 0%;
+}
+
+.play_button_on_pause-appear {
+  opacity: 0;
+}
+.play_button_on_pause-appear-active {
+  opacity: 1;
+  transition: opacity 1100ms;
+}
+
+.play_button_on_pause-enter {
+  opacity: 0;
+}
+.play_button_on_pause-enter-active {
+  opacity: 1;
+  transition: opacity 600ms;
+}
+.play_button_on_pause-exit {
+  opacity: 1;
+}
+.play_button_on_pause-exit-active {
+  opacity: 0;
+  transition: opacity 600ms;
+}
+
+.play_button_on_pause-exit-done {
+  opacity: 0;
 }

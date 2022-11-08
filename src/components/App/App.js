@@ -9,6 +9,7 @@ import { BeginSessionText } from "../BeginSessionText/BeginSessionText";
 import { EndOfSessionText } from "../EndOfSession/EndOfSessionText";
 // import { ShowingTechniqueNameOnScreen } from "../ShowingTechniqueName/ShowingTechniqueName";
 import "@fontsource/montserrat";
+import { CSSTransition, SwitchTransition } from "react-transition-group";
 
 const App = () => {
   const [seconds, setSeconds] = useState(0);
@@ -104,59 +105,71 @@ const App = () => {
           </div> */}
         </div>
       </div>
-      <div
-        className="menu-container"
-        style={{
-          background: showButtons ? "hsla(203, 12%, 21%, 1)" : "",
-        }}
-        onClick={() => handlePause()}
-        // onClick={() => {
-        //   handleShowingButtons();
-        // }}
-        // style={{ visibility: !intervalId ? "visible" : "hidden" }}
-      >
-        {!showButtons && (
+      <SwitchTransition>
+        <CSSTransition
+          key={showButtons}
+          timeout={{
+            enter: 500,
+            exit: 300,
+          }}
+          classNames={"showNavButtons"}
+        >
           <div
-            className="progress-meter"
+            className="menu-container"
             style={{
-              transform: `translateX(${
-                seconds / (durationOfSession * 60000) < 0.91
-                  ? (seconds / (durationOfSession * 60000)) * window.innerWidth
-                  : 0.91 * window.innerWidth
-              }px)`,
-              // left: `min(${
-              //   (seconds / (durationOfSession * 60000)) * 100 - 5
-              // }%, 93%)`,
-              // animationDuration: `${durationOfSession * 60}s`,
-              // animationPlayState: !pause ? "running" : "paused",
+              background: showButtons ? "hsla(203, 12%, 21%, 1)" : "",
             }}
-          ></div>
-        )}
-        {/* {console.log(
+            onClick={() => handlePause()}
+            // onClick={() => {
+            //   handleShowingButtons();
+            // }}
+            // style={{ visibility: !intervalId ? "visible" : "hidden" }}
+          >
+            {!showButtons && (
+              <div
+                className="progress-meter"
+                style={{
+                  transform: `translateX(${
+                    seconds / (durationOfSession * 60000) < 0.91
+                      ? (seconds / (durationOfSession * 60000)) *
+                        window.innerWidth
+                      : 0.91 * window.innerWidth
+                  }px)`,
+                  // left: `min(${
+                  //   (seconds / (durationOfSession * 60000)) * 100 - 5
+                  // }%, 93%)`,
+                  // animationDuration: `${durationOfSession * 60}s`,
+                  // animationPlayState: !pause ? "running" : "paused",
+                }}
+              ></div>
+            )}
+            {/* {console.log(
           seconds,
           window.innerWidth,
           seconds / (durationOfSession * 60000)
         )} */}
-        {showButtons && (
-          <NavigationIcons
-            setMenuOpen={setMenuOpen}
-            chosenTechnique={chosenTechnique}
-            setTechnique={setTechnique}
-            intervalId={intervalId}
-            setIntervalId={setIntervalId}
-            setSeconds={setSeconds}
-            setDuration={setDuration}
-            durationOfSession={durationOfSession}
-            setPause={setPause}
-            handlePause={handlePause}
-            handleStop={handleStop}
-            vibrations={vibrations}
-            setVibrations={setVibrations}
-            sounds={sounds}
-            setSounds={setSounds}
-          />
-        )}
-      </div>
+            {showButtons && (
+              <NavigationIcons
+                setMenuOpen={setMenuOpen}
+                chosenTechnique={chosenTechnique}
+                setTechnique={setTechnique}
+                intervalId={intervalId}
+                setIntervalId={setIntervalId}
+                setSeconds={setSeconds}
+                setDuration={setDuration}
+                durationOfSession={durationOfSession}
+                setPause={setPause}
+                handlePause={handlePause}
+                handleStop={handleStop}
+                vibrations={vibrations}
+                setVibrations={setVibrations}
+                sounds={sounds}
+                setSounds={setSounds}
+              />
+            )}
+          </div>
+        </CSSTransition>
+      </SwitchTransition>
       {/* <div
         className="mountains"
         style={{ width: "100%", visibility: intervalId ? "visible" : "hidden" }}
