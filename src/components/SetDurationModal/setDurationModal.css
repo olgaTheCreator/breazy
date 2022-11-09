@@ -164,27 +164,27 @@ input[type="range"]:focus::-ms-fill-lower {
 input[type="range"]:focus::-ms-fill-upper {
   background: #91aaa2;
 }*/
-.fade_in-appear {
+/* .fade_in-appear {
   opacity: 0;
 }
 .fade_in-appear-active {
   opacity: 1;
   transition: opacity 700ms;
-}
+} */
 
 .fade_in-enter {
   opacity: 0;
 }
 .fade_in-enter-active {
   opacity: 1;
-  transition: opacity 700ms;
+  transition: opacity 1100ms;
 }
 .fade_in-exit {
   opacity: 1;
 }
 .fade_in-exit-active {
   opacity: 0;
-  transition: opacity 700ms;
+  transition: opacity 100ms;
 }
 
 .fade_in-exit-done {

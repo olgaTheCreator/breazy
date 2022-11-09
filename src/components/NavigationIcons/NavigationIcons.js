@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import "./navigationIcons.css";
 import { Icon_Duration } from "../SvgIcons/NavigationIconsSvgs/Icon_Duration/Icon_Duration";
 import { Icon_Vibrations_On } from "../SvgIcons/NavigationIconsSvgs/Icon_Vibrations_On/Icon_Vibrations_On";
@@ -8,7 +8,8 @@ import { Icon_Sound_Off } from "../SvgIcons/NavigationIconsSvgs/Icon_Sound_Off/I
 import { Icon_Techniques } from "../SvgIcons/NavigationIconsSvgs/Icon_Techniques/Icon_Techniques";
 import { ChoosinTechniqueModal } from "../ChoosingTechniqueModal/ChoosingTechniquesModal";
 import { SetDurationModal } from "../SetDurationModal/SetDurationModal";
-import { CSSTransition } from "react-transition-group";
+// import { CSSTransition } from "react-transition-group";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const NavigationIcons = ({
   chosenTechnique,
@@ -26,7 +27,6 @@ export const NavigationIcons = ({
   setSounds,
   setMenuOpen,
 }) => {
-  const nodeRef = useRef(null);
   const [techniquesAreOpen, setTechniquesOpen] = useState(false);
   const [timeIsOpen, setTimeOpen] = useState(false);
   const [dur, setDur] = useState(durationOfSession);
@@ -95,22 +95,35 @@ export const NavigationIcons = ({
           <Icon_Techniques />
         </button>
       </div>
-      {techniquesAreOpen && (
-        <ChoosinTechniqueModal
-          setTechniquesOpen={setTechniquesOpen}
-          chosenTechnique={chosenTechnique}
-          setTechnique={setTechnique}
-          intervalId={intervalId}
-          setIntervalId={setIntervalId}
-          setSeconds={setSeconds}
-          handleStop={handleStop}
-        />
-      )}
-      <CSSTransition
+      {/* {console.log(timeIsOpen)} */}
+      {/* <CSSTransition
+        in={techniquesAreOpen}
+        nodeRef={nodeRef2}
+        timeout={{ enter: 400, exit: 500 }}
+        classNames="fade_in"
+        unmountOnExit
+      >
+        <div ref={nodeRef2}>
+          {techniquesAreOpen && (
+            <ChoosinTechniqueModal
+              setTechniquesOpen={setTechniquesOpen}
+              chosenTechnique={chosenTechnique}
+              setTechnique={setTechnique}
+              intervalId={intervalId}
+              setIntervalId={setIntervalId}
+              setSeconds={setSeconds}
+              handleStop={handleStop}
+            />
+          )}
+        </div>
+      </CSSTransition> */}
+      {/* <CSSTransition
         in={timeIsOpen}
         nodeRef={nodeRef}
-        timeout={700}
+        timeout={{ enter: 400, exit: 500 }}
         classNames="fade_in"
+        mountOnEnter
+        exit
       >
         <div ref={nodeRef}>
           {timeIsOpen && (
@@ -125,7 +138,49 @@ export const NavigationIcons = ({
             />
           )}
         </div>
-      </CSSTransition>
+      </CSSTransition> */}
+      <AnimatePresence>
+        {techniquesAreOpen && (
+          <motion.div
+            key="techniques_modal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <ChoosinTechniqueModal
+              setTechniquesOpen={setTechniquesOpen}
+              chosenTechnique={chosenTechnique}
+              setTechnique={setTechnique}
+              intervalId={intervalId}
+              setIntervalId={setIntervalId}
+              setSeconds={setSeconds}
+              handleStop={handleStop}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {timeIsOpen && (
+          <motion.div
+            key="duration_modal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            // transition={{ duration: 0.6 }}
+          >
+            <SetDurationModal
+              setTimeOpen={setTimeOpen}
+              timeIsOpen={timeIsOpen}
+              durationOfSession={durationOfSession}
+              setDuration={setDuration}
+              handleStop={handleStop}
+              dur={dur}
+              setDur={setDur}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

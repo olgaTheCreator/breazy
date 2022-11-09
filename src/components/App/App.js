@@ -99,7 +99,7 @@ const App = () => {
           ) : (
             " "
           )}
-          {console.log(stop)}
+
           {/* <div>
             <ShowingTechniqueNameOnScreen chosenTechnique={chosenTechnique} />
           </div> */}

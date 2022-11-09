@@ -16,7 +16,7 @@ export const MenuIcon = ({ menuIsOpen, setMenuOpen }) => {
           <Icon_Menu />
         </button>
       </div>
-      {menuIsOpen && <MenuModal setMenuOpen={setMenuOpen} />}
+      <MenuModal menuIsOpen={menuIsOpen} setMenuOpen={setMenuOpen} />
     </div>
   );
 };

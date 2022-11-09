@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../../styles/modalsStyle.css";
 import "./setDurationModal.css";
 import { DurationSlider } from "../Slider/Slider";
 import { Icon_Small } from "../SvgIcons/SmallIconSvg/Icon_Small/Icon_Small";
 // import { CSSTransition } from "react-transition-group";
+// import { createPortal } from "react-dom";
+
 export const SetDurationModal = ({
   // setTimeOpen,
   dur,
@@ -12,7 +14,7 @@ export const SetDurationModal = ({
   // timeIsOpen,
 }) => {
   // const [dur, setDur] = useState(durationOfSession);
-  // const nodeRef = useRef(null);
+  const nodeRef = useRef(null);
   const handleDurationChange = (value) => {
     setDur(value);
   };
@@ -26,11 +28,11 @@ export const SetDurationModal = ({
     // <CSSTransition
     //   in={timeIsOpen}
     //   nodeRef={nodeRef}
-    //   timeout={700}
-    //   classNames="mountain_on_stop"
+    //   timeout={1100}
+    //   classNames="fade_in"
     // >
     <div className="darkBG">
-      <div className="time-modal">
+      <div className="time-modal" ref={nodeRef}>
         <div className="modal-title">
           Session Length
           <p>set duration</p>
@@ -67,5 +69,6 @@ export const SetDurationModal = ({
       </div>
     </div>
     // </CSSTransition>
+    // document.body
   );
 };
