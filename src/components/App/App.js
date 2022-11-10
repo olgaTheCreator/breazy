@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { breathingTechniques } from "../../data/breathingTechniques";
 import { Timer } from "../Timer/Timer";
 import { NavigationIcons } from "../NavigationIcons/NavigationIcons";
@@ -23,6 +23,9 @@ const App = () => {
   const [showButtons, setShowButtons] = useState(true);
   const [stop, setStop] = useState(true);
   const [menuIsOpen, setMenuOpen] = useState(false);
+
+  const widthRef = useRef(null);
+  const progressRef = useRef(null);
 
   const handlePause = () => {
     clearInterval(intervalId);
@@ -119,6 +122,7 @@ const App = () => {
             style={{
               background: showButtons ? "hsla(203, 12%, 21%, 1)" : "",
             }}
+            ref={widthRef}
             onClick={() => handlePause()}
             // onClick={() => {
             //   handleShowingButtons();
@@ -128,12 +132,13 @@ const App = () => {
             {!showButtons && (
               <div
                 className="progress-meter"
+                ref={progressRef}
                 style={{
                   transform: `translateX(${
-                    seconds / (durationOfSession * 60000) < 0.91
-                      ? (seconds / (durationOfSession * 60000)) *
-                        window.innerWidth
-                      : 0.91 * window.innerWidth
+                    // seconds / (durationOfSession * 60000)
+                    (seconds / (durationOfSession * 60000)) *
+                    widthRef.current.offsetWidth
+                    // : 0.91 * widthRef.current.offsetWidth
                   }px)`,
                   // left: `min(${
                   //   (seconds / (durationOfSession * 60000)) * 100 - 5
