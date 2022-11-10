@@ -3,7 +3,7 @@
   background: hsla(203, 12%, 21%, 1);
   /* background: linear-gradient(to top, #7f9790, #8ea8a0 60%, #e8e1d4); */
   width: 100%;
-  height: 85%;
+  height: 84%;
   z-index: 0;
   top: 0%;
   left: 0;
@@ -13,6 +13,12 @@
   grid-template-rows: 100%;
   justify-items: center;
 }
+
+/* @media screen and (min-width: 801px) and (max-height: 1100px) {
+  .darkBG-menu {
+    height: 75%;
+  }
+} */
 
 .menu-modal {
   position: relative;
@@ -25,7 +31,7 @@
   border-radius: 62px;
   width: 80%;
   height: max-content;
-  max-height: 80%;
+  max-height: 100%;
   color: hsla(212, 18%, 60%, 1);
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
@@ -82,14 +88,25 @@
   flex-wrap: wrap;
 }
 
-.menu_item:hover svg .circleOuter {
-  fill: hsla(206, 39%, 30%, 1);
+@media (hover: hover) {
+  .menu_item:hover svg .circleOuter {
+    fill: hsla(206, 39%, 30%, 1);
+  }
 }
 
-/* .menu_item:focus svg .circleOuter {
+.menu_item[data-state="about"] svg .circleOuter {
   fill: hsla(206, 39%, 30%, 1);
 }
-.menu_item:active svg .circleOuter {
+.menu_item[data-state="prepare"] svg .circleOuter {
+  fill: hsla(206, 39%, 30%, 1);
+}
+.menu_item[data-state="disclaimer"] svg .circleOuter {
+  fill: hsla(206, 39%, 30%, 1);
+}
+/* .menu_item:focus svg .circleOuter {
+  fill: hsla(206, 39%, 30%, 1);
+} */
+/*.menu_item:active svg .circleOuter {
   fill: hsla(206, 39%, 30%, 1);
 } */
 

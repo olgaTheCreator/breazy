@@ -33,6 +33,7 @@ export const MenuModal = ({ menuIsOpen }) => {
                     ref={ref1}
                     onClick={() => handleScroll(ref1)}
                     className="menu_item"
+                    data-state={open === "about" ? "about" : ""}
                   >
                     <Icon_Small />
                     <button
@@ -44,7 +45,15 @@ export const MenuModal = ({ menuIsOpen }) => {
                     >
                       <span>About this app</span>
                     </button>
+                    {/* <AnimatePresence> */}
                     {open === "about" && (
+                      // <motion.div
+                      //   className="collapsable"
+                      //   key="about"
+                      //   initial={{ scaleY: 0 }}
+                      //   animate={{ scaleY: 1 }}
+                      //   exit={{ scaleY: 0 }}
+                      // >
                       <div className="collapsable">
                         {" "}
                         <p>
@@ -62,7 +71,9 @@ export const MenuModal = ({ menuIsOpen }) => {
                           use tool, that will help you set up your routine.
                         </p>
                       </div>
+                      // </motion.div>
                     )}
+                    {/* </AnimatePresence> */}
                   </div>
                   {/* <div ref={ref1} onClick={() => handleScroll(ref1)}>
               <Collapsible label="About this app"> */}
@@ -76,6 +87,7 @@ export const MenuModal = ({ menuIsOpen }) => {
                     ref={ref2}
                     onClick={() => handleScroll(ref2)}
                     className="menu_item"
+                    data-state={open === "prepare" ? "prepare" : ""}
                   >
                     <Icon_Small />
                     <button
@@ -122,6 +134,7 @@ export const MenuModal = ({ menuIsOpen }) => {
                     ref={ref3}
                     onClick={() => handleScroll(ref3)}
                     className="menu_item"
+                    data-state={open === "disclaimer" ? "disclaimer" : ""}
                   >
                     <Icon_Small />
                     <button

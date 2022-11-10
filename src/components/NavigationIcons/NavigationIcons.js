@@ -64,7 +64,7 @@ export const NavigationIcons = ({
         </button>
       </div>
       <div
-        className={`${timeIsOpen ? `visible-button` : ""}`}
+        className={`navButtons ${timeIsOpen ? `visible-button` : ""}`}
         onClick={() => {
           // handlePause();
           setMenuOpen(false);
@@ -81,7 +81,7 @@ export const NavigationIcons = ({
         </button>
       </div>
       <div
-        className={`${techniquesAreOpen ? "visible-button" : ""}`}
+        className={`navButtons ${techniquesAreOpen ? "visible-button" : ""}`}
         onClick={() => {
           setMenuOpen(false);
           techniquesAreOpen

@@ -38,6 +38,9 @@
   .navContainer button {
     margin-bottom: 0;
   }
+  .navButtons {
+    margin-top: 1rem;
+  }
 }
 
 .visible-button svg .circleOuter {
@@ -45,18 +48,18 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .navContainer div:hover > p {
+  .navButtons:hover p {
     visibility: visible;
     transition: none;
   }
 }
 
 @media (pointer: coarse) {
-  .navContainer p {
+  .navButtons p {
     transition: all 0.7s ease;
-    transition-delay: 200ms;
+    transition-delay: 100ms;
   }
-  .navContainer div:active > p {
+  .navButtons:active p {
     visibility: visible;
     transition: none;
   }

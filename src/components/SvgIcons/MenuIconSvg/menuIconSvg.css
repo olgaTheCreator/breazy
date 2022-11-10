@@ -7,14 +7,16 @@
   margin: auto;
 }
 
-svg:hover .circleOuter {
-  fill: hsla(206, 39%, 30%, 1);
-}
+@media (hover: hover) {
+  svg:hover .circleOuter {
+    fill: hsla(206, 39%, 30%, 1);
+  }
 
-svg:active .circleOuter {
-  fill: hsla(206, 39%, 30%, 1);
-}
+  svg:active .circleOuter {
+    fill: hsla(206, 39%, 30%, 1);
+  }
 
-svg:focus .circleOuter {
-  fill: hsla(206, 39%, 30%, 1);
+  svg:focus .circleOuter {
+    fill: hsla(206, 39%, 30%, 1);
+  }
 }

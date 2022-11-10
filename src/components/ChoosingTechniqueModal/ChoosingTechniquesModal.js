@@ -34,7 +34,7 @@ export const ChoosinTechniqueModal = ({
                   }}
                 >
                   <Icon_Small />
-                  {a.name}{" "}
+                  <span className="technique-name">{a.name}</span>{" "}
                   <span
                     style={{
                       margin: "0 1em 0 0",
