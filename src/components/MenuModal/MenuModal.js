@@ -1,19 +1,21 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import "./menuModal.css";
 import { Icon_Small } from "../SvgIcons/SmallIconSvg/Icon_Small/Icon_Small";
 import { motion, AnimatePresence } from "framer-motion";
 
 export const MenuModal = ({ menuIsOpen }) => {
   const [open, setOPen] = useState("nothing");
-  const ref1 = useRef();
-  const ref2 = useRef();
-  const ref3 = useRef();
-  const handleScroll = (a) => {
-    a.current.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
+  const [ariaExpanded, setAriaExpanded] = useState("false");
+  const aria_hidden = "true";
+  // const ref1 = useRef();
+  // const ref2 = useRef();
+  // const ref3 = useRef();
+  // const handleScroll = (a) => {
+  //   a.current.scrollIntoView({
+  //     behavior: "smooth",
+  //     block: "start",
+  //   });
+  // };
 
   return (
     <AnimatePresence>
@@ -30,20 +32,25 @@ export const MenuModal = ({ menuIsOpen }) => {
               <ul>
                 <li>
                   <div
-                    ref={ref1}
-                    onClick={() => handleScroll(ref1)}
+                    // aria-role="button"
+                    // aria-label="scroll into view"
+                    // ref={ref1}
+                    // onClick={() => handleScroll(ref1)}
                     className="menu_item"
                     data-state={open === "about" ? "about" : ""}
                   >
-                    <Icon_Small />
                     <button
+                      aria-expanded={ariaExpanded}
+                      tabIndex="0"
+                      aria-labelledby="about"
                       onClick={() => {
                         open !== "about"
-                          ? setOPen("about")
-                          : setOPen("nothing");
+                          ? (setOPen("about"), setAriaExpanded("true"))
+                          : (setOPen("nothing"), setAriaExpanded("false"));
                       }}
                     >
-                      <span>About this app</span>
+                      <Icon_Small aria_hidden={aria_hidden} />
+                      <span id="about">About this app</span>
                     </button>
                     {/* <AnimatePresence> */}
                     {open === "about" && (
@@ -84,21 +91,23 @@ export const MenuModal = ({ menuIsOpen }) => {
 
                 <li>
                   <div
-                    ref={ref2}
-                    onClick={() => handleScroll(ref2)}
+                    // ref={ref2}
+                    // onClick={() => handleScroll(ref2)}
                     className="menu_item"
                     data-state={open === "prepare" ? "prepare" : ""}
                   >
-                    <Icon_Small />
                     <button
+                      aria-expanded={ariaExpanded}
+                      tabIndex="0"
+                      aria-labelledby="get_ready"
                       onClick={() => {
                         open !== "prepare"
-                          ? setOPen("prepare")
-                          : setOPen("nothing");
+                          ? (setOPen("prepare"), setAriaExpanded("true"))
+                          : (setOPen("nothing"), setAriaExpanded("false"));
                       }}
                     >
-                      {console.log(ref2.current)}
-                      <span>Get ready</span>
+                      <Icon_Small aria_hidden={aria_hidden} />
+                      <span id="get_ready">Get ready</span>
                     </button>
                     {open === "prepare" && (
                       <div className="collapsable">
@@ -131,20 +140,21 @@ export const MenuModal = ({ menuIsOpen }) => {
                 </li>
                 <li>
                   <div
-                    ref={ref3}
-                    onClick={() => handleScroll(ref3)}
                     className="menu_item"
                     data-state={open === "disclaimer" ? "disclaimer" : ""}
                   >
-                    <Icon_Small />
                     <button
+                      aria-expanded={ariaExpanded}
+                      tabIndex="0"
+                      aria-labelledby="disclaimer"
                       onClick={() => {
                         open !== "disclaimer"
-                          ? setOPen("disclaimer")
-                          : setOPen("nothing");
+                          ? (setOPen("disclaimer"), setAriaExpanded("true"))
+                          : (setOPen("nothing"), setAriaExpanded("false"));
                       }}
                     >
-                      <span>Disclaimer</span>
+                      <Icon_Small aria_hidden={aria_hidden} />
+                      <span id="disclaimer">Disclaimer</span>
                     </button>
                     {open === "disclaimer" && (
                       <div>

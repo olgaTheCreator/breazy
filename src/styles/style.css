@@ -210,3 +210,8 @@ body {
     background: linear-gradient(0deg, #7f9790 10%, #8ea8a0 65%, #e8e1d4);
   }
 } */
+:focus-visible {
+  outline-color: rgba(149, 183, 208, 1);
+  outline-style: solid;
+  outline-width: 0.1rem;
+}

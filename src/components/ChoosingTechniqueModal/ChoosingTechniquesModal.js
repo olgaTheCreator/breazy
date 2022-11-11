@@ -26,6 +26,9 @@ export const ChoosinTechniqueModal = ({
             <ul>
               {breathingTechniques.map((a, index) => (
                 <li
+                  tabIndex="0"
+                  role="button"
+                  aria-pressed="false"
                   key={a.id}
                   onClick={() => {
                     handleStop();

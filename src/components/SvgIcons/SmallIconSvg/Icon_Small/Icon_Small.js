@@ -1,10 +1,11 @@
 import React from "react";
 import "../smallIconSvg.css";
 
-export const Icon_Small = () => {
+export const Icon_Small = ({ aria_hidden }) => {
   return (
     <div className="small_icon">
       <svg
+        aria-hidden={aria_hidden}
         width="100%"
         height="100%"
         viewBox="0 0 24 24"
