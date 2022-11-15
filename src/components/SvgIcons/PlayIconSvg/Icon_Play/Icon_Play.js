@@ -5,6 +5,7 @@ export const Icon_Play = () => {
   return (
     <div className="play_icon">
       <svg
+        aria-label="play and pause"
         width="0"
         height="0"
         viewBox="-4 -5 96.197502 105.611946"

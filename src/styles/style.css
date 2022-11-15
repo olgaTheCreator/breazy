@@ -41,7 +41,7 @@ body {
   margin: 0px;
   height: 100%;
   /* height: calc(var(--vh, 1vh) * 100); */
-  color: hsla(213, 19%, 62%, 1);
+  color: #a3afc0;
 }
 
 .external-container {

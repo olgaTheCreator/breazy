@@ -26,5 +26,10 @@ export const AppWrapper = ({ children }) => {
     };
   });
 
-  return <div className="app-container"> {children} </div>;
+  return (
+    <div className="app-container" role="application">
+      {" "}
+      {children}{" "}
+    </div>
+  );
 };

@@ -123,7 +123,7 @@ const App = () => {
               background: showButtons ? "hsla(203, 12%, 21%, 1)" : "",
             }}
             ref={widthRef}
-            onClick={() => handlePause()}
+            // onClick={() => handlePause()}
             // onClick={() => {
             //   handleShowingButtons();
             // }}

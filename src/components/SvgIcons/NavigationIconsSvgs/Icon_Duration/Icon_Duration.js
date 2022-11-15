@@ -5,6 +5,7 @@ export const Icon_Duration = () => {
   return (
     <div className="nav_icon">
       <svg
+        aria-label="duration"
         width="100%"
         height="100%"
         viewBox="0 0 54 54"

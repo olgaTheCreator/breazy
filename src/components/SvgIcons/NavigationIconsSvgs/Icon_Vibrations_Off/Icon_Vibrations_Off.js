@@ -5,6 +5,7 @@ export const Icon_Vibrations_Off = () => {
   return (
     <div className="nav_icon">
       <svg
+        aria-label="vibrations off"
         width="100%"
         height="100%"
         viewBox="0 0 54 54"

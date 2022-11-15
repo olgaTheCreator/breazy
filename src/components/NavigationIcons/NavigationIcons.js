@@ -33,8 +33,9 @@ export const NavigationIcons = ({
 
   return (
     <div className="navContainer">
-      <div
+      <button
         className="navButtons"
+        aria-label="set vibrations"
         onClick={() => {
           if (vibrations) setVibrations(false);
           else setVibrations(true);
@@ -42,15 +43,13 @@ export const NavigationIcons = ({
       >
         {" "}
         <p>{vibrations ? "vibrations on" : "vibrations off"}</p>
-        <button className="nav_button">
-          {/* className={`${vibrations ? "button1-vib" : "button1-novib"} `}> */}
-          {/* <div className="svg_size"> */}
+        <div className="nav_button">
           {vibrations && <Icon_Vibrations_On />}
           {!vibrations && <Icon_Vibrations_Off />}
-          {/* </div> */}
-        </button>
-      </div>
-      <div
+        </div>
+      </button>
+      <button
+        aria-label="set sounds"
         className="navButtons"
         onClick={() => {
           if (sounds) setSounds(false);
@@ -58,12 +57,13 @@ export const NavigationIcons = ({
         }}
       >
         <p>{sounds ? "sound on" : "sound off"}</p>
-        <button className="nav_button">
+        <div className="nav_button">
           {sounds && <Icon_Sound_On />}
           {!sounds && <Icon_Sound_Off />}
-        </button>
-      </div>
-      <div
+        </div>
+      </button>
+      <button
+        aria-label="set duration of breathing session"
         className={`navButtons ${timeIsOpen ? `visible-button` : ""}`}
         onClick={() => {
           // handlePause();
@@ -75,12 +75,13 @@ export const NavigationIcons = ({
           } else setTimeOpen(true);
         }}
       >
-        <p>time</p>
-        <button className="nav_button">
+        <p>duration</p>
+        <div className="nav_button">
           <Icon_Duration />
-        </button>
-      </div>
-      <div
+        </div>
+      </button>
+      <button
+        aria-label="choose technique"
         className={`navButtons ${techniquesAreOpen ? "visible-button" : ""}`}
         onClick={() => {
           setMenuOpen(false);
@@ -91,10 +92,10 @@ export const NavigationIcons = ({
         }}
       >
         <p>techniques</p>
-        <button className="nav_button">
+        <div className="nav_button">
           <Icon_Techniques />
-        </button>
-      </div>
+        </div>
+      </button>
       {/* {console.log(timeIsOpen)} */}
       {/* <CSSTransition
         in={techniquesAreOpen}
