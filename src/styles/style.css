@@ -28,9 +28,21 @@ html {
     font-size: 2.5rem;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 800px) and (max-width: 949px) {
   html {
     font-size: 2.8rem;
+  }
+}
+
+@media screen and (min-width: 950px) and (max-width: 1024px) {
+  html {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  html {
+    font-size: 2rem;
   }
 }
 
@@ -50,12 +62,14 @@ body {
 }
 .app-container {
   position: absolute;
+  width: 100vw;
+  height: 100%;
+  max-width: 1024px;
   /* left: 50%;
   transform: translate(-50%, 0); */
-  width: 100vw;
-  max-width: 800px;
   left: 50%;
-  transform: translate(-50%, 0);
+  top: 50%;
+  transform: translate(-50%, -50%);
   height: 100%;
   /* height: calc(var(--vh, 1vh) * 100); */
   padding: 0px;
@@ -64,13 +78,23 @@ body {
 }
 /*animation: gradient 3s infinite;*/
 .app_container {
-  height: 80%;
-  width: 80%;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background: hsla(203, 12%, 21%, 1);
+  padding: 0px;
+  margin: 0;
 }
+@media screen and (min-width: 1025px) {
+  .app-container {
+    height: 800px;
+    width: 400px;
+    border-radius: 50px;
+  }
+}
+
 /* grid-template-columns: 100%;
   grid-template-rows:
     13% 66% 1fr */
