@@ -34,7 +34,6 @@
   max-height: 100%;
   color: hsla(212, 18%, 60%, 1);
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
   /* scroll-padding: top right bottom left */
   scroll-padding-bottom: 20px;
   scrollbar-width: none;
@@ -45,13 +44,16 @@
 }
 .menu-modal ul {
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
   /* scroll-padding: top right bottom left */
   scroll-padding: 0 0 50px 0;
   padding: 2% 0% 0% 6%;
 
   list-style-position: outside;
   list-style-type: none;
+}
+
+.menu-modal ul::-webkit-scrollbar {
+  display: none;
 }
 .menu-modal li p {
   align-self: flex-end;
@@ -81,6 +83,10 @@
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-padding: 0 0 50px 0;
+}
+
+.collapsable::-webkit-scrollbar {
+  display: none;
 }
 .menu_item {
   display: flex;
