@@ -9,12 +9,13 @@ export const ChoosinTechniqueModal = ({
   setTechnique,
   handleStop,
 }) => {
+  const aria_hidden = "true";
   return (
     <div
       className="darkBG"
-      onClick={() => {
-        setTechniquesOpen(false);
-      }}
+      // onClick={() => {
+      //   setTechniquesOpen(false);
+      // }}
     >
       <div className="modal">
         <div className="techniques-parent">
@@ -36,7 +37,7 @@ export const ChoosinTechniqueModal = ({
                     setTechniquesOpen(false);
                   }}
                 >
-                  <Icon_Small />
+                  <Icon_Small aria_hidden={aria_hidden} />
                   <span className="technique-name">{a.name}</span>{" "}
                   <span
                     style={{

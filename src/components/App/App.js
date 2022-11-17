@@ -124,7 +124,7 @@ const App = () => {
                 background: showButtons ? "hsla(203, 12%, 21%, 1)" : "",
               }}
               ref={widthRef}
-              onClick={() => handlePause()}
+              // onClick={() => handlePause()}
               // onClick={() => {
               //   handleShowingButtons();
               // }}
@@ -139,8 +139,7 @@ const App = () => {
                       // seconds / (durationOfSession * 60000)
                       (seconds / (durationOfSession * 60000)) *
                         widthRef.current.offsetWidth -
-                      18
-                      // : 0.91 * widthRef.current.offsetWidth
+                      0.08 * widthRef.current.offsetWidth
                     }px)`,
                     // left: `min(${
                     //   (seconds / (durationOfSession * 60000)) * 100 - 5

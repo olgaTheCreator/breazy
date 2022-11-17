@@ -111,7 +111,6 @@ export const Timer = ({
                 background: intervalId ? "#23292d" : "",
               }}
             >
-              {console.log(intervalId)}
               <SwitchTransition>
                 <CSSTransition
                   // appear

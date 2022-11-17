@@ -22,7 +22,7 @@
 .modal-name {
   grid-row: 1/2;
   align-self: end;
-  color: hsla(212, 18%, 60%, 1);
+  color: #a3afc0;
 }
 .modal-name p {
   position: relative;

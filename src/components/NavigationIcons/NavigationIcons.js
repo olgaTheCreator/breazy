@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./navigationIcons.css";
 import { Icon_Duration } from "../SvgIcons/NavigationIconsSvgs/Icon_Duration/Icon_Duration";
 import { Icon_Vibrations_On } from "../SvgIcons/NavigationIconsSvgs/Icon_Vibrations_On/Icon_Vibrations_On";
@@ -10,6 +10,8 @@ import { ChoosinTechniqueModal } from "../ChoosingTechniqueModal/ChoosingTechniq
 import { SetDurationModal } from "../SetDurationModal/SetDurationModal";
 // import { CSSTransition } from "react-transition-group";
 import { motion, AnimatePresence } from "framer-motion";
+// import {FocusTrap} from focus-trap-react
+import FocusLock from "react-focus-lock";
 
 export const NavigationIcons = ({
   chosenTechnique,
@@ -30,6 +32,8 @@ export const NavigationIcons = ({
   const [techniquesAreOpen, setTechniquesOpen] = useState(false);
   const [timeIsOpen, setTimeOpen] = useState(false);
   const [dur, setDur] = useState(durationOfSession);
+  const techniquesRef = useRef(null);
+  const durationRef = useRef(null);
 
   return (
     <div className="navContainer">
@@ -63,6 +67,10 @@ export const NavigationIcons = ({
         </div>
       </button>
       <button
+        ref={durationRef}
+        aria-expanded={timeIsOpen ? "true" : "false"}
+        aria-pressed={timeIsOpen ? "true" : "false"}
+        tabIndex="0"
         aria-label="set duration of breathing session"
         className={`navButtons ${timeIsOpen ? `visible-button` : ""}`}
         onClick={() => {
@@ -81,6 +89,10 @@ export const NavigationIcons = ({
         </div>
       </button>
       <button
+        ref={techniquesRef}
+        aria-expanded={techniquesAreOpen ? "true" : "false"}
+        aria-pressed={techniquesAreOpen ? "true" : "false"}
+        tabIndex="0"
         aria-label="choose technique"
         className={`navButtons ${techniquesAreOpen ? "visible-button" : ""}`}
         onClick={() => {
@@ -142,44 +154,48 @@ export const NavigationIcons = ({
       </CSSTransition> */}
       <AnimatePresence>
         {techniquesAreOpen && (
-          <motion.div
-            key="techniques_modal"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <ChoosinTechniqueModal
-              setTechniquesOpen={setTechniquesOpen}
-              chosenTechnique={chosenTechnique}
-              setTechnique={setTechnique}
-              intervalId={intervalId}
-              setIntervalId={setIntervalId}
-              setSeconds={setSeconds}
-              handleStop={handleStop}
-            />
-          </motion.div>
+          <FocusLock shards={[techniquesRef]}>
+            <motion.div
+              key="techniques_modal"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <ChoosinTechniqueModal
+                setTechniquesOpen={setTechniquesOpen}
+                chosenTechnique={chosenTechnique}
+                setTechnique={setTechnique}
+                intervalId={intervalId}
+                setIntervalId={setIntervalId}
+                setSeconds={setSeconds}
+                handleStop={handleStop}
+              />
+            </motion.div>
+          </FocusLock>
         )}
       </AnimatePresence>
 
       <AnimatePresence>
         {timeIsOpen && (
-          <motion.div
-            key="duration_modal"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            // transition={{ duration: 0.6 }}
-          >
-            <SetDurationModal
-              setTimeOpen={setTimeOpen}
-              timeIsOpen={timeIsOpen}
-              durationOfSession={durationOfSession}
-              setDuration={setDuration}
-              handleStop={handleStop}
-              dur={dur}
-              setDur={setDur}
-            />
-          </motion.div>
+          <FocusLock shards={[durationRef]}>
+            <motion.div
+              key="duration_modal"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              // transition={{ duration: 0.6 }}
+            >
+              <SetDurationModal
+                setTimeOpen={setTimeOpen}
+                timeIsOpen={timeIsOpen}
+                durationOfSession={durationOfSession}
+                setDuration={setDuration}
+                handleStop={handleStop}
+                dur={dur}
+                setDur={setDur}
+              />
+            </motion.div>
+          </FocusLock>
         )}
       </AnimatePresence>
     </div>

@@ -18,19 +18,7 @@ export const SetDurationModal = ({
   const handleDurationChange = (value) => {
     setDur(value);
   };
-  // useEffect(() => {
-  //   return () => {
-  //     setDuration(dur);
-  //     handleStop();
-  //   };
-  // }, [dur]);
   return (
-    // <CSSTransition
-    //   in={timeIsOpen}
-    //   nodeRef={nodeRef}
-    //   timeout={1100}
-    //   classNames="fade_in"
-    // >
     <div className="darkBG">
       <div className="time-modal" ref={nodeRef}>
         <div className="modal-title">
@@ -42,33 +30,18 @@ export const SetDurationModal = ({
             <button onClick={() => (dur <= 29 ? setDur(dur + 1) : "")}>
               <Icon_Small />
             </button>
-            {console.log(dur)}
             <DurationSlider
               onChange={handleDurationChange}
               durationOfSession={durationOfSession}
               click={dur}
             />
             <button onClick={() => (dur >= 2 ? setDur(dur - 1) : "")}>
-              <Icon_Small />
+              <Icon_Small aria_hidden />
             </button>
           </div>
           <div className="duration-display">{dur} min</div>
-          {console.log(dur, durationOfSession)}
         </div>
-        {/* <div className="set-duration-button">
-          <button
-            onClick={() => {
-              setTimeOpen(false);
-              setDuration(dur);
-              handleStop();
-            }}
-          >
-            SET
-          </button>
-        </div> */}
       </div>
     </div>
-    // </CSSTransition>
-    // document.body
   );
 };

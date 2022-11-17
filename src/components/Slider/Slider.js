@@ -47,6 +47,10 @@ const marks = {
   },
 };
 
+var marksAria = document.getElementsByClassName("rc-slider-mark");
+console.log(marksAria);
+// marksAria[0].setAttribute("aria-hidden", "true");
+
 export const DurationSlider = ({ click, onChange, durationOfSession }) => {
   return (
     // <div className="slider-wrapper">

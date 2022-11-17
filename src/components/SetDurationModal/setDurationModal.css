@@ -24,7 +24,7 @@
 .modal-title {
   grid-row: 2/3;
   grid-column: 2/5;
-  color: hsla(212, 18%, 60%, 1);
+  color: #a3afc0;
 }
 .modal-title p {
   position: relative;
