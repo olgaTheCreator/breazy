@@ -5,6 +5,7 @@ export const Icon_Small = ({ aria_hidden }) => {
   return (
     <div className="small_icon">
       <svg
+        aria-label="decrease and increase duration icon"
         aria-hidden={aria_hidden}
         width="100%"
         height="100%"

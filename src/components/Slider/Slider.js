@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./slider1.css";
 import Slider from "rc-slider";
 
@@ -47,11 +47,11 @@ const marks = {
   },
 };
 
-var marksAria = document.getElementsByClassName("rc-slider-mark");
-console.log(marksAria);
-// marksAria[0].setAttribute("aria-hidden", "true");
-
 export const DurationSlider = ({ click, onChange, durationOfSession }) => {
+  useEffect(() => {
+    const marksAria = document.getElementsByClassName("rc-slider-mark");
+    marksAria[0].setAttribute("aria-hidden", "true");
+  }, []);
   return (
     // <div className="slider-wrapper">
     <Slider
@@ -62,6 +62,7 @@ export const DurationSlider = ({ click, onChange, durationOfSession }) => {
       value={click}
       onChange={onChange}
       marks={marks}
+      ariaLabelledByForHandle={"change_duration"}
     />
     // </div>
   );

@@ -63,6 +63,12 @@
   cursor: pointer;
   outline: inherit;
 }
+
+.slider button:focus {
+  outline-color: rgba(149, 183, 208, 1);
+  outline-style: solid;
+  outline-width: 0.1rem;
+}
 .slider svg {
   cursor: pointer;
 }

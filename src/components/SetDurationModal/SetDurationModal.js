@@ -23,11 +23,14 @@ export const SetDurationModal = ({
       <div className="time-modal" ref={nodeRef}>
         <div className="modal-title">
           Session Length
-          <p>set duration</p>
+          <p id="change_duration">set duration</p>
         </div>
         <div className="slider-parent">
           <div className="slider">
-            <button onClick={() => (dur <= 29 ? setDur(dur + 1) : "")}>
+            <button
+              aria-label="increase duration"
+              onClick={() => (dur <= 29 ? setDur(dur + 1) : "")}
+            >
               <Icon_Small />
             </button>
             <DurationSlider
@@ -35,8 +38,11 @@ export const SetDurationModal = ({
               durationOfSession={durationOfSession}
               click={dur}
             />
-            <button onClick={() => (dur >= 2 ? setDur(dur - 1) : "")}>
-              <Icon_Small aria_hidden />
+            <button
+              aria-label="decrease duration"
+              onClick={() => (dur >= 2 ? setDur(dur - 1) : "")}
+            >
+              <Icon_Small />
             </button>
           </div>
           <div className="duration-display">{dur} min</div>
