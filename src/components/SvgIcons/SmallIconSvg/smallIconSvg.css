@@ -8,7 +8,7 @@
   margin: auto 0;
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   svg:hover .circleOuter {
     fill: hsla(206, 39%, 30%, 1);
   }

@@ -14,6 +14,6 @@
   fill: hsla(206, 39%, 30%, 1);
 }
 
-button:focus svg .circleOuter {
+button:active svg .circleOuter {
   fill: hsla(206, 39%, 30%, 1);
 }

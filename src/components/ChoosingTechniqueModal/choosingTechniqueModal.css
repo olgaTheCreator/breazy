@@ -50,7 +50,8 @@
   list-style-position: outside;
   list-style-type: none;
 }
-.list-of-techniques li {
+
+.list-of-techniques li button {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -64,20 +65,20 @@
   text-align: left;
 }
 
-.list-of-techniques li:hover svg .circleOuter {
+.list-of-techniques li button:hover svg .circleOuter {
   fill: hsla(206, 39%, 30%, 1);
 }
 
-.list-of-techniques li:focus svg .circleOuter {
+.list-of-techniques li button:focus svg .circleOuter {
   fill: hsla(206, 39%, 30%, 1);
 }
 
-.list-of-techniques li:hover .technique-name {
+.list-of-techniques li button:hover .technique-name {
   text-shadow: none;
   transition: text-shadow 1s ease;
 }
 
-.list-of-techniques li:focus .technique-name {
+.list-of-techniques li button:focus .technique-name {
   text-shadow: none;
   transition: text-shadow 1s ease;
 }

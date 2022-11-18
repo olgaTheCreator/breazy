@@ -26,34 +26,45 @@ export const ChoosinTechniqueModal = ({
           <div className="list-of-techniques">
             <ul>
               {breathingTechniques.map((a, index) => (
-                <li
-                  tabIndex="0"
-                  role="button"
-                  aria-pressed="false"
-                  key={a.id}
-                  onClick={() => {
-                    handleStop();
-                    setTechnique(breathingTechniques[index]);
-                    setTechniquesOpen(false);
-                  }}
-                >
-                  <Icon_Small aria_hidden={aria_hidden} />
-                  <span className="technique-name">{a.name}</span>{" "}
-                  <span
-                    style={{
-                      margin: "0 1em 0 0",
-                      fontSize: "0.45rem",
-                      textAlign: "right",
-                      color: " hsla(212, 18%, 60%, 1)",
+                <li key={a.id}>
+                  {/* // tabIndex="0"
+                  // role="button"
+                  // // aria-pressed="false"
+                  // key={a.id}
+                  // onClick={() => {
+                  //   handleStop();
+                  //   setTechnique(breathingTechniques[index]);
+                  //   setTechniquesOpen(false);
+                  // }} */}
+
+                  <button
+                    tabIndex="0"
+                    // aria-pressed="false"
+
+                    onClick={() => {
+                      handleStop();
+                      setTechnique(breathingTechniques[index]);
+                      setTechniquesOpen(false);
                     }}
                   >
-                    {a.inhaleExhale[0].duration / 1000}-
-                    {a.inhaleExhale[1].duration / 1000}-
-                    {a.inhaleExhale[2].duration / 1000}-
-                    {a.inhaleExhale[3].duration / 1000}
-                    <br />
-                  </span>
-                  <p className="short-description">{a.shortDescription}</p>
+                    <Icon_Small aria_hidden={aria_hidden} />
+                    <span className="technique-name">{a.name}</span>{" "}
+                    <span
+                      style={{
+                        margin: "0 1em 0 0",
+                        fontSize: "0.45rem",
+                        textAlign: "right",
+                        color: " hsla(212, 18%, 60%, 1)",
+                      }}
+                    >
+                      {a.inhaleExhale[0].duration / 1000}-
+                      {a.inhaleExhale[1].duration / 1000}-
+                      {a.inhaleExhale[2].duration / 1000}-
+                      {a.inhaleExhale[3].duration / 1000}
+                      <br />
+                    </span>
+                    <p className="short-description">{a.shortDescription}</p>
+                  </button>
                 </li>
               ))}
             </ul>

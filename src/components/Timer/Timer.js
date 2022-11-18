@@ -48,7 +48,11 @@ export const Timer = ({
     for (let i = 0; i <= 3; i++) {
       const { duration, step } = array[i];
       if (modulo < duration) {
-        if (Math.floor(modulo / 100) * 100 === 0 && !pause) {
+        if (
+          Math.floor(modulo / 100) * 100 === 0 &&
+          !pause &&
+          navigator.userActivation.hasBeenActive
+        ) {
           sounds ? sound.play() : noOp();
           vibrations ? vibrate() : noOp();
         }

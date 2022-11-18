@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { MenuModal } from "../MenuModal/MenuModal";
 import "./menuIcon.css";
-import { Icon_Menu } from "../SvgIcons/MenuIconSvg/Icon_Menu/Icon_Menu";
+import { Icon_Info } from "../SvgIcons/InfoIconSvg/Icon_Menu/Icon_Info";
 import FocusLock from "react-focus-lock";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -29,7 +29,7 @@ export const MenuIcon = ({ menuIsOpen, setMenuOpen }) => {
                 setAriaPressed("true"));
           }}
         >
-          <Icon_Menu />
+          <Icon_Info />
         </button>
       </div>
 

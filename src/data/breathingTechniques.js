@@ -1,6 +1,6 @@
 export const breathingTechniques = [
   {
-    name: "water",
+    name: "calm",
     inhaleExhale: [
       { duration: 4000, step: "inhale" },
       { duration: 0, step: "hold" },
@@ -12,7 +12,7 @@ export const breathingTechniques = [
     id: 1,
   },
   {
-    name: "moon",
+    name: "sleep",
     inhaleExhale: [
       { duration: 4000, step: "inhale" },
       { duration: 7000, step: "hold" },
@@ -23,7 +23,7 @@ export const breathingTechniques = [
     id: 2,
   },
   {
-    name: "wind",
+    name: "focus",
     inhaleExhale: [
       { duration: 4000, step: "inhale" },
       { duration: 4000, step: "hold" },
@@ -34,7 +34,7 @@ export const breathingTechniques = [
     id: 3,
   },
   {
-    name: "flame",
+    name: "energy",
     inhaleExhale: [
       { duration: 1000, step: "inhale" },
       { duration: 0, step: "hold" },
