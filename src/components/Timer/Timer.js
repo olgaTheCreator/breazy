@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import "./timer.css";
 import { vibrate } from "../../utils/Vibration";
 import { noOp } from "../../utils/NoOp";
-import { Howl } from "howler";
+import { Howl, Howler } from "howler";
 import { Icon_Play } from "../SvgIcons/PlayIconSvg/Icon_Play/Icon_Play";
 import bell from "../../assets/sounds/bell-hit-soft.wav";
 import useOnClickOutside from "../../utils/Hooks/useOnClickOutside";
@@ -32,11 +32,28 @@ export const Timer = ({
   const nodeRef2 = useRef(null);
   const nodeRef3 = useRef(null);
   const [ariaPressed, setAriaPressed] = useState("false");
-  // Setup the new Howl.
-  const sound = new Howl({
-    src: [bell],
-  });
+  // const sound = new Howl({
+  //   src: [bell],
+  //   autoplay: false,
+  // });
+  // useEffect(() => {
+  //   const handleWindowClick = () => {
+  //     Howler.mute(false);
+  //     Howler.volume(1);
+  //     console.log(Howler.ctx.state);
+  //     if (Howler.ctx.state == "suspended") {
+  //       Howler.ctx.resume();
+  //     }
+  //   };
+  //   window.addEventListener("click", handleWindowClick);
 
+  //   return () => window.removeEventListener("click", handleWindowClick);
+  // }, []);
+  // const sound = new Howl({
+  //   src: [bell],
+  //   // autoplay: false,
+  // });
+  // console.log(Howler.ctx.state);
   useOnClickOutside(ref, () => {
     if (animate) {
       console.log("using onclickoutside");
@@ -48,13 +65,25 @@ export const Timer = ({
     for (let i = 0; i <= 3; i++) {
       const { duration, step } = array[i];
       if (modulo < duration) {
-        if (
-          Math.floor(modulo / 100) * 100 === 0 &&
-          !pause &&
-          navigator.userActivation.hasBeenActive
-        ) {
-          sounds ? sound.play() : noOp();
-          vibrations ? vibrate() : noOp();
+        if (Math.floor(modulo / 100) * 100 === 0 && !pause && !stop) {
+          if (
+            sounds &&
+            Howler.ctx.state !== null &&
+            Howler.ctx.state == "running"
+          ) {
+            const sound = new Howl({
+              src: [bell],
+              // autoplay: false,
+            });
+            sound.play();
+          } else noOp();
+          if (window.navigator.userActivation) {
+            vibrations && navigator.userActivation.hasBeenActive
+              ? vibrate()
+              : noOp();
+          } else {
+            vibrations ? vibrate() : noOp();
+          }
         }
         return { duration: duration - modulo, currentStep: step, index: i };
       } else {
@@ -67,6 +96,14 @@ export const Timer = ({
 
   const modFromSec =
     seconds % inhaleExhale.reduce((acc, b) => acc + b.duration, 0);
+
+  const handleHowler = () => {
+    Howler.mute(false);
+    Howler.volume(1);
+    if (Howler.ctx.state == "suspended") {
+      Howler.ctx.resume();
+    }
+  };
 
   const handleStart = () => {
     const initialUnixTime = Date.now();
@@ -88,6 +125,7 @@ export const Timer = ({
       setStop(false);
       setAnimate(true);
       setShowButtons(false);
+      handleHowler();
     }
   };
 

@@ -62,10 +62,19 @@ const App = () => {
     //   }, 5000);
     // }, []);
   }
+  // useEffect(() => {
+  //   const handleWindowClick = () => {
+  //     var context = new AudioContext();
+  //     console.log(AudioContext.state);
+  //     return context;
+  //   };
+  //   window.addEventListener("click", handleWindowClick);
+
+  //   return () => window.removeEventListener("click", handleWindowClick);
+  // }, []);
 
   return (
     <AppWrapper>
-      {" "}
       <div className="app_container">
         <div className="menu-icon">
           <MenuIcon menuIsOpen={menuIsOpen} setMenuOpen={setMenuOpen} />
