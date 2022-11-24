@@ -9,9 +9,10 @@
     "@fontsource/andika": "^4.5.7",
     "@fontsource/metropolis": "^4.5.3",
     "@fontsource/montserrat": "^4.5.12",
-    "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "eslint-plugin-eslint-plugin": "^5.0.6",
+    "eslint-plugin-jest": "^27.1.5",
     "framer-motion": "^7.6.5",
     "howler": "^2.2.3",
     "rc-slider": "^10.0.1",
@@ -49,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
     "eslint": "^8.9.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
