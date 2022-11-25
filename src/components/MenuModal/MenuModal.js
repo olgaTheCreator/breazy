@@ -3,7 +3,7 @@ import "./menuModal.css";
 import { Icon_Small } from "../SvgIcons/SmallIconSvg/Icon_Small/Icon_Small";
 
 export const MenuModal = () => {
-  const [open, setOPen] = useState("nothing");
+  const [open, setOpen] = useState("nothing");
   const [ariaExpanded, setAriaExpanded] = useState("false");
   const aria_hidden = "true";
 
@@ -21,8 +21,8 @@ export const MenuModal = () => {
                 aria-labelledby="about"
                 onClick={() => {
                   open !== "about"
-                    ? (setOPen("about"), setAriaExpanded("true"))
-                    : (setOPen("nothing"), setAriaExpanded("false"));
+                    ? (setOpen("about"), setAriaExpanded("true"))
+                    : (setOpen("nothing"), setAriaExpanded("false"));
                 }}
               >
                 <Icon_Small aria_hidden={aria_hidden} />
@@ -59,8 +59,8 @@ export const MenuModal = () => {
                 aria-labelledby="get_ready"
                 onClick={() => {
                   open !== "prepare"
-                    ? (setOPen("prepare"), setAriaExpanded("true"))
-                    : (setOPen("nothing"), setAriaExpanded("false"));
+                    ? (setOpen("prepare"), setAriaExpanded("true"))
+                    : (setOpen("nothing"), setAriaExpanded("false"));
                 }}
               >
                 <Icon_Small aria_hidden={aria_hidden} />
@@ -94,8 +94,8 @@ export const MenuModal = () => {
                 aria-labelledby="disclaimer"
                 onClick={() => {
                   open !== "disclaimer"
-                    ? (setOPen("disclaimer"), setAriaExpanded("true"))
-                    : (setOPen("nothing"), setAriaExpanded("false"));
+                    ? (setOpen("disclaimer"), setAriaExpanded("true"))
+                    : (setOpen("nothing"), setAriaExpanded("false"));
                 }}
               >
                 <Icon_Small aria_hidden={aria_hidden} />

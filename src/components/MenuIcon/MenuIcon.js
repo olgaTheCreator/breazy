@@ -6,7 +6,7 @@ import FocusLock from "react-focus-lock";
 import { AnimatePresence, motion } from "framer-motion";
 
 export const MenuIcon = ({ menuIsOpen, setMenuOpen }) => {
-  const [ariaExpanded, setAriaExpanded] = useState("false");
+  // const [ariaExpanded, setAriaExpanded] = useState("false");
   const [ariaPressed, setAriaPressed] = useState("false");
   const infoRef = useRef(null);
   return (
@@ -15,7 +15,7 @@ export const MenuIcon = ({ menuIsOpen, setMenuOpen }) => {
         <button
           data-testid="info_menu_button"
           ref={infoRef}
-          aria-expanded={ariaExpanded}
+          aria-expanded={menuIsOpen}
           aria-pressed={ariaPressed}
           tabIndex="0"
           aria-label="open and close information menu"
@@ -23,10 +23,10 @@ export const MenuIcon = ({ menuIsOpen, setMenuOpen }) => {
           onClick={() => {
             menuIsOpen
               ? (setMenuOpen(false),
-                setAriaExpanded("false"),
+                // setAriaExpanded("false"),
                 setAriaPressed("false"))
               : (setMenuOpen(true),
-                setAriaExpanded("true"),
+                // setAriaExpanded("true"),
                 setAriaPressed("true"));
           }}
         >
