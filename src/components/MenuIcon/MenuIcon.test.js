@@ -16,9 +16,6 @@ test("info modal doesnt render when menuisopen is false", () => {
   const container = render(
     <MenuIcon menuIsOpen={false} setMenuOpen={setMenuOpen} />
   );
-  // const buttonEl = container.getByLabelText("open and close information menu");
-
-  // userEvent.click(buttonEl);
 
   const menuModalWrapper = container.queryByTestId("wrapper_div_menuModal");
 
@@ -30,9 +27,6 @@ test("info modal does render when menuisopen is true", () => {
   const container = render(
     <MenuIcon menuIsOpen={true} setMenuOpen={setMenuOpen} />
   );
-  // const buttonEl = container.getByLabelText("open and close information menu");
-
-  // userEvent.click(buttonEl);
 
   const menuModalWrapper = container.getByTestId("wrapper_div_menuModal");
 
