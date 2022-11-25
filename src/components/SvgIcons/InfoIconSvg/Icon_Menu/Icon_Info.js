@@ -15,6 +15,7 @@ export const Icon_Info = () => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <circle
+          data-testid="circleOuter"
           cx="27"
           cy="27"
           r="27"

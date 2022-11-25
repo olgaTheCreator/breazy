@@ -13,6 +13,7 @@ export const MenuIcon = ({ menuIsOpen, setMenuOpen }) => {
     <div>
       <div className="menu-icon-container">
         <button
+          data-testid="info_menu_button"
           ref={infoRef}
           aria-expanded={ariaExpanded}
           aria-pressed={ariaPressed}
@@ -37,6 +38,7 @@ export const MenuIcon = ({ menuIsOpen, setMenuOpen }) => {
         {menuIsOpen && (
           <FocusLock shards={[infoRef]}>
             <motion.div
+              data-testid="wrapper_div_menuModal"
               key="menu_modal"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
