@@ -69,3 +69,54 @@ test("disclaimer should expand onclick", async () => {
   expect(getReadyParagraph).not.toBeInTheDocument();
   expect(aboutParagraph).not.toBeInTheDocument();
 });
+
+test("aria-expanded is set to true after clicking about button, and set to false after another click", async () => {
+  const container = render(<MenuModal />);
+  const about = container.getByRole("button", { name: /about/i });
+
+  await userEvent.click(about);
+
+  expect(
+    container.getByRole("button", { name: /about/i, expanded: true })
+  ).toBeInTheDocument();
+
+  await userEvent.click(about);
+
+  expect(
+    container.getByRole("button", { name: /about/i, expanded: false })
+  ).toBeInTheDocument();
+});
+
+test("aria-expanded is set to true after clicking get ready button, and set to false after another click", async () => {
+  const container = render(<MenuModal />);
+  const about = container.getByRole("button", { name: /Get ready/i });
+
+  await userEvent.click(about);
+
+  expect(
+    container.getByRole("button", { name: /Get ready/i, expanded: true })
+  ).toBeInTheDocument();
+
+  await userEvent.click(about);
+
+  expect(
+    container.getByRole("button", { name: /Get ready/i, expanded: false })
+  ).toBeInTheDocument();
+});
+
+test("aria-expanded is set to true after clicking disclaimer button, and set to false after another click", async () => {
+  const container = render(<MenuModal />);
+  const about = container.getByRole("button", { name: /disclaimer/i });
+
+  await userEvent.click(about);
+
+  expect(
+    container.getByRole("button", { name: /disclaimer/i, expanded: true })
+  ).toBeInTheDocument();
+
+  await userEvent.click(about);
+
+  expect(
+    container.getByRole("button", { name: /disclaimer/i, expanded: false })
+  ).toBeInTheDocument();
+});

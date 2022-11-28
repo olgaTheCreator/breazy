@@ -3,7 +3,7 @@ import "./menuModal.css";
 import { Icon_Small } from "../SvgIcons/SmallIconSvg/Icon_Small/Icon_Small";
 
 export const MenuModal = () => {
-  const [open, setOpen] = useState("nothing");
+  const [open, setOpen] = React.useState("nothing");
   const [ariaExpanded, setAriaExpanded] = useState("false");
   const aria_hidden = "true";
 
