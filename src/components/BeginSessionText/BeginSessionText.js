@@ -1,19 +1,9 @@
 import { React } from "react";
 import "./beginSessionText.css";
-// import { ShowingTechniqueName } from "../ShowingTechniqueName/ShowingTechniqueName";
 
 export const BeginSessionText = ({ durationOfSession, chosenTechnique }) => {
-  // const [visible, setVisible] = useState(true);
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setVisible(false);
-  //   }, 5000);
-  //   return () => setVisible(true);
-  // }, [durationOfSession, chosenTechnique]);
-  // return <div>{visible ? chosenTechnique.name : ""}</div>;
   return (
     <div>
-      {/* {visible ? ( */}
       <div className="begin-session">
         Begin your {durationOfSession} minute
         {durationOfSession > 1 ? "s" : ""}
@@ -21,20 +11,9 @@ export const BeginSessionText = ({ durationOfSession, chosenTechnique }) => {
         <span style={{ fontWeight: "700", color: "hsla(216, 100%, 94%, 1)" }}>
           {chosenTechnique.name}
         </span>
-        {/* {<ShowingTechniqueName chosenTechnique={chosenTechnique} />} */}
         <br />
         breathing session
       </div>
-      {/* ) : (
-        ""
-      )} */}
     </div>
   );
 };
-
-// const beginSessionStyles = {
-//   span: {
-//     color: "#455a6e",
-//     shadowColor: "transparent",
-//   },
-// };
