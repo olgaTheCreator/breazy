@@ -3,17 +3,8 @@ import "../../styles/modalsStyle.css";
 import "./setDurationModal.css";
 import { DurationSlider } from "../Slider/Slider";
 import { Icon_Small } from "../SvgIcons/SmallIconSvg/Icon_Small/Icon_Small";
-// import { CSSTransition } from "react-transition-group";
-// import { createPortal } from "react-dom";
 
-export const SetDurationModal = ({
-  // setTimeOpen,
-  dur,
-  setDur,
-  durationOfSession,
-  // timeIsOpen,
-}) => {
-  // const [dur, setDur] = useState(durationOfSession);
+export const SetDurationModal = ({ dur, setDur, durationOfSession }) => {
   const nodeRef = useRef(null);
   const handleDurationChange = (value) => {
     setDur(value);
