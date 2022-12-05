@@ -80,4 +80,26 @@ describe("Duration modal", () => {
       expect(dur).toEqual(expected);
     }
   );
+
+  test.each([
+    [1, 1],
+    [2, 1],
+    [13, 12],
+    [30, 29],
+  ])(
+    "Decrease button onclick decreases duration if dur=>2",
+    async (a, expected) => {
+      let dur = a;
+      let setDur = (v) => (dur = v);
+
+      const container = render(<SetDurationModal dur={dur} setDur={setDur} />);
+      const increaseBtn = container.getByRole("button", {
+        name: /decrease duration/i,
+      });
+
+      await userEvent.click(increaseBtn);
+
+      expect(dur).toEqual(expected);
+    }
+  );
 });

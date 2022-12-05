@@ -6,9 +6,6 @@ import { Icon_Small } from "../SvgIcons/SmallIconSvg/Icon_Small/Icon_Small";
 
 export const SetDurationModal = ({ dur, setDur, durationOfSession }) => {
   const nodeRef = useRef(null);
-  const handleDurationChange = (value) => {
-    setDur(value);
-  };
   return (
     <div className="darkBG">
       <div className="time-modal" ref={nodeRef}>
@@ -25,7 +22,7 @@ export const SetDurationModal = ({ dur, setDur, durationOfSession }) => {
               <Icon_Small />
             </button>
             <DurationSlider
-              onChange={handleDurationChange}
+              onChange={setDur}
               durationOfSession={durationOfSession}
               click={dur}
             />
