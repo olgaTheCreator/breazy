@@ -11,12 +11,7 @@ export const ChoosinTechniqueModal = ({
 }) => {
   const aria_hidden = "true";
   return (
-    <div
-      className="darkBG"
-      // onClick={() => {
-      //   setTechniquesOpen(false);
-      // }}
-    >
+    <div className="darkBG">
       <div className="modal">
         <div className="techniques-parent">
           <div className="modal-name">
@@ -27,20 +22,8 @@ export const ChoosinTechniqueModal = ({
             <ul>
               {breathingTechniques.map((a, index) => (
                 <li key={a.id}>
-                  {/* // tabIndex="0"
-                  // role="button"
-                  // // aria-pressed="false"
-                  // key={a.id}
-                  // onClick={() => {
-                  //   handleStop();
-                  //   setTechnique(breathingTechniques[index]);
-                  //   setTechniquesOpen(false);
-                  // }} */}
-
                   <button
                     tabIndex="0"
-                    // aria-pressed="false"
-
                     onClick={() => {
                       handleStop();
                       setTechnique(breathingTechniques[index]);
