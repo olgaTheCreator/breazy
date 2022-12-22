@@ -8,9 +8,7 @@ import { Icon_Sound_Off } from "../SvgIcons/NavigationIconsSvgs/Icon_Sound_Off/I
 import { Icon_Techniques } from "../SvgIcons/NavigationIconsSvgs/Icon_Techniques/Icon_Techniques";
 import { ChoosinTechniqueModal } from "../ChoosingTechniqueModal/ChoosingTechniquesModal";
 import { SetDurationModal } from "../SetDurationModal/SetDurationModal";
-// import { CSSTransition } from "react-transition-group";
 import { motion, AnimatePresence } from "framer-motion";
-// import {FocusTrap} from focus-trap-react
 import FocusLock from "react-focus-lock";
 
 export const NavigationIcons = ({
@@ -21,7 +19,6 @@ export const NavigationIcons = ({
   setSeconds,
   durationOfSession,
   setDuration,
-  // handlePause,
   handleStop,
   vibrations,
   setVibrations,
@@ -74,7 +71,6 @@ export const NavigationIcons = ({
         aria-label="set duration of breathing session"
         className={`navButtons ${timeIsOpen ? `visible-button` : ""}`}
         onClick={() => {
-          // handlePause();
           setMenuOpen(false);
           if (timeIsOpen) {
             setTimeOpen(false);
@@ -100,7 +96,6 @@ export const NavigationIcons = ({
           techniquesAreOpen
             ? setTechniquesOpen(false)
             : setTechniquesOpen(true);
-          // handlePause();
         }}
       >
         <p>techniques</p>
@@ -108,50 +103,6 @@ export const NavigationIcons = ({
           <Icon_Techniques />
         </div>
       </button>
-      {/* {console.log(timeIsOpen)} */}
-      {/* <CSSTransition
-        in={techniquesAreOpen}
-        nodeRef={nodeRef2}
-        timeout={{ enter: 400, exit: 500 }}
-        classNames="fade_in"
-        unmountOnExit
-      >
-        <div ref={nodeRef2}>
-          {techniquesAreOpen && (
-            <ChoosinTechniqueModal
-              setTechniquesOpen={setTechniquesOpen}
-              chosenTechnique={chosenTechnique}
-              setTechnique={setTechnique}
-              intervalId={intervalId}
-              setIntervalId={setIntervalId}
-              setSeconds={setSeconds}
-              handleStop={handleStop}
-            />
-          )}
-        </div>
-      </CSSTransition> */}
-      {/* <CSSTransition
-        in={timeIsOpen}
-        nodeRef={nodeRef}
-        timeout={{ enter: 400, exit: 500 }}
-        classNames="fade_in"
-        mountOnEnter
-        exit
-      >
-        <div ref={nodeRef}>
-          {timeIsOpen && (
-            <SetDurationModal
-              setTimeOpen={setTimeOpen}
-              timeIsOpen={timeIsOpen}
-              durationOfSession={durationOfSession}
-              setDuration={setDuration}
-              handleStop={handleStop}
-              dur={dur}
-              setDur={setDur}
-            />
-          )}
-        </div>
-      </CSSTransition> */}
       <AnimatePresence>
         {techniquesAreOpen && (
           <FocusLock shards={[techniquesRef]}>
@@ -183,7 +134,6 @@ export const NavigationIcons = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              // transition={{ duration: 0.6 }}
             >
               <SetDurationModal
                 setTimeOpen={setTimeOpen}
