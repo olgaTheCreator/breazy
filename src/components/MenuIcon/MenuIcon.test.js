@@ -33,28 +33,6 @@ test("info modal does render when menuisopen is true", () => {
   expect(menuModalWrapper).toBeInTheDocument();
 });
 
-// testing internal state - not a case here:
-
-// test("should update state on click", async () => {
-//   jest.mock("react", () => ({
-//     ...jest.requireActual("react"),
-//     useState: jest.fn(),
-//   }));
-
-//   const setState = jest.fn();
-//   const useStateMock = (initState) => [initState, setState];
-//   jest.spyOn(React, "useState").mockImplementation(useStateMock);
-//   const setMenuOpen = jest.fn();
-
-//   render(<MenuIcon menuIsOpen={true} setMenuOpen={setMenuOpen} />);
-
-//   const buttonEl = screen.getByLabelText(/open and close/i);
-
-//   userEvent.click(buttonEl);
-
-//   expect(setState).toHaveBeenCalledTimes(1);
-// });
-
 test("button click triggers call to setMenuOpen", async () => {
   const setMenuOpen = jest.fn();
   const container = render(

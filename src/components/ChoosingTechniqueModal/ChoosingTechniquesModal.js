@@ -31,7 +31,12 @@ export const ChoosinTechniqueModal = ({
                     }}
                   >
                     <Icon_Small aria_hidden={aria_hidden} />
-                    <span className="technique-name">{a.name}</span>{" "}
+                    <span
+                      className="technique-name"
+                      data-testid="technique-name"
+                    >
+                      {a.name}
+                    </span>{" "}
                     <span
                       style={{
                         margin: "0 1em 0 0",
@@ -39,6 +44,7 @@ export const ChoosinTechniqueModal = ({
                         textAlign: "right",
                         color: " hsla(212, 18%, 60%, 1)",
                       }}
+                      data-testid="steps-durations"
                     >
                       {a.inhaleExhale[0].duration / 1000}-
                       {a.inhaleExhale[1].duration / 1000}-
@@ -46,7 +52,12 @@ export const ChoosinTechniqueModal = ({
                       {a.inhaleExhale[3].duration / 1000}
                       <br />
                     </span>
-                    <p className="short-description">{a.shortDescription}</p>
+                    <p
+                      className="short-description"
+                      data-testid="short-description"
+                    >
+                      {a.shortDescription}
+                    </p>
                   </button>
                 </li>
               ))}
