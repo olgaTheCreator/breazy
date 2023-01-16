@@ -48,17 +48,6 @@ describe("Duration modal", () => {
     expect(durationDiv).toBeInTheDocument();
   });
 
-  // describe("Increase button onClick", () => {
-  //   const container = render(<SetDurationModal />);
-  //   const increaseBtn = container.getByRole("button", {
-  //     name: /increase duration/i,
-  //   });
-  //   let dur;
-  //   let setDur;
-  //   if (dur <= 29) {
-  //     setDur = (dur) => dur + 1;
-  //   } else setDur = () => 30;
-
   test.each([
     [4, 5],
     [15, 16],

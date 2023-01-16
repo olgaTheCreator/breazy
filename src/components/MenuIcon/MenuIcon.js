@@ -6,7 +6,6 @@ import FocusLock from "react-focus-lock";
 import { AnimatePresence, motion } from "framer-motion";
 
 export const MenuIcon = ({ menuIsOpen, setMenuOpen }) => {
-  // const [ariaExpanded, setAriaExpanded] = useState("false");
   const [ariaPressed, setAriaPressed] = useState("false");
   const infoRef = useRef(null);
   return (
@@ -22,12 +21,8 @@ export const MenuIcon = ({ menuIsOpen, setMenuOpen }) => {
           className={menuIsOpen ? "visible-button" : ""}
           onClick={() => {
             menuIsOpen
-              ? (setMenuOpen(false),
-                // setAriaExpanded("false"),
-                setAriaPressed("false"))
-              : (setMenuOpen(true),
-                // setAriaExpanded("true"),
-                setAriaPressed("true"));
+              ? (setMenuOpen(false), setAriaPressed("false"))
+              : (setMenuOpen(true), setAriaPressed("true"));
           }}
         >
           <Icon_Info />

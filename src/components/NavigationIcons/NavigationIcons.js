@@ -107,6 +107,7 @@ export const NavigationIcons = ({
         {techniquesAreOpen && (
           <FocusLock shards={[techniquesRef]}>
             <motion.div
+              data-testid="techniques motion div"
               key="techniques_modal"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -130,6 +131,7 @@ export const NavigationIcons = ({
         {timeIsOpen && (
           <FocusLock shards={[durationRef]}>
             <motion.div
+              data-testid="duration motion div"
               key="duration_modal"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
