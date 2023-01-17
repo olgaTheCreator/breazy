@@ -265,12 +265,12 @@ export const Timer = ({
               <div
                 className="sun2"
                 style={{
-                  "--color1": "hsla(216, 100%, 94%, 1)",
-                  "--color2": "hsla(206, 82%, 17%, 1)",
+                  "--color1": "#DFECFF",
+                  "--color2": "#2D506A",
                   transform:
                     changeOfStep(modFromSec, inhaleExhale).index === 1 &&
                     changeOfStep(modFromSec, inhaleExhale).duration > 0
-                      ? `scale(1.3,1.3)`
+                      ? `scale(1,1)`
                       : changeOfStep(modFromSec, inhaleExhale).index === 3 &&
                         changeOfStep(modFromSec, inhaleExhale).duration > 0
                       ? `scale(1,1)`
@@ -281,14 +281,20 @@ export const Timer = ({
                   //     : changeOfStep(modFromSec, inhaleExhale).index === 3
                   //     ? `${1.8}rem`
                   //     : "",
-                  background:
-                    changeOfStep(modFromSec, inhaleExhale).index === 3 &&
-                    changeOfStep(modFromSec, inhaleExhale).duration > 0
-                      ? "linear-gradient(to bottom, var(--color2), var(--color1)) top /250% 250%"
-                      : changeOfStep(modFromSec, inhaleExhale).index === 1 &&
-                        changeOfStep(modFromSec, inhaleExhale).duration > 0
-                      ? "linear-gradient(to bottom, var(--color2), var(--color1)) bottom /250% 250%"
-                      : "",
+                  // zIndex:
+                  //   changeOfStep(modFromSec, inhaleExhale).index === 1 ||
+                  //   changeOfStep(modFromSec, inhaleExhale).index === 2 ||
+                  //   changeOfStep(modFromSec, inhaleExhale).index === 3
+                  //     ? "10"
+                  //     : "0",
+                  // background:
+                  //   changeOfStep(modFromSec, inhaleExhale).index === 3 &&
+                  //   changeOfStep(modFromSec, inhaleExhale).duration > 0
+                  //     ? "var(--color2)"
+                  //     : changeOfStep(modFromSec, inhaleExhale).index === 1 &&
+                  //       changeOfStep(modFromSec, inhaleExhale).duration > 0
+                  //     ? "var(--color1)"
+                  //     : "",
 
                   animationName: !stop
                     ? `${
