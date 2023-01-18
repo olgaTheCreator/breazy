@@ -2,7 +2,7 @@
   "name": "breazy",
   "version": "1.0.0",
   "private": true,
-  "homepage": "http://olgaTheCreator.github.io/breazy",
+  "homepage": "http://olgaTheCreator.github.io/breazy/",
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
