@@ -420,30 +420,6 @@
     background-color: yellow;
   } */
 
-/* 
-@-webkit-keyframes sun_gradient {
-  from {
-    background-color: red;
-  }
-  to {
-    background-color: blue;
-  }
-  /* 100% {
-    background-color: yellow;
-  } */
-
-@-moz-keyframes sun_gradient {
-  from {
-    background-color: 50% 0%;
-  }
-  to {
-    background-color: 50% 100%;
-  }
-  /* 100% {
-    background-color: yellow;
-  } */
-}
-
 .mountain_on_stop-appear {
   background-size: auto 0%;
 }
