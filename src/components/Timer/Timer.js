@@ -265,8 +265,8 @@ export const Timer = ({
               <div
                 className="sun2"
                 style={{
-                  "--color1": "#DFECFF",
-                  "--color2": "#2D506A",
+                  // "--color1": "#DFECFF",
+                  // "--color2": "#2D506A",
                   transform:
                     changeOfStep(modFromSec, inhaleExhale).index === 1 &&
                     changeOfStep(modFromSec, inhaleExhale).duration > 0
@@ -300,10 +300,10 @@ export const Timer = ({
                     ? `${
                         changeOfStep(modFromSec, inhaleExhale).currentStep ===
                         "inhale"
-                          ? "scale, sun_gradient"
+                          ? "scale"
                           : changeOfStep(modFromSec, inhaleExhale)
                               .currentStep === "exhale"
-                          ? "scale2, sun_gradient2"
+                          ? "scale2"
                           : "none"
                       }`
                     : "",
