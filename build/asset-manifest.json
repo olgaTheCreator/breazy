@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/breazy/static/css/main.353dc4bb.css",
-    "main.js": "/breazy/static/js/main.9d1d88b4.js",
+    "main.js": "/breazy/static/js/main.f19ef7e7.js",
     "static/media/bell-hit-soft.wav": "/breazy/static/media/bell-hit-soft.fbe646fb74c7cea1354c.wav",
     "static/media/gory.png": "/breazy/static/media/gory.2417822ed774c0d62f38.png",
     "static/media/montserrat-all-400-normal.woff": "/breazy/static/media/montserrat-all-400-normal.327fab0afc997a2d9b16.woff",
@@ -12,10 +12,10 @@
     "static/media/montserrat-vietnamese-400-normal.woff2": "/breazy/static/media/montserrat-vietnamese-400-normal.8f3f4c99eb0eeb5990f1.woff2",
     "index.html": "/breazy/index.html",
     "main.353dc4bb.css.map": "/breazy/static/css/main.353dc4bb.css.map",
-    "main.9d1d88b4.js.map": "/breazy/static/js/main.9d1d88b4.js.map"
+    "main.f19ef7e7.js.map": "/breazy/static/js/main.f19ef7e7.js.map"
   },
   "entrypoints": [
     "static/css/main.353dc4bb.css",
-    "static/js/main.9d1d88b4.js"
+    "static/js/main.f19ef7e7.js"
   ]
 }
