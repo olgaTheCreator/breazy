@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/breazy/static/css/main.353dc4bb.css",
-    "main.js": "/breazy/static/js/main.f19ef7e7.js",
+    "main.css": "/breazy/static/css/main.956d4811.css",
+    "main.js": "/breazy/static/js/main.72635f85.js",
     "static/media/bell-hit-soft.wav": "/breazy/static/media/bell-hit-soft.fbe646fb74c7cea1354c.wav",
     "static/media/gory.png": "/breazy/static/media/gory.2417822ed774c0d62f38.png",
     "static/media/montserrat-all-400-normal.woff": "/breazy/static/media/montserrat-all-400-normal.327fab0afc997a2d9b16.woff",
@@ -11,11 +11,11 @@
     "static/media/montserrat-cyrillic-400-normal.woff2": "/breazy/static/media/montserrat-cyrillic-400-normal.e5c5c19c23e370a342c8.woff2",
     "static/media/montserrat-vietnamese-400-normal.woff2": "/breazy/static/media/montserrat-vietnamese-400-normal.8f3f4c99eb0eeb5990f1.woff2",
     "index.html": "/breazy/index.html",
-    "main.353dc4bb.css.map": "/breazy/static/css/main.353dc4bb.css.map",
-    "main.f19ef7e7.js.map": "/breazy/static/js/main.f19ef7e7.js.map"
+    "main.956d4811.css.map": "/breazy/static/css/main.956d4811.css.map",
+    "main.72635f85.js.map": "/breazy/static/js/main.72635f85.js.map"
   },
   "entrypoints": [
-    "static/css/main.353dc4bb.css",
-    "static/js/main.f19ef7e7.js"
+    "static/css/main.956d4811.css",
+    "static/js/main.72635f85.js"
   ]
 }
