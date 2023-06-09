@@ -30,16 +30,11 @@
   visibility: visible;
   font-size: 0.6rem;
 }
-/* p.technique-name {
-  grid-row: 1/2;
-  font-size: 1em;
-} */
 
 .list-of-techniques {
   font-size: 0.85rem;
   font-weight: 500;
   margin: 0% 10% -5% 10%;
-  /* padding: 0.3em; */
   background: #23292d;
 
   border-radius: 62px;
@@ -56,12 +51,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-end;
-  /* background: url(../../assets/svgs/small.svg) no-repeat left top 10%; */
-  /* background-size: 1.1em 1.1em; */
   padding-left: 0.1em;
   padding-top: 0.05em;
   padding-bottom: 0.07em;
-  /* vertical-align: middle; */
   text-align: left;
 }
 
@@ -90,13 +82,8 @@
   font-size: 0.45rem;
   font-weight: 400;
 }
-/* .list-of-techniques li:hover p {
-  visibility: visible;
-  font-size: 0.45rem;
-} */
 
 .short-description {
-  /* margin: 0.2rem 0.3rem 0.3rem 0.3rem; */
   padding-right: 0.4em;
   text-align: left;
   color: hsla(212, 18%, 60%, 0.95);

@@ -2,7 +2,6 @@ import React from "react";
 import { render, cleanup } from "@testing-library/react";
 import { NavigationIcons } from "./NavigationIcons";
 import { breathingTechniques } from "../../data/breathingTechniques";
-//import { userEvent } from "@testing-library/user-event/dist/types/setup";
 import userEvent from "@testing-library/user-event";
 
 describe("Navigation Icons", () => {

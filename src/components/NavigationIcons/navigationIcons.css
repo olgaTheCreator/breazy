@@ -25,7 +25,6 @@
   border-radius: 50%;
   height: 1.95rem;
   width: 1.95rem;
-  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25); */
   color: #455a6e;
 
   border: none;
@@ -68,14 +67,6 @@
     transition: none;
   }
 }
-
-/* .fade_in-appear {
-  opacity: 0;
-}
-.fade_in-appear-active {
-  opacity: 1;
-  transition: opacity 700ms;
-} */
 
 .fade_in-enter {
   opacity: 0;

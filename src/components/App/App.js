@@ -42,36 +42,14 @@ const App = () => {
     setStop(true);
     setPause(false);
     setAnimate(false);
-    // setShowButtons(true);
     return;
   };
-  // const handleShowingButtons = () => {
-  //   if (intervalId && !pause) {
-  //     setShowButtons(true);
-  //     setTimeout(() => setShowButtons(false), 7000);
-  //   }
-  // };
+
   if (Math.floor(seconds / 1000) === durationOfSession * 60) {
     setTimeout(() => {
       handleStop();
-    }, 3000);
-
-    // useEffect(() => {
-    //   setTimeout(() => {
-    //     handleStop();
-    //   }, 5000);
-    // }, []);
+    }, 4000);
   }
-  // useEffect(() => {
-  //   const handleWindowClick = () => {
-  //     var context = new AudioContext();
-  //     console.log(AudioContext.state);
-  //     return context;
-  //   };
-  //   window.addEventListener("click", handleWindowClick);
-
-  //   return () => window.removeEventListener("click", handleWindowClick);
-  // }, []);
 
   return (
     <AppWrapper>
@@ -102,7 +80,7 @@ const App = () => {
             />
           </div>
           <div className="beginSession">
-            {durationOfSession * 60 === Math.round(seconds / 1000) ? (
+            {durationOfSession * 60 === Math.floor(seconds / 1000) ? (
               <EndOfSessionText />
             ) : stop ? (
               <BeginSessionText
@@ -112,10 +90,6 @@ const App = () => {
             ) : (
               " "
             )}
-
-            {/* <div>
-            <ShowingTechniqueNameOnScreen chosenTechnique={chosenTechnique} />
-          </div> */}
           </div>
         </div>
         <SwitchTransition>
@@ -133,11 +107,6 @@ const App = () => {
                 background: showButtons ? "hsla(203, 12%, 21%, 1)" : "",
               }}
               ref={widthRef}
-              // onClick={() => handlePause()}
-              // onClick={() => {
-              //   handleShowingButtons();
-              // }}
-              // style={{ visibility: !intervalId ? "visible" : "hidden" }}
             >
               {!showButtons && (
                 <div
@@ -150,19 +119,9 @@ const App = () => {
                         widthRef.current.offsetWidth -
                       0.08 * widthRef.current.offsetWidth
                     }px)`,
-                    // left: `min(${
-                    //   (seconds / (durationOfSession * 60000)) * 100 - 5
-                    // }%, 93%)`,
-                    // animationDuration: `${durationOfSession * 60}s`,
-                    // animationPlayState: !pause ? "running" : "paused",
                   }}
                 ></div>
               )}
-              {/* {console.log(
-          seconds,
-          window.innerWidth,
-          seconds / (durationOfSession * 60000)
-        )} */}
               {showButtons && (
                 <NavigationIcons
                   setMenuOpen={setMenuOpen}
@@ -185,12 +144,6 @@ const App = () => {
             </div>
           </CSSTransition>
         </SwitchTransition>
-        {/* <div
-        className="mountains"
-        style={{ width: "100%", visibility: intervalId ? "visible" : "hidden" }}
-      >
-        <div></div>
-      </div> */}
       </div>
     </AppWrapper>
   );

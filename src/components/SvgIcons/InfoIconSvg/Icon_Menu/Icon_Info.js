@@ -29,7 +29,6 @@ export const Icon_Info = () => {
             cy="27"
             r="23"
             fill="url(#paint0_linear_201_12)"
-            //  shape-rendering="crispEdges"
             id="circle4"
             style={{ fill: "url(#paint0_linear_201_12)" }}
           />

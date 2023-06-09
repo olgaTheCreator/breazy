@@ -29,7 +29,6 @@ export const Icon_Play = () => {
               dy="4"
               stdDeviation="0.6"
               floodColor="rgba(0, 0, 0, 0.6"
-              // floodOpacity="0.8"
             />
             <feDropShadow
               dx="5"

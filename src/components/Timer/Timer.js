@@ -4,7 +4,7 @@ import { vibrate } from "../../utils/Vibration";
 import { noOp } from "../../utils/NoOp";
 import { Howl, Howler } from "howler";
 import { Icon_Play } from "../SvgIcons/PlayIconSvg/Icon_Play/Icon_Play";
-import bell from "../../assets/sounds/bell-hit-soft.wav";
+import bell from "../../assets/sounds/josemaria__sol.wav";
 import useOnClickOutside from "../../utils/Hooks/useOnClickOutside";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 
@@ -14,13 +14,11 @@ export const Timer = ({
   setSeconds,
   setIntervalId,
   intervalId,
-  //durationOfSession,
   pause,
   setPause,
   handlePause,
   setStop,
   stop,
-  //handleStop,
   vibrations,
   sounds,
   animate,
@@ -32,31 +30,9 @@ export const Timer = ({
   const nodeRef2 = useRef(null);
   const nodeRef3 = useRef(null);
   const [ariaPressed, setAriaPressed] = useState("false");
-  // const sound = new Howl({
-  //   src: [bell],
-  //   autoplay: false,
-  // });
-  // useEffect(() => {
-  //   const handleWindowClick = () => {
-  //     Howler.mute(false);
-  //     Howler.volume(1);
-  //     console.log(Howler.ctx.state);
-  //     if (Howler.ctx.state == "suspended") {
-  //       Howler.ctx.resume();
-  //     }
-  //   };
-  //   window.addEventListener("click", handleWindowClick);
 
-  //   return () => window.removeEventListener("click", handleWindowClick);
-  // }, []);
-  // const sound = new Howl({
-  //   src: [bell],
-  //   // autoplay: false,
-  // });
-  // console.log(Howler.ctx.state);
   useOnClickOutside(ref, () => {
     if (animate) {
-      console.log("using onclickoutside");
       handlePause();
     }
   });
@@ -73,7 +49,6 @@ export const Timer = ({
           ) {
             const sound = new Howl({
               src: [bell],
-              // autoplay: false,
             });
             sound.play();
           } else noOp();
@@ -99,7 +74,7 @@ export const Timer = ({
 
   const handleHowler = () => {
     Howler.mute(false);
-    Howler.volume(1);
+    Howler.volume(0.1);
     if (Howler.ctx.state == "suspended") {
       Howler.ctx.resume();
     }
@@ -132,13 +107,7 @@ export const Timer = ({
   return (
     <div className="container">
       <div className="visible_layer">
-        {/* <div className="area1"></div>
-      <div className="area2"> */}
-        <div
-          className="circle-outer"
-          // onClick={handleStart}
-          // ref={ref}
-        >
+        <div className="circle-outer">
           <CSSTransition
             appear
             in={stop}
@@ -155,7 +124,6 @@ export const Timer = ({
             >
               <SwitchTransition>
                 <CSSTransition
-                  // appear
                   key={intervalId}
                   timeout={{ appear: 1100, enter: 600, exit: 600 }}
                   classNames="play_button_on_pause"
@@ -183,21 +151,8 @@ export const Timer = ({
           className="orbit"
           style={{
             visibility: intervalId ? "visible" : "hidden",
-            // transform:
-            //   changeOfStep(modFromSec, inhaleExhale).index === 1
-            //     ? `rotateZ(-175deg)`
-            //     : changeOfStep(modFromSec, inhaleExhale).index === 3
-            //     ? `rotateZ(-360deg)`
-            //     : "",
-            animationName: !stop ? "orbit" : "",
 
-            // animationDuration: `${
-            //   changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale"
-            //     ? inhaleExhale[0].duration
-            //     : changeOfStep(modFromSec, inhaleExhale).currentStep === "exhale"
-            //     ? inhaleExhale[2].duration
-            //     : 0
-            // }s`,
+            animationName: !stop ? "orbit" : "",
             animationDuration: `${
               inhaleExhale[0].duration + inhaleExhale[2].duration
             }ms`,
@@ -207,41 +162,11 @@ export const Timer = ({
               changeOfStep(modFromSec, inhaleExhale).currentStep === "hold"
                 ? "paused"
                 : "running",
-            // changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale" ||
-            // changeOfStep(modFromSec, inhaleExhale).currentStep === "exhale"
-            //   ? "running"
-            //   : "paused",
           }}
         >
           <div
             className="sun2-wrapper"
             style={{
-              // transform:
-              //   changeOfStep(modFromSec, inhaleExhale).index === 1
-              //     ? `rotateX(-90deg) rotateY(180deg) rotateZ(0deg)`
-              //     : changeOfStep(modFromSec, inhaleExhale).index === 3
-              //     ? `rotateX(-90deg) rotateY(0deg) rotateZ(0deg)`
-              //     : "",
-              // // display: intervalId || pause ? "grid" : "none",
-              // animationName: !stop
-              //   ? `${
-              //       changeOfStep(modFromSec, inhaleExhale).currentStep ===
-              //       "inhale"
-              //         ? "invert"
-              //         : changeOfStep(modFromSec, inhaleExhale).currentStep ===
-              //           "exhale"
-              //         ? "invert2"
-              //         : "none"
-              //     }`
-              //   : "",
-              // animationDuration: `${
-              //   changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale"
-              //     ? inhaleExhale[0].duration
-              //     : changeOfStep(modFromSec, inhaleExhale).currentStep ===
-              //       "exhale"
-              //     ? inhaleExhale[2].duration
-              //     : 0
-              // }s`,
               animationName: !stop ? "invert" : "",
               animationDuration: `${
                 inhaleExhale[0].duration + inhaleExhale[2].duration
@@ -251,10 +176,6 @@ export const Timer = ({
                 changeOfStep(modFromSec, inhaleExhale).currentStep === "hold"
                   ? "paused"
                   : "running",
-              // changeOfStep(modFromSec, inhaleExhale).currentStep === "inhale" ||
-              // changeOfStep(modFromSec, inhaleExhale).currentStep === "exhale"
-              //   ? "running"
-              //   : "paused",
             }}
           >
             <CSSTransition
@@ -265,8 +186,6 @@ export const Timer = ({
               <div
                 className="sun2"
                 style={{
-                  // "--color1": "#DFECFF",
-                  // "--color2": "#2D506A",
                   transform:
                     changeOfStep(modFromSec, inhaleExhale).index === 1 &&
                     changeOfStep(modFromSec, inhaleExhale).duration > 0
@@ -275,26 +194,6 @@ export const Timer = ({
                         changeOfStep(modFromSec, inhaleExhale).duration > 0
                       ? `scale(1,1)`
                       : "",
-                  // width:
-                  //   changeOfStep(modFromSec, inhaleExhale).index === 1
-                  //     ? `${1.4 * 1.8}rem`
-                  //     : changeOfStep(modFromSec, inhaleExhale).index === 3
-                  //     ? `${1.8}rem`
-                  //     : "",
-                  // zIndex:
-                  //   changeOfStep(modFromSec, inhaleExhale).index === 1 ||
-                  //   changeOfStep(modFromSec, inhaleExhale).index === 2 ||
-                  //   changeOfStep(modFromSec, inhaleExhale).index === 3
-                  //     ? "10"
-                  //     : "0",
-                  // background:
-                  //   changeOfStep(modFromSec, inhaleExhale).index === 3 &&
-                  //   changeOfStep(modFromSec, inhaleExhale).duration > 0
-                  //     ? "var(--color2)"
-                  //     : changeOfStep(modFromSec, inhaleExhale).index === 1 &&
-                  //       changeOfStep(modFromSec, inhaleExhale).duration > 0
-                  //     ? "var(--color1)"
-                  //     : "",
 
                   animationName: !stop
                     ? `${
@@ -328,34 +227,11 @@ export const Timer = ({
                   animationDirection: "normal, normal",
                   animationIterationCount: `1, 1`,
                   animationPlayState: `
-                ${
-                  pause
-                    ? // changeOfStep(modFromSec, inhaleExhale).currentStep === "hold"
-                      "paused"
-                    : "running"
-                }, ${
-                    pause
-                      ? // ||
-                        // changeOfStep(modFromSec, inhaleExhale).currentStep === "hold"
-                        "paused"
-                      : "running"
+                ${pause ? "paused" : "running"}, ${
+                    pause ? "paused" : "running"
                   }`,
-
-                  // `sun_gradient ${
-                  //   changeOfStep(modFromSec, inhaleExhale).duration
-                  // }s linear infinite alternate`,
-                  // animationPlayState:
-                  //   animate &&
-                  //   (changeOfStep(modFromSec, inhaleExhale).currentStep ===
-                  //     "inhale" ||
-                  //     changeOfStep(modFromSec, inhaleExhale).currentStep ===
-                  //       "exhale")
-                  //     ? "running"
-                  //     : "paused",
                 }}
-              >
-                {/* {console.log(seconds)} */}
-              </div>
+              ></div>
             </CSSTransition>
           </div>
         </div>

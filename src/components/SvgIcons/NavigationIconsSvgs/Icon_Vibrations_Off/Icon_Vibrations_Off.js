@@ -28,7 +28,6 @@ export const Icon_Vibrations_Off = () => {
             cy="27"
             r="23"
             fill="url(#paint0_linear_936_907)"
-            //    shape-rendering="crispEdges"
             id="circle488"
             style={{ fill: "url(#paint0_linear_936_907)" }}
           />

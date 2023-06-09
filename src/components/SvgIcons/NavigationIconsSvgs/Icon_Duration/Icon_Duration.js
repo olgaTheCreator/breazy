@@ -28,7 +28,6 @@ export const Icon_Duration = () => {
             cy="27"
             r="23"
             fill="url(#paint0_linear_936_912)"
-            //    shape-rendering="crispEdges"
             id="circle1209"
             style={{ fill: "url(#paint0_linear_936_912)" }}
           />
