@@ -1,4 +1,4 @@
 # Breazy
 
-Breazy is a PWA app, that I made as my first independent React project. Design: Karolina Duda.
-I improve it daily and I'm very proud of the outcome. Please enjoy!
+Breazy is a web app, that I made as my first independent React project. Design: Karolina Duda.
+It can help you with breathing exercises. Please enjoy!
