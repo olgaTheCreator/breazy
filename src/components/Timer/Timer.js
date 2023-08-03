@@ -37,6 +37,9 @@ export const Timer = ({
     }
   });
 
+  const canVibrate = "vibrate" in navigator;
+  console.log(canVibrate);
+
   const changeOfStep = (modulo, array) => {
     for (let i = 0; i <= 3; i++) {
       const { duration, step } = array[i];
@@ -53,11 +56,11 @@ export const Timer = ({
             sound.play();
           } else noOp();
           if (window.navigator.userActivation) {
-            vibrations && navigator.userActivation.hasBeenActive
+            vibrations && navigator.userActivation.hasBeenActive && canVibrate
               ? vibrate()
               : noOp();
           } else {
-            vibrations ? vibrate() : noOp();
+            vibrations && canVibrate ? vibrate() : noOp();
           }
         }
         return { duration: duration - modulo, currentStep: step, index: i };

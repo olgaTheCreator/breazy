@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "http://olgaTheCreator.github.io/breazy/",
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@fontsource/andika": "^4.5.7",
